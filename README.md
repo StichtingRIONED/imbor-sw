@@ -1,6 +1,7 @@
-# GWSW_IMBOR
-Deelmodel GWSW-IMBOR  
-Integratie datamodellen GWSW en IMBOR
+# IMBOR-SW ontwikkelen op basis van het GWSW en IMBOR
 
-* Definitiëren van het deelmodel GWSW-IMBOR als bron voor de module IMBOR Stedelijk Water
+Directe aanmaak vanuit het GWSW van het deelmodel IMBOR Stedelijk Water.
+
+* Definiëren van het deelmodel IMBOR-SW
 * Overnemen TOP-concepten uit IMBOR in het GWSW Datamodel
+* Functionele beschrijving van de conversie GWSW naar IMBOR-SW
