@@ -1,4 +1,4 @@
-# IMBOR-SW ontwikkelen op basis van het GWSW en IMBOR
+# IMBOR-SW ontwikkelen op basis van het GWSW
 
 Directe aanmaak vanuit het GWSW van het deelmodel IMBOR Stedelijk Water.
 
