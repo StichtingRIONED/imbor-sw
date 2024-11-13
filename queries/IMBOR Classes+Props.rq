@@ -1,4 +1,4 @@
-# IMBOR Classes+Props (2441 stuks) (20241112), (2689 stuks) (20231217)
+# IMBOR Classes+Props (2484 stuks) (20241113) (2441 stuks) (20241112), (2689 stuks) (20231217)
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -6,26 +6,29 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX imbor: <https://data.crow.nl/imbor/def/> 
 PREFIX nen2660: <https://w3id.org/nen2660/def#>
+PREFIX nen3610: <http://modellen.geostandaarden.nl/def/nen3610-2022#>
 PREFIX sh: <http://www.w3.org/ns/shacl#>
 
-SELECT ?Name ?Labels ?AltLabels ?type ?Definitions ?SeeAlsos
+SELECT ?url ?Name ?Labels ?AltLabels ?type ?Definitions ?SeeAlsos
 
 WHERE
 {
-  BIND (str(iri(imbor:)) AS ?aft)
+  BIND (str(iri(imbor:)) AS ?aftImbor)
+  BIND (str(iri(nen2660:)) AS ?aft2660)
+  BIND (str(iri(nen3610:)) AS ?aft3610)
 
   { ?class rdf:type rdfs:Class . }
   UNION
   { ?class rdf:type rdf:Property . }
+    
+  BIND (IF (CONTAINS(str(?class), ?aft2660), ?aft2660, (IF (CONTAINS(str(?class), ?aft3610), ?aft3610, ?aftImbor))) as ?url)
+  filter (CONTAINS(str(?class), ?url))
 
-  filter (CONTAINS(str(?class), ?aft))
-
-  BIND (strafter(str(?class), ?aft) AS ?Name)
+  BIND (strafter(str(?class), ?url) AS ?Name)
   ?class sesame:directType ?_type
     
   FILTER (?_type != sh:NodeShape)
   BIND (strafter(str(?_type), "#") AS ?type)
-
   { 
     SELECT ?class (GROUP_CONCAT(?Label; separator = " | ") as ?Labels)
     WHERE
@@ -34,7 +37,6 @@ WHERE
     }
     GROUP BY ?class
   }
-
   { 
     SELECT ?class (GROUP_CONCAT(?AltLabel; separator = " | ") as ?AltLabels)
     WHERE
@@ -46,7 +48,6 @@ WHERE
     }
     GROUP BY ?class
   }
-
   { 
     SELECT ?class (GROUP_CONCAT(?Definition; separator = " | ") as ?Definitions)
     WHERE
@@ -58,7 +59,6 @@ WHERE
     }
     GROUP BY ?class
   }
-
   { 
     SELECT ?class (GROUP_CONCAT(?SeeAlso; separator = " | ") as ?SeeAlsos)
     WHERE
@@ -70,5 +70,4 @@ WHERE
     }
     GROUP BY ?class
   }
-
 }
