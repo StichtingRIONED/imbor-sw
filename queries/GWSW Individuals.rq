@@ -1,0 +1,73 @@
+# GWSW Individuals (20231218)
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX : <http://data.gwsw.nl/1.6/totaal/>
+
+select ?Name ?Labels ?AltLabels ?Definition ?SeeAlsos (GROUP_CONCAT(?Collection; separator = "|") as ?Collections)
+
+where
+{
+  ?coll rdfs:subClassOf :VerzamelingSoorten .
+  ?coll rdfs:subClassOf ?o1 .
+  ?o1 owl:oneOf ?list .
+
+  # Deze duurt te lang, wordt afgebroken: (20231217)
+  #voer eerst rdf:rest uit, met object vervolgens rdf:first (rest*: doe voor alle rest-relaties)
+  #?list rdf:rest*/rdf:first ?elem .
+
+  ?elem rdf:type ?coll .
+
+  { 
+  SELECT ?elem (GROUP_CONCAT(?Label; separator = " | ") as ?Labels)
+  WHERE
+  {
+    ?elem rdfs:label ?Label .
+  }
+  GROUP BY ?elem
+  }
+  
+  OPTIONAL { # De optional buiten de subquery houden, loopt veel beter!
+  { 
+    SELECT ?elem (GROUP_CONCAT(?AltLabel; separator = " | ") as ?_AltLabels)
+    WHERE
+    {
+     # OPTIONAL {
+      ?elem skos:altLabel ?AltLabel .
+      #?elem rdf:type ?typ . # dummy om de boel te laten lopen (GraphDB?) (20231217)
+     #}
+    }
+    GROUP BY ?elem
+    }
+  }
+  BIND (COALESCE(?_AltLabels, "") AS ?AltLabels)
+  
+  OPTIONAL {
+  { 
+    SELECT ?elem (GROUP_CONCAT(?SeeAlso; separator = " | ") as ?_SeeAlsos)
+    WHERE
+    {
+     # OPTIONAL {
+      ?elem rdfs:seeAlso ?SeeAlso .
+      #?elem rdf:type ?typ . # dummy om de boel te laten lopen (GraphDB?) (20231217)
+     #}
+    }
+    GROUP BY ?elem
+    }
+  }
+  BIND (COALESCE(?_SeeAlsos, "") AS ?SeeAlsos)
+
+  OPTIONAL {
+    ?elem skos:definition ?_Definition .
+  }
+  BIND (COALESCE(?_Definition, "") AS ?Definition) # Hou gevuld, tbv CSV-export
+  
+  BIND (str(iri(:)) AS ?aft)
+  BIND (strafter(str(?coll), ?aft) AS ?Collection)
+  BIND (strafter(str(?elem), ?aft) AS ?Name)
+}
+group by ?Name ?Labels ?AltLabels ?Definition ?SeeAlsos

@@ -1,0 +1,74 @@
+# IMBOR Classes+Props (2441 stuks) (20241112), (2689 stuks) (20231217)
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX imbor: <https://data.crow.nl/imbor/def/> 
+PREFIX nen2660: <https://w3id.org/nen2660/def#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+
+SELECT ?Name ?Labels ?AltLabels ?type ?Definitions ?SeeAlsos
+
+WHERE
+{
+  BIND (str(iri(imbor:)) AS ?aft)
+
+  { ?class rdf:type rdfs:Class . }
+  UNION
+  { ?class rdf:type rdf:Property . }
+
+  filter (CONTAINS(str(?class), ?aft))
+
+  BIND (strafter(str(?class), ?aft) AS ?Name)
+  ?class sesame:directType ?_type
+    
+  FILTER (?_type != sh:NodeShape)
+  BIND (strafter(str(?_type), "#") AS ?type)
+
+  { 
+    SELECT ?class (GROUP_CONCAT(?Label; separator = " | ") as ?Labels)
+    WHERE
+    {
+      ?class skos:prefLabel ?Label .
+    }
+    GROUP BY ?class
+  }
+
+  { 
+    SELECT ?class (GROUP_CONCAT(?AltLabel; separator = " | ") as ?AltLabels)
+    WHERE
+    {
+      OPTIONAL
+      {
+        ?class skos:altLabel ?AltLabel .
+      }
+    }
+    GROUP BY ?class
+  }
+
+  { 
+    SELECT ?class (GROUP_CONCAT(?Definition; separator = " | ") as ?Definitions)
+    WHERE
+    {
+      OPTIONAL
+      {
+        ?class skos:definition ?Definition .
+      }
+    }
+    GROUP BY ?class
+  }
+
+  { 
+    SELECT ?class (GROUP_CONCAT(?SeeAlso; separator = " | ") as ?SeeAlsos)
+    WHERE
+    {
+      OPTIONAL
+      {
+        ?class rdfs:seeAlso ?SeeAlso .
+      }
+    }
+    GROUP BY ?class
+  }
+
+}
