@@ -17,4 +17,4 @@ In Excel markeert de kolom IMBOR-module de indeling van de concepten:
 Map GWSW-concepten vanuit Excel op basis van:
 - label GWSW versus label IMBOR
 - altLabel GWSW versus label IMBOR
-- alleen IMBOR-modules TOP en ?
+- alleen concepten binnen IMBOR-modules TOP en ?
