@@ -24,8 +24,7 @@ Map GWSW-concepten vanuit Excel op basis van:
 - alleen concepten binnen IMBOR-modules TOP en ?
 
 ## GWSW Deelmodel IMBOR-SW 
-Indeling vergelijkbaar met deelmodel GWSW: CoF-en TOP, BAS, MDS, HYD (excl. NLCS)  
-Gebruik conformiteitsklasse 6:
-- schakel activiteiten uit (komen niet voor in IMBOR)
+Indeling vergelijkbaar met deelmodel GWSW Basis: CoF-en TOP, BAS, MDS, HYD (excl. NLCS)  
+Gebruik conformiteitsklasse 6.
 
 
