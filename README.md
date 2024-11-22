@@ -10,8 +10,8 @@ De mappingfile met de vertaling van GWSW naar IMBOR (in JSON-vorm (bestand Mappi
 De mappingfile wordt toegepast in repos StichtingRIONED/gwsw_worker. Repos gwsw_worker maakt de conversie van het deelmodel GWSW-IMBOR-SW naar de RDF-vorm van IMBOR.
 
 De spreadsheet Mapping GWSW IMBOR.xlsm wordt gevuld:
-- het blad IMBOR: met SPARQL op IMBOR-Kern (zie map queries in deze repos)
-- het blad GWSW: met de SPARQL-queries Klassen en Collecties binnen GWSW-Lijsten, de queries draaien op het deelmodel GWSW-IMBOR-SW
+- het blad IMBOR: Gebruik de query IMBOR Classes+Props.rq in de map queries. De query draait op IMBOR-Kern (zie map datamodellen). 
+- het blad GWSW: met de SPARQL-query Klassen binnen GWSW-Lijsten en de query GWSW Collecties.rq in de map queries. De queries draaien op het deelmodel GWSW-IMBOR-SW. Gebruik GraphDB-repository GWSW_IMBOR-SW_v161 (zie map datamodellen voor de inhoud. 
 
 In Excel markeert de kolom IMBOR-module de indeling van de concepten:
 - TOP = kernmodel IMBOR
