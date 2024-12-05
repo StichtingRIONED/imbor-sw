@@ -1,0 +1,1036 @@
+[
+  {
+    "comment": [
+      "Action replace = vervang GWSW-concept door IMBOR-concept ",
+      "Action parent = vervang GWSW-parent door IMBOR-parent ",
+      "Action remove = GWSW-concept vervalt (verwijderen lukt niet met deelmodel-filtering, bijv. bij supertype van GWSW-klassen met nieuwe IMBOR parent)"
+    ]
+  },
+  {
+    "comment": "20241107/mv: IMBOR-Kenmerk-klasse, alleen voor browser (20241105)",
+    "gwsw": "Kenmerk",
+    "imbor": "imbor:AttribuutKwalKwan",
+    "label": "Attribuut (kwalitatief/kwantitatief)",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20241112/mv: Subtype(property) toegestaan? Dan is het eenheden-probleem (lees hieronder) ook opgelost",
+      "20240327/overleg: wordt in GWSW de algemene prop imbor:breedte, verwijder subprops met alleen constraints op waarde. De constraint verschuiven naar SHACL. (nu alleen in conversie, straks in 2.0). Nog doordenken: hoe gaan we om met eenheden. Lengte leiding = m, lengte put = mm"
+    ],
+    "gwsw": "Breedte",
+    "imbor": "imbor:4af7d3cc-a139-4c7e-83c0-67ea8b628001",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20241126/mv: Staat in IMBOR/Access onder GWSW, corrigeren?",
+      "20231229/tm: Inderdaad een IMBOR term."
+    ],
+    "gwsw": "Buurt",
+    "imbor": "imbor:47fbba3e-34bb-4f4b-a4ea-b6fbfa34426c",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20241122/mv: Staat in IMBOR/Access onder GWSW, corrigeren?",
+      "20231229/tm: Inderdaad een IMBOR term. "
+    ],
+    "gwsw": "Fundering",
+    "imbor": "imbor:9ee5bd00-c5a8-4d8b-871a-cd3b4eddd9df",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20241117/mv: Staat in IMBOR/Access onder GWSW. Dat is niet ok, subtype Vertex is een IMBOR-Kern ding.",
+      "20231229/tm: met Marinus overlegd hoe topologie te integreren. Is een superklasse van een netwerkelement."
+    ],
+    "gwsw": "TopologischElement",
+    "imbor": "imbor:7b39d108-a9dd-4a15-9ad9-2c6c4512c492",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20241126/mv: Subtype van IMBOR-concept objectnaam",
+      "20240327/overleg: GWSW neemt IMBOR concept over",
+      "20231229/tm: Exact.",
+      "20231219/ro:  Zit in IMBOR als attribuut 'objectnaam' bij klasse 'OpenbareRuimte'. "
+    ],
+    "gwsw": "NaamOpenbareRuimte",
+    "imbor": "imbor:ee97b257-d3b8-4d0c-9a42-c07d88b36d9f",
+    "action": "parent"
+  },
+  {
+    "comment": [
+      "20241119/mv: Gemaild naar Rik: kunnen GWSW-activiteiten zoals inspecteren, reinigen meedoen in IMBOR-SW? (Activiteit is nu uitgeschakeld in het deelmodel)",
+      "20231229/tm: inderdaad.  nen2660:Activity vervangt deze GWSW term.",
+      "20231219/ro:  Zit in IMBOR als nen2660:Activity. "
+    ],
+    "gwsw": "Activiteit",
+    "imbor": "nen2660:Activity",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20240327/overleg: in IMBOR wordt dit een superprop",
+      "20240307/mv: In GWSW als abstract supertype opgenomen, kan er uit, wordt niet gebruikt in toepassingen (sparql).",
+      "20231229/tm: Bespreekgeval, want dit is een zeer algemeen begrip. Waarom zit dit in GWSW? IMBOR verwijst naar externe informatiemodellen en maakt attributen geen subklassen van abstractere begrippen.",
+      "20231219/ro:  Zit in IMBOR als een aantal specifieke attributen. "
+    ],
+    "gwsw": "Afstand",
+    "action": "remove"
+  },
+  {
+    "comment": [
+      "20231229/tm: IMBOR gaat dit objectificeren. Dan IMBOR volgen. https://github.com/Stichting-CROW/imbor/issues/1192#issuecomment-1820919049",
+      "20240327/overleg: in IMBOR wordt dit Beheerder. GWSW neemt deze over, supertype is JuridischeEenheid"
+    ],
+    "gwsw": "Beheerder",
+    "imbor": "imbor:8cb1bf27-67aa-47f5-a85c-b3b19e3f2ef2",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20240327/overleg: imbor:Bouwwerk hanteren, definitie in GWSW aanpassen",
+      "20231229/tm: Terminologische match met IMBOR. Maar qua definitie niet. Overleggen welke definitie leidend moet zijn."
+    ],
+    "gwsw": "Bouwwerk",
+    "imbor": "imbor:ffa16bb2-fa5a-49f1-b3e8-794499b02785",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Inderdaad een IMBOR term."
+    ],
+    "gwsw": "Datakabel",
+    "imbor": "imbor:bc6f8c37-6121-49db-af4d-7d805f1e82f6",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20240327/overleg: GWSW volgt IMBOR, alleen de superprop gebruiken. Zie punt 8",
+      "20231229/tm: Inderdaad een IMBOR term."
+    ],
+    "gwsw": "Diameter",
+    "imbor": "imbor:638eff22-a320-43ae-889a-0a0b5f83dceb",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20241126/mv: Synoniem toegevoegd aan GWSW",
+      "20240327/overleg: GWSW hanteert imbor:Dijklichaam",
+      "20231229/tm: skos ExactMatch",
+      "20231219/ro:  Er is een klasse Dijklichaam"
+    ],
+    "gwsw": "Dijk",
+    "imbor": "imbor:fb26a375-695e-4ab0-9403-59c00cdc9d04",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Inderdaad een IMBOR term."
+    ],
+    "gwsw": "Dikte",
+    "imbor": "imbor:b5ebc81d-849c-43f1-b461-3d3595a572ad",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20240327/overleg: Wijk is synoniem, GWSW volgt IMBOR",
+      "20231229/tm: dit is Wijk in IMBOR. IMBOR volgen.",
+      "20231219/ro:  Zit in IMBOR als nen2660:RuimtelijkGebied met allerlei subklassen. Ook de klasse Gebiedsindeling heeft hier mee te maken. In IMBOR2024 krijgt dit een prominentere rol."
+    ],
+    "gwsw": "District",
+    "imbor": "imbor:b5947439-11e6-423e-b67b-671905610154",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20240327/overleg: aan IMBOR wordt Eigenaar toegevoegd",
+      "20231229/tm: wordt equivalent zodra nieuwe geobjectificeerde IMBOR modellering tot stand komt."
+    ],
+    "gwsw": "Eigenaar",
+    "imbor": "imbor:7dc78de4-02e4-41c8-974f-585066e09225",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20240327/overleg: IMBOR aanhouden, definitie algemener maken in het GWSW",
+      "20231229/tm: Inderdaad een IMBOR term. GWSW definitie is dus te nauw."
+    ],
+    "gwsw": "Elektriciteitskast",
+    "imbor": "imbor:ce738f23-2622-45f9-82fd-259e62bf4daf",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20240327/overleg: aan IMBOR wordt Fabrikant toegevoegd",
+      "20231229/tm: wordt equivalent zodra nieuwe geobjectificeerde IMBOR modellering tot stand komt."
+    ],
+    "gwsw": "Fabrikant",
+    "imbor": "imbor:b1815e57-72dc-41d8-a648-d26171c20d1d",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20240327/overleg: Wordt in GWSW nen2660:DiscreetObject",
+      "20231219/ro:  Zit in IMBOR als nen2660:PhysicalObject.GWSW term kan vervallen."
+    ],
+    "gwsw": "FysiekObject",
+    "imbor": "nen2660:DiscreteObject",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20241122/mv: synoniem aan GWSW-datamodel toegevoegd",
+      "20231229/tm: deze GWSW term kan vervallen.",
+      "20231219/ro:  Zit in IMBOR als nen2660:RuimtelijkGebied met allerlei subklassen. Ook de klasse Gebiedsindeling heeft hier mee te maken. In IMBOR2024 krijgt dit een prominentere rol."
+    ],
+    "gwsw": "Gebied",
+    "imbor": "nen2660:SpatialRegion",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20240327/overleg: Wordt in GWSW nen3610:Gebouw",
+      "20231229/tm: skos exactMatch.",
+      "20231219/ro:  Zit wel in IMBOR. "
+    ],
+    "gwsw": "Gebouw",
+    "imbor": "nen3610:Gebouw",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20240327/overleg: Wordt als object in IMBOR opgenomen. GWSW neemt IMBOR-concept over",
+      "20231229/tm: wordt equivalent zodra nieuwe geobjectificeerde IMBOR modellering tot stand komt."
+    ],
+    "gwsw": "Gemeente",
+    "imbor": "imbor:8b9d6f6f-524d-45ca-8a1a-996414bfd04b",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Inderdaad een IMBOR term. "
+    ],
+    "gwsw": "Geometrie",
+    "imbor": "imbor:888e13ae-214e-471e-839b-79d77d69d46e",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Inderdaad een IMBOR term. "
+    ],
+    "gwsw": "Grondsoort",
+    "imbor": "imbor:220b6cfb-9737-451b-a353-974ff6a6929f",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Inderdaad een IMBOR term. "
+    ],
+    "gwsw": "Hoogte",
+    "imbor": "imbor:f46c02ba-18ac-4f9f-856a-64dd56591700",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20240327/overleg: Maak in GWSW subclass van nen2660:ReeelObject",
+      "20231229/tm: Informatiedrager uit GWSW lijkt een soort Informatieobject uit NEN2660.",
+      "20231219/ro:  Informatiedrager wordt enkel gebruikt in de context van Bord. "
+    ],
+    "gwsw": "Informatiedrager",
+    "imbor": "nen2660:RealObject",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Inderdaad een IMBOR term. "
+    ],
+    "gwsw": "Inhoud",
+    "imbor": "imbor:a6482382-af5c-4e18-a2db-a353004051f0",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Inderdaad een IMBOR term. "
+    ],
+    "gwsw": "Kabel",
+    "imbor": "imbor:80f7db6c-0e53-4f15-91c1-88c69455d150",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20240327/overleg: wordt imbor:JuridischeEenheid",
+      "20231229/tm: exact. Gaat vervallen na IMBOR overname van Juridische entiteit o.i.d., zie https://github.com/Stichting-CROW/imbor/issues/1192#issuecomment-1820919049",
+      "20231219/ro:  Niet in IMBOR. "
+    ],
+    "gwsw": "Levensvorm",
+    "imbor": "imbor:a81bafb3-b93c-44d4-9f1a-5fbeda562fe5",
+    "action": "parent"
+  },
+  {
+    "comment": [
+      "20240327/overleg: Aan IMBOR wordt Leverancier toegevoegd",
+      "20231229/tm: wordt equivalent zodra nieuwe geobjectificeerde IMBOR modellering tot stand komt."
+    ],
+    "gwsw": "Leverancier",
+    "imbor": "imbor:c36a31ea-a38f-42b5-b494-5d30d4465617",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Inderdaad een IMBOR term. "
+    ],
+    "gwsw": "Mantelbuis",
+    "imbor": "imbor:ea3de512-7af7-439f-bdd4-1ddacf6cc2bc",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Inderdaad een IMBOR term. "
+    ],
+    "gwsw": "Project",
+    "imbor": "imbor:5edad64e-5fd7-4692-bc5c-b7b12fecfbb7",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20241113/mv: Ruimte laten vervallen, de subtypes krijgen nieuwe IMBOR-parents",
+      "20240327/overleg: GWSW gebruikt nen2660:RuimtelijkGebied, daaronder valt ook compariment",
+      "20231229/tm: Inderdaad een IMBOR term. "
+    ],
+    "gwsw": "Ruimte",
+    "action": "remove"
+  },
+  {
+    "comment": [
+      "20231229/tm: Inderdaad een IMBOR term. "
+    ],
+    "gwsw": "Serienummer",
+    "imbor": "imbor:721aa6e1-cec4-4cce-8eea-38ee4399da06",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Inderdaad een IMBOR term. "
+    ],
+    "gwsw": "Sleutelnummer",
+    "imbor": "imbor:87907a18-21ff-4cf8-875c-794eaa9b7242",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Inderdaad een IMBOR term. "
+    ],
+    "gwsw": "Slot",
+    "imbor": "imbor:4a8a4b11-e7a2-40c7-a208-86190ff6812c",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20241126/mv: Synoniem Openbare weg aan GWSW toegevoegd",
+      "20240327/overleg:  Wordt in GWSW synoniem van imbor:OpenbareRuimteWegverbinding",
+      "20231229/tm: Openbare ruimte in IMBOR. Dat is een breder begrip."
+    ],
+    "gwsw": "Straat",
+    "imbor": "imbor:d92894c0-0539-4a08-acd8-303b76aec4c4",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Inderdaad een IMBOR term. "
+    ],
+    "gwsw": "Voedingskabel",
+    "imbor": "imbor:71cd52ae-6864-40e2-9f50-97daa00f74d9",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Inderdaad een IMBOR term. Definitie mogelijk te nauw"
+    ],
+    "gwsw": "Vorm",
+    "imbor": "imbor:cb68e3f3-405e-42bd-a965-6d9fae10988f",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Bestaat alleen voor een term t.b.v. GWSW in IMBOR, nl. Holle leiding"
+    ],
+    "gwsw": "Wanddikte",
+    "imbor": "imbor:851c0d3e-c015-4e9b-8556-75fd0a498d22",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "Asbestcement",
+    "imbor": "imbor:606568bb-450c-4347-bc74-99796df0ddc0",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Laten vervallen of verwijzen naar IMBOR-termen. Dit is een beschrijving van oppervlakteverharding, vakdiscipline Wegen."
+    ],
+    "gwsw": "Asfalt",
+    "imbor": "imbor:a768ba26-9e40-448e-869d-9a4a6e8a65b7",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "BAIZob",
+    "imbor": "imbor:b36745f4-eb66-4f04-b41d-cc712c087ec9",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20240327/overleg: Volg de NEN3610 (dat doet IMBOR ook)",
+      "20231229/tm: Modelleren zoals IMBOR 2024: zie NEN 3610 TijdlijnGeldigheid https://github.com/Stichting-CROW/imbor/issues/1075"
+    ],
+    "gwsw": "Begindatum",
+    "imbor": "imbor:f65dd67b-8c4c-47f6-9ed2-4ab87763bbac",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20241122/mv: Blijft IMBOR-kern, heeft meerdere zoekingangen",
+      "20231229/tm: subklasse van Kast. GWSW domein, mits Kast IMBOR domein is."
+    ],
+    "gwsw": "Besturingskast",
+    "imbor": "imbor:86c535d2-6a5f-48af-a3d7-1b21de0de6c5",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "Beton",
+    "imbor": "imbor:52ab27f2-fb67-4752-8cfc-ac4f3638df4e",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "Bitumen",
+    "imbor": "imbor:735acdf2-1d8f-4112-9f43-2c116974919b",
+    "action": "replace"
+  },
+  {
+    "gwsw": "Bovengrond",
+    "imbor": "nen3610:GeografischeRuimte",
+    "action": "parent"
+  },
+  {
+    "gwsw": "Brandput",
+    "imbor": "imbor:befaedad-e835-499e-b5b5-d07ccc6b2174",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20240327/overleg: Zie punt 74"
+    ],
+    "gwsw": "Bron",
+    "imbor": "imbor:79a89ac1-19b0-4756-9971-c40fade1a8fe",
+    "action": "replace"
+  },
+  {
+    "gwsw": "Capaciteit",
+    "imbor": "imbor:1799894e-4d26-4800-a08e-6b2c7d4b07df",
+    "action": "replace"
+  },
+  {
+    "gwsw": "Constructieonderdeel",
+    "imbor": "imbor:7f573337-00f1-41a0-98e0-1936837802fa",
+    "action": "replace"
+  },
+  {
+    "gwsw": "Datum",
+    "imbor": "imbor:107332e5-5843-46b7-901d-13633fba7ef7",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20241122/MV: Hou in IMBOR-Kern, heeft meerdere zoekingangen",
+      "20231229/tm: GWSW term die alleen t.b.v. Riolering in IMBOR zit."
+    ],
+    "gwsw": "Drukmeter",
+    "imbor": "imbor:834df2e2-a063-4562-ba96-710b7769ba31",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Laten vervallen of verwijzen naar IMBOR-termen. Dit is een beschrijving van oppervlakteverharding, vakdiscipline Wegen."
+    ],
+    "gwsw": "ElementenVerharding",
+    "imbor": "imbor:21e19973-ba96-4711-a92f-32c57989aa37",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "Epoxy",
+    "imbor": "imbor:cc48be01-5df4-4c9e-b5d4-3f7375837772",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: IMBOR kunstwerk dat aangesloten is op Riolering."
+    ],
+    "gwsw": "Fontein",
+    "imbor": "imbor:8a10e8b9-f3c5-42e3-b08d-ae5b4d16b9e8",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "GespotenBeton",
+    "imbor": "imbor:bf202514-1dcb-40e4-b1da-aaa1cd2960ee",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "GewapendBeton",
+    "imbor": "imbor:cc9e23e8-8e47-4f71-ae1c-19ba3ffe86a7",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "Gietijzer",
+    "imbor": "imbor:5f4a9eaa-e61e-44cc-8218-79930e872a80",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "Gres",
+    "imbor": "imbor:160edacd-cdd5-42c3-8bf6-687f0702f9ad",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "GrijsGietijzer",
+    "imbor": "imbor:1d8a6b8f-3a00-4b85-bca2-3ebd655da6e3",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "GVK",
+    "imbor": "imbor:5d390719-05c4-4810-9b64-22767c6ba2c7",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "HDPE",
+    "imbor": "imbor:92faeb9e-c662-439f-9b44-203542e3e4cf",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Laten vervallen of verwijzen naar IMBOR-termen. Dit is een beschrijving van wegcategorie duurzaam veilig, vakdiscipline Wegen."
+    ],
+    "gwsw": "Hoofdweg",
+    "imbor": "imbor:24adb07a-8a5e-435b-852f-5c034eafcceb",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Wellicht hermodelleren in IMBOR als Informatieobject Adresgegevens"
+    ],
+    "gwsw": "Huisnummer",
+    "imbor": "imbor:7ecb3a41-3c0c-40fc-bf43-83dadbd5638e",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: discipline overstijgend. IMBOR volgen en Grondsoorttypering waar nodig aanvullen."
+    ],
+    "gwsw": "Klei",
+    "imbor": "imbor:cc85c4a0-f201-4a8d-a346-e440a1d24c7e",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Algemeen attribuut. Kan GWSW afnemen van IMBOR"
+    ],
+    "gwsw": "Kleur",
+    "imbor": "imbor:90c47fe0-0f7a-42fb-a437-be9cb8c233e1",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20241122/mv: Laat in IMBOR-Kern, heeft meerdere zoekingangen",
+      "20231229/tm: GWSW term. Zit nu in IMBOR t.b.v. Riolering"
+    ],
+    "gwsw": "Klimijzer",
+    "imbor": "imbor:eb911448-1c62-4b00-881c-b14dd6db1e2b",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "Kokosvezels",
+    "imbor": "imbor:e9f3fbf6-b7a9-4791-ab23-bc6f46e11001",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Gerelateerd aan IMBOR Civiele constructies. Kan GWSW afnemen van IMBOR."
+    ],
+    "gwsw": "Kunstwerk",
+    "imbor": "nen3610:Kunstwerk",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: discipline overstijgend. IMBOR volgen en Grondsoorttypering waar nodig aanvullen."
+    ],
+    "gwsw": "Leem",
+    "imbor": "imbor:2bf26030-c1bf-49fc-a75c-8f5a6cb77506",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20241125/mv: Aldus doorgevoerd, rioolleidingen enzo worden subtype van Holle leiding",
+      "20240327/overleg: GWSW volgt de NEN3610 en IMBOR, zowel een buis als kabel is subClassOf Leiding: holle leiding, open leiding, kabel",
+      "20231229/tm: In de IMBOR definitie zijn zowel Kabels als Holle Leidingen subklassen van Leiding. Overleggen hoe dit gescheiden dient te worden, zie NEN 3610"
+    ],
+    "gwsw": "Leiding",
+    "imbor": "nen3610:Leiding",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: skos ExactMatch met IMBOR lengte"
+    ],
+    "gwsw": "Lengte",
+    "imbor": "imbor:2b1b2ffa-6cdd-4c54-b8c3-475757e347ff",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20240327/overleg: GWSW neemt dit concept over, wordt een IMBOR-ding",
+      "20231229/tm: GWSW term, zit nu in IMBOR t.b.v. Riolering."
+    ],
+    "gwsw": "Maaiveldhoogte",
+    "imbor": "imbor:092c0fd0-cb1c-4161-9d52-2a182bcae7a9",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: IMBOR Sensoren kan hier leidend zijn, als de GWSW eigenschappen geborgd zijn."
+    ],
+    "gwsw": "MeetSensor",
+    "imbor": "imbor:f15d86c3-ef9c-4a31-a43e-de3b3f70fbbe",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "Metselwerk",
+    "imbor": "imbor:bb61fd55-c4b4-4e82-a83f-5fe8621bdcc8",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "MetselwerkBaksteen",
+    "imbor": "imbor:b222a3f2-8ec2-4edc-a4d2-cf1a1fa70bd4",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "MetselwerkBepleisterd",
+    "imbor": "imbor:37768910-2e06-4c69-bf5b-45b7b4f40375",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "MetselwerkOnbepleisterd",
+    "imbor": "imbor:d16bf896-c083-4fd2-b5c6-2149760e542c",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "NodulairGietijzer",
+    "imbor": "imbor:d39f5797-b67b-4303-9f65-58c7c98200c5",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "NylonKous",
+    "imbor": "imbor:72ba7b7d-6db7-46ee-8298-03cc8e7587f5",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20240327/overleg: GWSW volgt IMBOR, daarin is een grondsoort een subclass van bodem. Klei is een grondsoort-individu",
+      "20231229/tm: Maar niet instantieerbaar. Bespreken wat GWSW hier mee doet.",
+      "20231219/ro:  Zit in IMBOR als 'Bodem'. "
+    ],
+    "gwsw": "Ondergrond",
+    "imbor": "nen3610:GeografischeRuimte",
+    "action": "parent"
+  },
+  {
+    "comment": [
+      "20231229/tm: Laten vervallen of verwijzen naar IMBOR-termen. Dit is een beschrijving van oppervlakteverharding, vakdiscipline Wegen."
+    ],
+    "gwsw": "Onverhard",
+    "imbor": "imbor:2328d9b8-0aed-453a-864b-df830407ca34",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: gaat herzien worden in het kader van juridische eenheid "
+    ],
+    "gwsw": "Opdrachtgever",
+    "imbor": "imbor:8d3cbbae-5dae-4539-84c9-f6d6756f88d0",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "PE",
+    "imbor": "imbor:6bad1fdb-6052-4239-a199-ad8cfa73159a",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Zie aanmerking bij Bedrijfslocatie.",
+      "20231219/ro:  Zit niet in IMBOR. "
+    ],
+    "gwsw": "Perceel",
+    "imbor": "nen3610:RegistratieveRuimte",
+    "action": "parent"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "Plaatijzer",
+    "imbor": "imbor:8b6f78cb-9bdd-49a4-ba6a-bd797f5a2998",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "Polyester",
+    "imbor": "imbor:596d866d-d691-42a8-9760-1b0da0e98849",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "Polypropyleen",
+    "imbor": "imbor:c27567a6-5bcd-4635-8930-26ad650578bb",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "PPVezels",
+    "imbor": "imbor:e5db285f-c73e-4883-8bc4-d821cf8a3751",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "PVC",
+    "imbor": "imbor:c444418f-d1ba-4127-8af0-67979ca6436c",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Ja. Kan dit generiek geaddresseerd worden met Informatieobject Document?",
+      "20231219/ro:  Als type van een document. "
+    ],
+    "gwsw": "Revisietekening",
+    "imbor": "imbor:1b90f29e-2fb5-481f-b222-0bc2721ea7a1",
+    "action": "parent"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "RoestvastStaal",
+    "imbor": "imbor:32dc3e0d-2163-4ce0-a045-2d7bbcbce967",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Raakvlakken met IMBOR Wegrinrichtingselementen. Kan dit ges"
+    ],
+    "gwsw": "Rooster",
+    "imbor": "imbor:4e8d3195-7824-4559-8d6b-1b92062d1a34",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "Rubber",
+    "imbor": "imbor:6d8fcd27-e317-499a-bef2-3a05e4078f7c",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "Staal",
+    "imbor": "imbor:ce8aa2ed-1ec2-4ba9-adda-2fdb57dd39d9",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Laten vervallen of verwijzen naar IMBOR-termen. Dit is een beschrijving van oppervlakteverharding, vakdiscipline Wegen."
+    ],
+    "gwsw": "Steenslag",
+    "imbor": "imbor:ff76fcec-8319-4349-9687-8ada7823dcbd",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Eigenschap van Waterobjecten. Dit lijkt me primair IMBOR Water."
+    ],
+    "gwsw": "Streefpeil",
+    "imbor": "imbor:9e4eadf7-1ef6-4970-8dba-7b7d9c9d81e7",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Gerelateerd aan de algemenere klasse Apparaat. Overnemen uit IMBOR met de adequate specificatie."
+    ],
+    "gwsw": "TelecomAdres",
+    "imbor": "imbor:6485bc3c-7a26-4370-a181-ba2811cd9658",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20241122/mv: Hou in IMBOR-Kern, is attribuut van Holle Leiding",
+      "20231229/tm: GWSW term. Zit nu in IMBOR vanwege Riolering."
+    ],
+    "gwsw": "Toegankelijk",
+    "imbor": "imbor:21857276-cc31-4b71-b0e5-7fd95fbe94b9",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20241122/mv: Synoniem resource identifier toegevoegd",
+      "20231229/tm: nen2660 volgen voor identificatie van klasse Object."
+    ],
+    "gwsw": "UniekeIdentificatie",
+    "imbor": "imbor:a56da5a3-147a-4117-95a0-9f5bc910b712",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: modelleren in lijn met nen2660:Matter en waar nodig subklassen maken van Materiesoorten die al in IMBOR zijn opgenomen. Collectie uit GWSW kan gemodelleerd worden met de juiste multipliciteit uit IMBOR."
+    ],
+    "gwsw": "Vezelcement",
+    "imbor": "imbor:5a740982-81d5-476b-81b8-783386e3e7b8",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Gerelateerd aan IMBOR Civiele constructies. Kan GWSW afnemen van IMBOR."
+    ],
+    "gwsw": "Waterkering",
+    "imbor": "imbor:899b3ebd-eb08-4ab3-885c-f7ef4d22820f",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Eigenschap van Waterobjecten. Dit lijkt me primair IMBOR Water."
+    ],
+    "gwsw": "WaterpeilWinter",
+    "imbor": "imbor:f49c84a4-f7b9-44c5-9dbc-d9f63f552415",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Eigenschap van Waterobjecten. Dit lijkt me primair IMBOR Water."
+    ],
+    "gwsw": "WaterpeilZomer",
+    "imbor": "imbor:0fe546c6-2acd-4d1f-8cb2-ff589cdd6449",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Zal herzien "
+    ],
+    "gwsw": "Waterschap",
+    "imbor": "imbor:dee45e84-56af-4948-9fe8-9d584af7de07",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Waterobjecten zijn hoofdzakelijk voor IMBOR Water. Stedelijk Water maakt er secundair gebruik van."
+    ],
+    "gwsw": "Watervlakte",
+    "imbor": "imbor:999c662a-cdcc-4feb-8ec6-8818a2ca44e4",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: Overname van IMBOR Woongebied"
+    ],
+    "gwsw": "Woonwijk",
+    "imbor": "imbor:bd2fd05d-9d00-4c84-b05c-12e3e22b79ae",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: bestaat in IMBOR alleen bij Vuilvangrooster, een Stedelijk Water object. GWSW volgen lijkt me!"
+    ],
+    "gwsw": "Zand",
+    "imbor": "imbor:904417a6-d966-4a0b-a397-0e416c0e35a1",
+    "action": "replace"
+  },
+  {
+    "gwsw": "Put",
+    "imbor": "imbor:b7168388-9eb9-4c95-b35e-1ba2660849e8",
+    "action": "replace"
+  },
+  {
+    "gwsw": "TheoretischeLevensduur",
+    "imbor": "imbor:9e00cc46-caf0-49da-9b3a-c282a8d47c2d",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: documentnummer van Informatieobject Document. "
+    ],
+    "gwsw": "Revisietekeningnummer",
+    "imbor": "imbor:d87dabf8-9e94-4ed9-b246-b0024a55d373",
+    "action": "parent"
+  },
+  {
+    "gwsw": "Aansluitleiding",
+    "imbor": "imbor:a57c92d8-2139-45c8-b96f-471106f6af2e",
+    "action": "parent"
+  },
+  {
+    "gwsw": "AfstandTotBeginpunt",
+    "imbor": "imbor:0dac7828-b6e7-46eb-b538-dd6ac0005eca",
+    "action": "parent"
+  },
+  {
+    "gwsw": "AfstandTotBovenzijdePut",
+    "imbor": "imbor:0dac7828-b6e7-46eb-b538-dd6ac0005eca",
+    "action": "parent"
+  },
+  {
+    "gwsw": "AfstandTotEindpunt",
+    "imbor": "imbor:0dac7828-b6e7-46eb-b538-dd6ac0005eca",
+    "action": "parent"
+  },
+  {
+    "gwsw": "Compartiment",
+    "imbor": "imbor:7de9ac78-23f4-4a18-8728-4170f23a9ec4",
+    "action": "parent"
+  },
+  {
+    "gwsw": "DCAbc",
+    "imbor": "imbor:a57c92d8-2139-45c8-b96f-471106f6af2e",
+    "action": "parent"
+  },
+  {
+    "gwsw": "Drain",
+    "imbor": "imbor:a57c92d8-2139-45c8-b96f-471106f6af2e",
+    "action": "parent"
+  },
+  {
+    "gwsw": "Duiker",
+    "imbor": "imbor:a57c92d8-2139-45c8-b96f-471106f6af2e",
+    "action": "parent"
+  },
+  {
+    "gwsw": "LozeLeiding",
+    "imbor": "imbor:a57c92d8-2139-45c8-b96f-471106f6af2e",
+    "action": "parent"
+  },
+  {
+    "gwsw": "Ontluchtingsleiding",
+    "imbor": "imbor:a57c92d8-2139-45c8-b96f-471106f6af2e",
+    "action": "parent"
+  },
+  {
+    "gwsw": "Pendelstuk",
+    "imbor": "imbor:a57c92d8-2139-45c8-b96f-471106f6af2e",
+    "action": "parent"
+  },
+  {
+    "gwsw": "Rioolleiding",
+    "imbor": "imbor:a57c92d8-2139-45c8-b96f-471106f6af2e",
+    "action": "parent"
+  },
+  {
+    "gwsw": "Transportleiding",
+    "imbor": "imbor:a57c92d8-2139-45c8-b96f-471106f6af2e",
+    "action": "parent"
+  },
+  {
+    "gwsw": "VrijeOverstorthoogte",
+    "imbor": "imbor:0dac7828-b6e7-46eb-b538-dd6ac0005eca",
+    "action": "parent"
+  },
+  {
+    "gwsw": "Waking",
+    "imbor": "imbor:0dac7828-b6e7-46eb-b538-dd6ac0005eca",
+    "action": "parent"
+  },
+  {
+    "gwsw": "Aanlegdiepte",
+    "imbor": "imbor:0dac7828-b6e7-46eb-b538-dd6ac0005eca",
+    "action": "parent"
+  },
+  {
+    "comment": [
+      "20231229/tm: zoals overlegd met Marinus wordt RioleringLink."
+    ],
+    "gwsw": "Edge",
+    "imbor": "imbor:0379b919-1cf8-4546-8091-0a6d0cab3197",
+    "action": "replace"
+  },
+  {
+    "comment": [
+      "20231229/tm: zoals overlegd met Marinus wordt RioleringNode."
+    ],
+    "gwsw": "Vertex",
+    "imbor": "imbor:f6f6c34a-540b-46c5-8b49-9681056a1261",
+    "action": "replace"
+  }
+]
