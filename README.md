@@ -1,12 +1,14 @@
 # IMBOR-SW ontwikkelen op basis van het GWSW
 
-Directe aanmaak vanuit het GWSW van het deelmodel IMBOR Stedelijk Water.
+Deze repository bevat het ontwerp voor de directe aanmaak van het deelmodel IMBOR Stedelijk Water vanuit het GWSW-datamodel .
 
+Het ontwerp omvat het volgende:
 * Definiëren van het deelmodel IMBOR-SW
 * Overnemen TOP-concepten uit IMBOR in het GWSW Datamodel
 * Functionele beschrijving van de conversie GWSW naar IMBOR-SW
 
-De mappingfile met de vertaling van GWSW naar IMBOR (in JSON-vorm (bestand Mapping IMBOR.json) wordt aangemaakt vanuit Excel (bestand Mapping GWSW IMBOR.xlsm). 
+De mappingfile met de vertaling van GWSW naar IMBOR in JSON-vorm [(bestand Mapping IMBOR.json)](https://github.com/StichtingRIONED/gwsw_worker/blob/main/appdata/publish/imbor/Mapping%20IMBOR.json) 
+wordt aangemaakt vanuit Excel [(bestand Mapping GWSW IMBOR.xlsm)](./Mapping%20GWSW%20IMBOR.xlsm). 
 De mappingfile wordt toegepast in repos StichtingRIONED/gwsw_worker. Repos gwsw_worker maakt de conversie van het deelmodel GWSW-IMBOR-SW naar de RDF-vorm van IMBOR.
 
 De spreadsheet Mapping GWSW IMBOR.xlsm wordt gevuld:
