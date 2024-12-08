@@ -1,7 +1,7 @@
+Buurtgrens - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Aansluitleiding - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Aansluitput - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Beerput - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
-Buurt - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Debietmeter - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Drain - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Drainageput - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
@@ -33,10 +33,6 @@ Watermeterput - Term is exclusief GWSW: Staat niet in KlassenAttributen maar hee
 Waterniveaumeter - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Compartiment - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Lijngoot - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
-Hevel - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
-Ontluchtingsunit - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
-Stankfilter - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
-Uitklimvoorziening - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 RWZI - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
 Zuiveringsreservoir - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Infiltratiebassin - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
@@ -68,6 +64,10 @@ Vrijverval transportleiding - Klasse met attributen zijn exclusief GWSW: Volgens
 Opvangput - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
 Overstortput - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Pompput - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
+Hevel - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
+Ontluchtingsunit - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
+Stankfilter - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
+Uitklimvoorziening - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Ontlastput - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
 Afsluiteraandrijving - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Afsluitstuk - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
@@ -97,6 +97,11 @@ Schildmuur - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft 
 Stuwmuur - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Verbindingsstuk - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Wervelventiel - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
+Drainagestelsel - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
+Infiltratiestelsel - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
+Transportstelsel - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
+Rioolstelsel - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
+Gescheiden systeem - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Stankafsluiter - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Steenwolblok - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
 Diffusiescherm - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
@@ -104,36 +109,32 @@ Drijflaagschot - Term is exclusief GWSW: Staat niet in KlassenAttributen maar he
 Weesleiding - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
 Flexibel zettingstuk - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
 Luik - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
+Term FunctioneleEntiteit heeft geen supertype, is IMBOR-Topconcept
+Term TechnischeEntiteit heeft geen supertype, is IMBOR-Topconcept
 Rioolaansluiting - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
-Topologisch element - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Representatie fysiek object - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
-Duikerstelsel - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
-Drainagestelsel - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
-Infiltratiestelsel - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
-Transportstelsel - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
-Rioolstelsel - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
-Grondwatermeetnet - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
-Afvalwatersysteem - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
-Gescheiden systeem - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
-Grondwatersysteem - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
-Meetinrichting - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
 Oppervlaktewatersysteem - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
-Regelinrichting - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
-RTC-sturing - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
 Steenwolkoffer - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Zandkoffer - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Luchtinjectie-unit - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
 Rioolafsluiter - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
+Term Activiteit heeft geen supertype, is IMBOR-Topconcept
+Term Object heeft geen supertype, is IMBOR-Topconcept
 Leidingbrug - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
 Lavakoffer - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Open leiding - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Compensator - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
 Zadel - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
 Warmtewinningsnet - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
-Transportsysteem - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
 RioleringNode - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 RioleringLink - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
+Term Rol heeft geen supertype, is IMBOR-Topconcept
 Reservoir - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Infiltratiereservoir - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Bescherming - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
 Doorlaat - Klasse met attributen zijn exclusief GWSW: Volgens KlassenAttributen (de klasse + attributen zijn allen GWSW)
+Ketting - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
+Stellaag - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
+Valleiding - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
+Duikerput - Term is exclusief GWSW: Staat niet in KlassenAttributen maar heeft wel exclusief Zoekingang Stedelijk Water
+
