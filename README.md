@@ -3,19 +3,20 @@
 Deze repository bevat het ontwerp voor de directe aanmaak van het deelmodel IMBOR Stedelijk Water vanuit het GWSW-datamodel .
 
 Het ontwerp omvat het volgende:
-* Definiëren van het deelmodel IMBOR-SW binnen het GWSW-datamodel (#gwsw-deelmodel-imbor-sw)
-* Definieer de mapping GWSW-IMBOR, overnemen TOP-concepten uit IMBOR in het GWSW-datamodel
-* Functionele beschrijving van de conversie GWSW naar IMBOR-SW
+* Definiëren van het deelmodel IMBOR-SW binnen het GWSW-datamodel [GWSW Deelmodel IMBOR-SW](#gwsw-deelmodel-imbor-sw)
+* Definieer de mapping GWSW-IMBOR, overnemen TOP-concepten uit IMBOR in het GWSW-datamodel [Mapping GWSW-IMBOR](#mapping-gwsw-imbor)
+* Functionele beschrijving van de conversie GWSW naar IMBOR-SW [IMBOR-conform RDF](#imbor-conform-rdf)
 
 ## GWSW Deelmodel IMBOR-SW 
 Indeling vergelijkbaar met deelmodel GWSW Basis: CoF-en TOP, BAS, MDS, HYD (excl. NLCS)  
 Gebruik conformiteitsklasse 6.
 
-Het deelmodel wordt voor presentaties gekoppeld aan IMBOR-Kern. 
+Het deelmodel wordt voor presentaties gekoppeld aan IMBOR-Kern. Zie [data.gwsw.nl/imbor-sw](https://data.gwsw.nl/imbor-sw).
 Om te komen tot de presentatie op [data.gwsw.nl/imbor-sw](https://data.gwsw.nl/imbor-sw) worden de volgende stappen doorlopen:
-- voer de mapping GWSW-IMBOR uit op het datamodel GWSW
+- converteer het model IMBOR-Kern naar het GWSW-conforme RDF 
+- koppel het omgezette model IMBOR-Kern aan het datamodel GWSW
+- voer de mapping GWSW-IMBOR uit op deze model-koppeling
 - filter deze mapping op basis van deelmodel IMBOR-SW (Cof-en TOP, BAS, MDS, HYD en CFK 6)
-- converteer deze GWSW-filtering naar het IMBOR-conforme RDF
 
 ## Mapping GWSW-IMBOR
 De mappingfile met de vertaling van GWSW naar IMBOR in JSON-vorm [(bestand Mapping IMBOR.json)](./Mapping%20IMBOR.json) 
