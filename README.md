@@ -43,12 +43,12 @@ Map GWSW-concepten vanuit Excel op basis van:
 ### SW-deel (omgezet vanuit GWSW)
 
 In de volgende paragrafen is als voorbeeld een datamodel IMBOR-conform uitgewerkt.  
-In dit voorbeeld zijn enkele concepten van IMBOR-Kern en omgezette concepten van GWSW opgenomen.
+In dit voorbeeld zijn enkele omgezette concepten van GWSW en bijbehorende topconcepten van IMBOR-Kern opgenomen.
 
 Gemodelleerd zijn de fysieke objecten rioolput en overstortput inclusief enkele kenmerken.
 
 Het test-datamodel in de GWSW/RDF-viewer: [data.gwsw.nl/imbor-sw-test](https://data.gwsw.nl/imbor-sw-test).  
-Het test-datamodel in RDF/Turtle-vorm: [test-datamodel imbor-sw-test](./test-datamodel%20imbor-sw-test.ttl).
+Het test-datamodel in RDF/Turtle-vorm: [datamodel imbor-sw-test](./datamodel%20imbor-sw-test.ttl).
 
 **SW prefixes**
 * gwsw: voor ongewijzigde SW-concepten
