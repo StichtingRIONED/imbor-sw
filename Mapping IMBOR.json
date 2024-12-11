@@ -1256,32 +1256,6 @@
   },
   {
     "remarks": [
-      "Item nr 408",
-      "20231229/tm: Wat Rik zegt is niet correct. Dit is een combinatie van klasse en attribuut met bijbehorende enumeratie. Aanvullen met GWSW waarden voor zover die ontbreken en dan kan GWSW de IMBOR structuur hergebruiken.",
-      "20231219/ro:  Niet in IMBOR. "
-    ],
-    "gwsw": "VormBouwwerk",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 409",
-      "20231229/tm: Wat Rik zegt is niet correct. Dit is een combinatie van klasse en attribuut met bijbehorende enumeratie. Aanvullen met GWSW waarden voor zover die ontbreken en dan kan GWSW de IMBOR structuur hergebruiken. Of IMBOR structuur vervalt en wordt vervangen door IMBOR termen.",
-      "20231219/ro:  Niet in IMBOR. "
-    ],
-    "gwsw": "VormDeksel",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 410",
-      "20231229/tm: GWSW term, zit nu in IMBOR t.b.v. Riolering."
-    ],
-    "gwsw": "VormLeiding",
-    "action": "remove"
-  },
-  {
-    "remarks": [
       "Item nr 462"
     ],
     "gwsw": "Aansluitleiding",
@@ -1423,6 +1397,14 @@
   },
   {
     "remarks": [
+      "Item nr 1815"
+    ],
+    "gwsw": "MaaiveldschematiseringColl",
+    "imbor": "nen2660:EnumerationType",
+    "action": "parent"
+  },
+  {
+    "remarks": [
       "Item nr 1825"
     ],
     "gwsw": "MateriaalPut",
@@ -1459,6 +1441,13 @@
     "gwsw": "Transportleiding",
     "imbor": "imbor:a57c92d8-2139-45c8-b96f-471106f6af2e",
     "action": "parent"
+  },
+  {
+    "remarks": [
+      "Item nr 2543"
+    ],
+    "gwsw": "VerzamelingSoorten",
+    "action": "remove"
   },
   {
     "remarks": [

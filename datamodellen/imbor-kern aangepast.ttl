@@ -23,6 +23,10 @@
 
 @prefix gwsw: <http://data.gwsw.nl/1.6/totaal/> . # 20231214/mv: zodat we gwsw-apps/upload kunnen gebruiken
 
+nen2660:EnumerationType a rdfs:Class; # 20241213/mv: ontbreekt in dit datamodel (nodig voor SPARQL)
+  dash:abstract true;
+  skos:prefLabel "Enumeratietype"@nl.
+
 net:Link a rdfs:Class, sh:NodeShape;
   dash:abstract true;
   rdfs:seeAlso imbor-term:e280bf5f-18bc-40a8-a344-753daa25f448;

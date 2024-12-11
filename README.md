@@ -5,7 +5,7 @@ Deze repository bevat het ontwerp voor de directe aanmaak van het deelmodel IMBO
 Het ontwerp omvat het volgende:
 * Definiëren van het deelmodel IMBOR-SW binnen het GWSW-datamodel [GWSW Deelmodel IMBOR-SW](#gwsw-deelmodel-imbor-sw)
 * Definieer de mapping GWSW-IMBOR, overnemen TOP-concepten uit IMBOR in het GWSW-datamodel [Mapping GWSW-IMBOR](#mapping-gwsw-imbor)
-* Functionele beschrijving van de conversie GWSW naar IMBOR-SW [IMBOR-conform RDF](#imbor-conform-rdf)
+* Functionele beschrijving van de conversie GWSW naar IMBOR-SW [IMBOR in RDF](#imbor-in-rdf)
 
 ## GWSW Deelmodel IMBOR-SW 
 
@@ -38,46 +38,57 @@ Map GWSW-concepten vanuit Excel op basis van:
 - altLabel GWSW versus label IMBOR
 - alleen concepten binnen IMBOR-module TOP en ?
 
-## IMBOR-conform RDF
+## IMBOR in RDF
 
-### Import SW-deel (afgeleid uit GWSW)
+### SW-deel (omgezet vanuit GWSW)
 
-**Prefixes**
+In de volgende paragrafen is als voorbeeld een datamodel IMBOR-conform uitgewerkt.  
+In dit voorbeeld zijn enkele concepten van IMBOR-Kern en omgezette concepten van GWSW opgenomen.
+
+Gemodelleerd zijn de fysieke objecten rioolput en overstortput inclusief enkele kenmerken.
+
+Het test-datamodel in de GWSW/RDF-viewer: [data.gwsw.nl/imbor-sw-test](https://data.gwsw.nl/imbor-sw-test).  
+Het test-datamodel in RDF/Turtle-vorm: [test-datamodel imbor-sw-test](./test-datamodel%20imbor-sw-test.ttl).
+
+**SW prefixes**
 * gwsw: voor ongewijzigde SW-concepten
 * imbor-sw: voor IMBOR-conforme toevoegingen (propertyshapes, kenmerk-attributen), in URI geen guid maar SW-namen
 
 ### Klassen
 
-Voorbeeld Rioolput
+Voorbeeld Rioolput en Overstortput
 
 <pre>
-imbor:095ecf95-3717-43ec-bc36-8e23e692def9 # neutrale/taalonafhankelijke identificatie
+gwsw:Rioolput
         rdf:type         rdfs:Class , sh:NodeShape ;
         rdfs:seeAlso     imbor-term:100c3a15-3342-46fd-9f48-843c076571e9 ; # verwijst naar vocabulaire-model
-        rdfs:subClassOf  imbor:b7168388-9eb9-4c95-b35e-1ba2660849e8 ;
+        rdfs:subClassOf  imbor:b7168388-9eb9-4c95-b35e-1ba2660849e8 ; # verwijst naar IMBOR-concept Put (neutrale/taalonafhankelijke identificatie)
         skos:definition  "Constructie toegang gevend tot het rioolstelsel."@nl  ;
         skos:prefLabel   "Rioolput"@nl  ;
         sh:property      imbor:0579a2c5-bff7-417f-860c-8299a806c419 ; # verwijst naar onderscheidend kenmerk "Functie"
-        sh:property      imbor:8e3ccb03-a015-420d-a646-bfd05ae734bb ; # verwijst naar relatie "hasPart"
         sh:property      imbor:00910ff5-f2c7-4f22-ad64-787552e3dd38 ; # verwijst naar referentie "Maaiveldschematisering"
         sh:property      imbor:b6ac17af-8019-4d03-9a72-096b51b0cebe ; # verwijst naar waarde "LengteToegang"
         sh:property      imbor:7ad9fafd-6eb1-4853-9b23-2e8f0e7003d4 . # verwijst naar waarde "Aantal i.e. recreatie-eenheden."
         # enzovoort: totaal 62 objects bij sh:property
+gwsw:Overstortput
+        rdf:type         rdfs:Class , sh:NodeShape ;
+        rdfs:subClassOf  gwsw:Rioolput ;
+        sh:property      imbor:8e3ccb03-a015-420d-a646-bfd05ae734bb . # verwijst naar relatie "hasPart"
 </pre>
 
 ### Abstracte klassen
 
 <pre>
-imbor-sw:NodeAbstract
+imbor-sw:CfkTypes
         a                 sh:NodeShape ;
-        sh:targetNode     gwsw:Put, gwsw:Leiding ;
+        sh:targetNode     gwsw:Rioolput, gwsw:Leiding ;
         sh:property       [
           sh:path         [ sh:inversePath rdf:type ] ;
           sh:maxCount     0 ;
         ] .
 </pre>
 
->Gebruik een SHACL construct (ipv dash:abstract), deze expliciete variant is nodig voor validatie.
+>Gebruik een SHACL construct ipv dash:abstract, deze expliciete variant is nodig voor validatie.
 
 ### Onderscheidend kenmerk 
 
@@ -97,16 +108,17 @@ imbor:0579a2c5-bff7-417f-860c-8299a806c419
 Dat is principieel heel anders dan het GWSW, daar is een eenduidige definitie/betekenis bij de objectnaam een voorwaarde. 
 Afgesproken om in de omzetter de IMBOR-syntax op te nemen, mogelijk met sh:qualifiedMinCount 1?
 
+>Nog bepalen of andere onderscheidende kenmerken (gwsw:Uitvoering) meegeleverd worden via de prop gwsw:uitvoering
+
 ### Relatie hasPart in IMBOR-vorm
+
 <pre>
-imbor:8e3ccb03-a015-420d-a646-bfd05ae734bb
+imbor-sw:Overstortput_Duikschot_card
         rdf:type                sh:PropertyShape ;
-        skos:prefLabel          "Rioolput heeft deel Duikschot"@nl ;
+        skos:prefLabel          "Overstortput heeft deel Duikschot"@nl ;
         sh:path                 nen2660:hasPart ; # verwijst naar de rdf:Property
         sh:qualifiedMaxCount    1 ;
-        sh:qualifiedMinCount    0 ;
-         # verwijst naar de klasse "Duikschot":
-        sh:qualifiedValueShape  [ sh:class  imbor:fea5d169-07bd-47eb-8af9-ec0aae99936e ] .
+        sh:qualifiedValueShape  [ sh:class  gwsw:Duikschot ] .
 </pre>
 
 >IMBOR gebruikt ook de inverse relatie nen2660:isPartOf (is ook nodig voor kardinaliteits-definitie)
@@ -114,14 +126,12 @@ imbor:8e3ccb03-a015-420d-a646-bfd05ae734bb
 ### Kenmerk - hasReference in IMBOR-vorm
 
 <pre>
-imbor:00910ff5-f2c7-4f22-ad64-787552e3dd38
+imbor-sw:Rioolput_Maaiveldschematisering_card
         rdf:type                sh:PropertyShape ;
         skos:prefLabel          "maaiveldschematisering vastgezet op Rioolput"@nl ;
         sh:path                 imbor:f4c31d93-4ed7-47f2-8b91-a24247de7e3d ; # is type rdf:Property
         sh:qualifiedMaxCount    1 ;
-        sh:qualifiedMinCount    0 ;
-        # verwijst naar de klasse "RioolputMaaiveldschematisering", een subtype van nen2660:EnumerationType
-        sh:qualifiedValueShape  [ sh:class  imbor:90b87700-9800-4394-89d5-377291331901 ] .
+        sh:qualifiedValueShape  [ sh:class  gwsw:Maaiveldschematisering ] .
 </pre>
 
 >**SW-Specifiek**

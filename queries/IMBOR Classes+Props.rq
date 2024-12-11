@@ -1,4 +1,4 @@
-# IMBOR Classes+Props - Gebruik in mapping-spreadsheet: 2476 stuks (20241122), 2484 stuks (20241113), 2441 stuks (20241112), 2689 stuks (20231217)
+# IMBOR Classes+Props - Gebruik in mapping-spreadsheet: 2522 stuks (20241211, met extra optional), 2476 stuks (20241122), 2484 stuks (20241113), 2441 stuks (20241112), 2689 stuks (20231217)
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -23,6 +23,7 @@ WHERE
     
   BIND (IF (CONTAINS(str(?class), ?aft2660), ?aft2660, (IF (CONTAINS(str(?class), ?aft3610), ?aft3610, ?aftImbor))) as ?url)
   filter (CONTAINS(str(?class), ?url))
+  #filter (CONTAINS(str(?class), ?aft2660)) # testen
 
   BIND (strafter(str(?class), ?url) AS ?Name)
   ?class sesame:directType ?_type
@@ -37,37 +38,39 @@ WHERE
     }
     GROUP BY ?class
   }
-  { 
-    SELECT ?class (GROUP_CONCAT(?AltLabel; separator = " | ") as ?AltLabels)
-    WHERE
-    {
-      OPTIONAL
+  OPTIONAL { # Voor het geval de rest onbreekt (20241211)
+    { 
+      SELECT ?class (GROUP_CONCAT(?AltLabel; separator = " | ") as ?AltLabels)
+      WHERE
       {
-        ?class skos:altLabel ?AltLabel .
+        OPTIONAL
+        {
+          ?class skos:altLabel ?AltLabel .
+        }
       }
+      GROUP BY ?class
     }
-    GROUP BY ?class
-  }
-  { 
-    SELECT ?class (GROUP_CONCAT(?Definition; separator = " | ") as ?Definitions)
-    WHERE
-    {
-      OPTIONAL
+    { 
+      SELECT ?class (GROUP_CONCAT(?Definition; separator = " | ") as ?Definitions)
+      WHERE
       {
-        ?class skos:definition ?Definition .
+        OPTIONAL
+        {
+          ?class skos:definition ?Definition .
+        }
       }
+      GROUP BY ?class
     }
-    GROUP BY ?class
-  }
-  { 
-    SELECT ?class (GROUP_CONCAT(?SeeAlso; separator = " | ") as ?SeeAlsos)
-    WHERE
-    {
-      OPTIONAL
+    { 
+      SELECT ?class (GROUP_CONCAT(?SeeAlso; separator = " | ") as ?SeeAlsos)
+      WHERE
       {
-        ?class rdfs:seeAlso ?SeeAlso .
+        OPTIONAL
+        {
+          ?class rdfs:seeAlso ?SeeAlso .
+        }
       }
+      GROUP BY ?class
     }
-    GROUP BY ?class
   }
 }
