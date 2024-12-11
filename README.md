@@ -3,10 +3,21 @@
 Deze repository bevat het ontwerp voor de directe aanmaak van het deelmodel IMBOR Stedelijk Water vanuit het GWSW-datamodel .
 
 Het ontwerp omvat het volgende:
-* Definiëren van het deelmodel IMBOR-SW binnen het GWSW-datamodel 
-* Overnemen TOP-concepten uit IMBOR in het GWSW-datamodel
+* Definiëren van het deelmodel IMBOR-SW binnen het GWSW-datamodel (#gwsw-deelmodel-imbor-sw)
+* Definieer de mapping GWSW-IMBOR, overnemen TOP-concepten uit IMBOR in het GWSW-datamodel
 * Functionele beschrijving van de conversie GWSW naar IMBOR-SW
 
+## GWSW Deelmodel IMBOR-SW 
+Indeling vergelijkbaar met deelmodel GWSW Basis: CoF-en TOP, BAS, MDS, HYD (excl. NLCS)  
+Gebruik conformiteitsklasse 6.
+
+Het deelmodel wordt voor presentaties gekoppeld aan IMBOR-Kern. 
+Om te komen tot de presentatie op [data.gwsw.nl/imbor-sw](https://data.gwsw.nl/imbor-sw) worden de volgende stappen doorlopen:
+- voer de mapping GWSW-IMBOR uit op het datamodel GWSW
+- filter deze mapping op basis van deelmodel IMBOR-SW (Cof-en TOP, BAS, MDS, HYD en CFK 6)
+- converteer deze GWSW-filtering naar het IMBOR-conforme RDF
+
+## Mapping GWSW-IMBOR
 De mappingfile met de vertaling van GWSW naar IMBOR in JSON-vorm [(bestand Mapping IMBOR.json)](./Mapping%20IMBOR.json) 
 wordt aangemaakt vanuit Excel [(bestand Mapping GWSW IMBOR.xlsm)](./Mapping%20GWSW%20IMBOR.xlsm). 
 De mappingfile wordt toegepast in repository StichtingRIONED/gwsw_worker. Repository gwsw_worker maakt de conversie van het deelmodel GWSW-IMBOR-SW naar de RDF-vorm van IMBOR.
@@ -23,10 +34,6 @@ In Excel markeert de kolom IMBOR-module de indeling van de concepten:
 Map GWSW-concepten vanuit Excel op basis van:
 - label GWSW versus label IMBOR
 - altLabel GWSW versus label IMBOR
-- alleen concepten binnen IMBOR-modules TOP en ?
+- alleen concepten binnen IMBOR-module TOP en ?
 
-## GWSW Deelmodel IMBOR-SW 
-Indeling vergelijkbaar met deelmodel GWSW Basis: CoF-en TOP, BAS, MDS, HYD (excl. NLCS)  
-Gebruik conformiteitsklasse 6.
-
-
+## IMBOR-conform RDF

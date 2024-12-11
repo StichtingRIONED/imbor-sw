@@ -1,3 +1,6 @@
+# baseURI: http://data.gwsw.nl/1.6.1/imbor-sw/Datamodel
+# imports: http://www.w3.org/2004/02/skos/core
+
 @prefix dash: <http://datashapes.org/dash#>.
 @prefix geo: <http://www.opengis.net/ont/geosparql#>.
 @prefix imbor: <https://data.crow.nl/imbor/def/>.

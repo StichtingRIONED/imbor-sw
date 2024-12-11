@@ -1356,14 +1356,6 @@
   },
   {
     "remarks": [
-      "Item nr 1421"
-    ],
-    "gwsw": "DiameterKlep",
-    "imbor": "imbor:638eff22-a320-43ae-889a-0a0b5f83dceb",
-    "action": "parent"
-  },
-  {
-    "remarks": [
       "Item nr 1422"
     ],
     "gwsw": "DiameterPut",
