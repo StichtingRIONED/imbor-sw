@@ -52,7 +52,7 @@ Het test-datamodel in RDF/Turtle-vorm: [datamodel imbor-sw-test](./datamodel%20i
 
 **SW prefixes**
 * gwsw: voor ongewijzigde SW-concepten
-* imbor-sw: voor IMBOR-conforme toevoegingen (propertyshapes, kenmerk-attributen), in URI geen guid maar SW-namen
+* imbor-sw: voor IMBOR-conforme toevoegingen van SW-concepten (propertyshapes, kenmerk-attributen)
 
 ### Klassen
 
