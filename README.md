@@ -20,8 +20,8 @@ Om te komen tot de presentatie op [data.gwsw.nl/imbor-sw](https://data.gwsw.nl/i
 - filter deze mapping op basis van deelmodel IMBOR-SW (Cof-en TOP, BAS, MDS, HYD en CFK 6)
 
 ## Mapping GWSW-IMBOR
-De mappingfile met de vertaling van GWSW naar IMBOR in JSON-vorm [(bestand Mapping IMBOR.json)](./Mapping%20IMBOR.json) 
-wordt aangemaakt vanuit Excel [(bestand Mapping GWSW IMBOR.xlsm)](./Mapping%20GWSW%20IMBOR.xlsm). 
+De mappingfile met de vertaling van GWSW naar IMBOR in JSON-vorm [(bestand Mapping GWSW-IMBOR.json)](./Mapping%20GWSW-IMBOR.json) 
+wordt aangemaakt vanuit Excel [(bestand Mapping GWSW-IMBOR.xlsm)](./Mapping%20GWSW-IMBOR.xlsm). 
 De mappingfile wordt toegepast in repository StichtingRIONED/gwsw_worker. Repository gwsw_worker maakt de conversie van het deelmodel GWSW-IMBOR-SW naar de RDF-vorm van IMBOR.
 
 De spreadsheet Mapping GWSW IMBOR.xlsm wordt gevuld:
