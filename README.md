@@ -123,6 +123,33 @@ imbor-sw:Overstortput_Duikschot_card
 
 >IMBOR kent ook de inverse relatie nen2660:isPartOf (is ook nodig voor kardinaliteits-definitie)
 
+### Kenmerk - hasAspect in IMBOR-basisvorm
+<pre>
+imbor-sw:Rioolput_Aantal_ieRecreatie
+        rdf:type            sh:PropertyShape ;
+        skos:prefLabel      "aantal i.e. recreatie vastgezet op Rioolput"@nl ;
+        sh:datatype         xsd:positiveInteger ;
+        sh:maxCount         1 ; # kardinaliteit
+        sh:minCount         0 ;
+        sh:path             imbor-sw:aantal_ieRecreatie ; # verwijst naar de rdf:Property
+</pre>
+
+En de property als object van sh:path:
+<pre>
+imbor-sw:aantal_ieRecreatie
+        rdf:type         rdf:Property ;
+        rdfs:seeAlso     imbor-term:c3f45eea-738c-4a37-906b-d872192e0c08 ;
+        skos:definition  "Aantal i.e. recreatie-eenheden."@nl ;
+        skos:note        "Vrij invoerveld"@nl ;
+        skos:prefLabel   "aantal i.e. recreatie"@nl .
+</pre>
+
+>**SW-Specifiek**
+>* in propertyshapes geen skos:prefLabel
+>* wel sh:message en sh:severity opgenomen
+>* gescheiden propershapes (met eigen message en severity) voor datatype en kardinaliteit
+>* geen skos:note in property
+
 ### Kenmerk - hasReference in IMBOR-basisvorm
 
 <pre>
@@ -170,8 +197,10 @@ imbor-domeinwaarde:184c2d2e-6990-4b84-a334-875dc4c0b09b # Het individu "Geknevel
 
 imbor:MaaiveldschematiseringColl-list-0 # Maak een lijst met individuen
         rdf:type   rdf:List ;
-        rdf:first  imbor-domeinwaarde:184c2d2e-6990-4b84-a334-875dc4c0b09b ;
-        rdf:rest   imbor:MaaiveldschematiseringColl-list-1 . # sluit af met "rdf:rest rdf:nil"
+        rdf:first  imbor-domeinwaarde:184c2d2e-6990-4b84-a334-875dc4c0b09b ; # het collectie-element (individu)
+        rdf:rest   imbor:MaaiveldschematiseringColl-list-1 . 
+# Enzovoort, sluit af met
+        rdf:rest rdf:nil .
 
 imbor-sw:Rioolput_Maaiveldschematisering # de PropertyShape
         sh:in   imbor:MaaiveldschematiseringColl-list-0 .
@@ -179,33 +208,6 @@ imbor-sw:Rioolput_Maaiveldschematisering # de PropertyShape
 
 >sh:qualifiedValueShape staat in IMBOR als achtervang, voor het geval het individu niet voorkomt. 
 In IMBOR-SW is sh:in voldoende (SW-individuen zijn er altijd)
-
-### Kenmerk - hasAspect in IMBOR-basisvorm
-<pre>
-imbor-sw:Rioolput_Aantal_ieRecreatie
-        rdf:type            sh:PropertyShape ;
-        skos:prefLabel      "aantal i.e. recreatie vastgezet op Rioolput"@nl ;
-        sh:datatype         xsd:positiveInteger ;
-        sh:maxCount         1 ; # kardinaliteit
-        sh:minCount         0 ;
-        sh:path             imbor-sw:aantal_ieRecreatie ; # verwijst naar de rdf:Property
-</pre>
-
-En de property als object van sh:path:
-<pre>
-imbor-sw:aantal_ieRecreatie
-        rdf:type         rdf:Property ;
-        rdfs:seeAlso     imbor-term:c3f45eea-738c-4a37-906b-d872192e0c08 ;
-        skos:definition  "Aantal i.e. recreatie-eenheden."@nl ;
-        skos:note        "Vrij invoerveld"@nl ;
-        skos:prefLabel   "aantal i.e. recreatie"@nl .
-</pre>
-
->**SW-Specifiek**
->* in propertyshapes geen skos:prefLabel
->* wel sh:message en sh:severity opgenomen
->* gescheiden propershapes (met eigen message en severity) voor datatype en kardinaliteit
->* geen skos:note in property
 
 ## Vocabulaire IMBOR
 
