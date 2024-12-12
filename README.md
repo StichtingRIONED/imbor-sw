@@ -4,7 +4,7 @@ Deze repository bevat het ontwerp voor de directe aanmaak van het deelmodel IMBO
 
 Het ontwerp omvat het volgende:
 * Definiëren van het deelmodel IMBOR-SW binnen het GWSW-datamodel [GWSW Deelmodel IMBOR-SW](#gwsw-deelmodel-imbor-sw)
-* Definieer de mapping GWSW-IMBOR, overnemen TOP-concepten uit IMBOR in het GWSW-datamodel [Mapping GWSW-IMBOR](#mapping-gwsw-imbor)
+* Maak de mapping GWSW-IMBOR, overnemen TOP-concepten uit IMBOR in het GWSW-datamodel [Mapping GWSW-IMBOR](#mapping-gwsw-imbor)
 * Functionele beschrijving van de conversie GWSW naar IMBOR-SW [IMBOR in RDF](#imbor-in-rdf)
 
 ## GWSW Deelmodel IMBOR-SW 
@@ -181,18 +181,18 @@ In IMBOR-SW is sh:in voldoende (SW-individuen zijn er altijd)
 
 ### Kenmerk - hasAspect in IMBOR-vorm
 <pre>
-imbor:7ad9fafd-6eb1-4853-9b23-2e8f0e7003d4
+imbor-sw:Rioolput_Aantal_ieRecreatie
         rdf:type            sh:PropertyShape ;
         skos:prefLabel      "aantal i.e. recreatie vastgezet op Rioolput"@nl ;
         sh:datatype         xsd:positiveInteger ;
-        sh:maxCount         1 ;
+        sh:maxCount         1 ; # kardinaliteit
         sh:minCount         0 ;
-        sh:path             imbor:ffb7311e-ade9-46e4-bd4a-4eec7ce10789 ; # verwijst naar de rdf:Property
+        sh:path             imbor-sw:aantal_ieRecreatie ; # verwijst naar de rdf:Property
 </pre>
 
 En de property als object van sh:path:
 <pre>
-imbor:ffb7311e-ade9-46e4-bd4a-4eec7ce10789
+imbor-sw:aantal_ieRecreatie
         rdf:type         rdf:Property ;
         rdfs:seeAlso     imbor-term:c3f45eea-738c-4a37-906b-d872192e0c08 ;
         skos:definition  "Aantal i.e. recreatie-eenheden."@nl ;
@@ -201,7 +201,10 @@ imbor:ffb7311e-ade9-46e4-bd4a-4eec7ce10789
 </pre>
 
 >**SW-Specifiek**
->* conform voorbeeld, behalve skos:note
+>* in propertyshapes geen skos:prefLabel
+>* wel sh:message en sh:severity opgenomen
+>* gescheiden propershapes (met eigen message en severity) voor datatype en kardinaliteit
+>* geen skos:note in property
 
 ## Vocabulaire IMBOR
 
