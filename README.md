@@ -45,9 +45,9 @@ Map GWSW-concepten vanuit Excel op basis van:
 In de volgende paragrafen is als voorbeeld een datamodel IMBOR-conform uitgewerkt.  
 In dit voorbeeld zijn enkele omgezette concepten van GWSW en bijbehorende topconcepten van IMBOR-Kern opgenomen.
 
-Gemodelleerd zijn de fysieke objecten rioolput en overstortput inclusief enkele kenmerken.
+Gemodelleerd zijn de fysieke objecten **rioolput** en **overstortput** inclusief enkele **kenmerken**.
 
-Het test-datamodel in de GWSW/RDF-viewer: [data.gwsw.nl/imbor-sw-test](https://data.gwsw.nl/imbor-sw-test).  
+Het test-datamodel in de GWSW/RDF-viewer: [data.gwsw.nl/imbor-sw-test](https://data.gwsw.nl/1.6.1/imbor-sw-test).  
 Het test-datamodel in RDF/Turtle-vorm: [datamodel imbor-sw-test](./datamodel%20imbor-sw-test.ttl).
 
 **SW prefixes**
@@ -121,7 +121,7 @@ imbor-sw:Overstortput_Duikschot_card
         sh:qualifiedValueShape  [ sh:class  gwsw:Duikschot ] .
 </pre>
 
->IMBOR gebruikt ook de inverse relatie nen2660:isPartOf (is ook nodig voor kardinaliteits-definitie)
+>IMBOR kent ook de inverse relatie nen2660:isPartOf (is ook nodig voor kardinaliteits-definitie)
 
 ### Kenmerk - hasReference in IMBOR-vorm
 
