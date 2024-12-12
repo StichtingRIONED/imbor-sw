@@ -18,53 +18,47 @@
 @prefix imbor-sw: <https://data.crow.nl/imbor-sw/def/>.
 @prefix imbor-term: <https://data.crow.nl/imbor/term/>.
 
-gwsw:Functie a rdfs:Class;
-    skos:prefLabel "Functie"@nl;
-    skos:definition "Wat doet het"@nl.
 gwsw:Rioolput a rdfs:Class;
+    rdfs:subClassOf imbor:b7168388-9eb9-4c95-b35e-1ba2660849e8;
     skos:prefLabel "Rioolput"@nl;
     skos:altLabel "Node reference"@en;
     rdfs:seeAlso "file:///img/Rioolput.jpg", "[EN13508-2+A1] The node reference of the manhole or inspection chamber as specified by the employing authority."@en, "[NEN 3300:1996] constructie toegang gevend tot het rioolstelsel"@nl;
     skos:definition "Een put met een verwijderbare deksel, dat toegang geeft tot de aangesloten rioolleidingen"@nl.
 gwsw:Overstortput a rdfs:Class;
+    rdfs:subClassOf gwsw:Rioolput;
     skos:prefLabel "Combined sewer overflow"@en, "Overstortput"@nl;
     skos:altLabel "Overstort"@nl, "Riooloverstort"@nl;
     rdfs:seeAlso "file:///img/Overstortput.jpg", "https://content.omgevingswet.overheid.nl/doc/concept/Riooloverstort", "[EN 16323:2014] device on a combined system that relieves the system of excess flow"@en, "[IRIS-RIOKEN:2012] Een inzamelknooppunt, uitgevoerd als voorziening met drempel, voor het onder bepaalde omstandigheden lozen van afvalwater uit het rioleringsnetwerk naar een ander rioleringsnetwerk of oppervlaktewater in de zin van de Wet verontreiniging oppervlaktewateren. Een riooloverstort is dus een voorziening door middel waarvan bij de neerslag van hemelwater het teveel aan hemelwater, al of niet vermengd met afvalwater dat niet in het stelsel wordt geborgen, kan worden geloosd op oppervlaktewater."@nl, "[NEN 3300:1996] rioolput voorzien van een overstortdrempel"@nl, "[Omgevingswet] Een kunstwerk waarmee rioolwater op het oppervlaktewater wordt geloosd, zodra het riool door te grote neerslaghoeveelheden niet al het rioolwater kan verwerken"@nl;
     skos:definition "Een rioolput voorzien van een overstortdrempel met een ontworpen drempellengte en -hoogte."@nl.
 gwsw:MaaiveldschematiseringColl a rdfs:Class;
+    rdfs:subClassOf nen2660:EnumerationType;
+    imbor:typeLijst "Enumeratielijst"@nl;
     skos:prefLabel "Maaiveldschematisering (coll)"@nl.
 gwsw:Duikschot a rdfs:Class;
+    rdfs:subClassOf imbor:7f573337-00f1-41a0-98e0-1936837802fa;
     skos:prefLabel "Duikschot"@nl;
     skos:altLabel "Drijfschot"@nl;
     skos:definition "Constructie die verhindert dat opdrijvend materiaal dat zich aan het oppervlak heeft verzameld, wordt meegesleurd over de overstortrand."@nl.
-gwsw:Maaiveldschematisering a rdfs:Class;
-    skos:prefLabel "Maaiveldschematisering"@nl;
-    rdfs:seeAlso "[HYD] Aanduiding schematisering maaiveld bij uitstroom van water via de putdeksel"@nl.
-gwsw:Aantal_ieRecreatie a rdfs:Class;
-    skos:prefLabel "Aantal i.e. recreatie"@nl;
-    skos:definition "Aantal inwonerequivalenten afkomstig van recreatie"@nl.
-imbor:d70fd28a-a989-4697-8547-938be6019b5f a rdfs:Class;
-    skos:prefLabel "aanleghoogte"@nl;
-    rdfs:seeAlso "https://data.crow.nl/imbor/def/D70FD28A-A989-4697-8547-938BE6019B5F";
-    skos:definition "Hoogte van het beheerobject t.o.v. NAP in meters."@nl.
+imbor-sw:maaiveldschematisering a rdf:Property;
+    skos:note "Enumeratie"@nl.
+imbor-sw:aantal_ieRecreatie a rdf:Property;
+    rdfs:subPropertyOf imbor-sw:aantal_ie.
+imbor-sw:d70fd28a-a989-4697-8547-938be6019b5f a rdf:Property.
 nen3610:Constructie a rdfs:Class;
+    rdfs:subClassOf nen3610:ReeelObject;
     skos:prefLabel "Constructie"@nl;
     rdfs:seeAlso "http://modellen.geostandaarden.nl/def/nen3610-2022#Constructie";
     skos:definition "Gebouwd object dat direct of indirect met de grond is verbonden en bedoeld is om ter plaatse te functioneren."@nl.
-gwsw:OnderscheidendKenmerk a rdfs:Class;
-    skos:prefLabel "Onderscheidend kenmerk"@nl;
-    skos:definition "Een dicriminerend (onderscheidend) kenmerk"@nl.
 imbor:b7168388-9eb9-4c95-b35e-1ba2660849e8 a rdfs:Class;
+    rdfs:subClassOf nen3610:Constructie;
     skos:prefLabel "Put"@nl;
     rdfs:seeAlso "https://data.crow.nl/imbor/def/B7168388-9EB9-4C95-B35E-1BA2660849E8";
     skos:definition "Gegraven of geboorde kokervormige diepte waarin zich (vloei)stoffen bevinden."@nl.
-gwsw:Aantal_ie a rdfs:Class;
-    skos:prefLabel "Aantal i.e."@nl;
-    skos:altLabel "Aantal inwonerequivalenten"@nl;
-    rdfs:seeAlso "[IRIS-RIOKEN:2012] Maat voor de belasting van het afvalwater met organische bestanddelen die een inwoner gemiddeld per dag produceert. Ook het afvalwater van bedrijven wordt in deze maat uitgedrukt."@nl, "[NEN 3300:1996] berekeningseenheid om de hoeveelheid vervuiling in afvalwater per inwoner per dag aan te geven"@nl.
+imbor-sw:aantal_ie a rdf:Property.
 imbor:AttribuutKwalKwan a rdfs:Class;
     skos:prefLabel "Attribuut (kwalitatief/kwantitatief)"@nl.
 imbor:7f573337-00f1-41a0-98e0-1936837802fa a rdfs:Class;
+    rdfs:subClassOf nen3610:Constructie;
     skos:prefLabel "Constructieonderdeel"@nl;
     rdfs:seeAlso "https://data.crow.nl/imbor/def/7F573337-00F1-41A0-98E0-1936837802FA";
     skos:definition "Een onderdeel van een objecttype dat als zelfstandig objecttype beheerd kan worden."@nl.
@@ -85,9 +79,24 @@ imbor-sw:CfkTypes_typ a sh:PropertyShape;
     sh:severity sh:Violation.
 imbor-sw:Maaiveldschematisering_ref a sh:PropertyShape;
     sh:path imbor-sw:maaiveldschematisering;
-    sh:class gwsw:MaaiveldschematiseringColl;
+    sh:in gwsw:MaaiveldschematiseringColl-list-0;
     sh:message "Kenmerk Maaiveldschematisering - waarde wijkt af (ontbreekt in collectie MaaiveldschematiseringColl)"@nl;
     sh:severity sh:Warning.
+gwsw:ReservoirMaaiveldschema a gwsw:MaaiveldschematiseringColl;
+    skos:prefLabel "Reservoir (maaiveldschematisering)"@nl.
+gwsw:Gekneveld a gwsw:MaaiveldschematiseringColl;
+    skos:prefLabel "Gekneveld"@nl.
+gwsw:Verlies a gwsw:MaaiveldschematiseringColl;
+    skos:prefLabel "Verlies"@nl.
+gwsw:MaaiveldschematiseringColl-list-0 a rdf:list;
+    rdf:first gwsw:ReservoirMaaiveldschema;
+    rdf:rest gwsw:MaaiveldschematiseringColl-list-1.
+gwsw:MaaiveldschematiseringColl-list-1 a rdf:list;
+    rdf:first gwsw:Gekneveld;
+    rdf:rest gwsw:MaaiveldschematiseringColl-list-2.
+gwsw:MaaiveldschematiseringColl-list-2 a rdf:list;
+    rdf:first gwsw:Verlies;
+    rdf:rest rdf:nil.
 imbor-sw:Aantal_ieRecreatie_dt a sh:PropertyShape;
     sh:path imbor-sw:aantal_ieRecreatie;
     sh:datatype xsd:integer;
@@ -99,20 +108,18 @@ imbor-sw:Aantal_ie_dt a sh:PropertyShape;
     sh:message "Kenmerk Aantal_ie - datatype wijkt af (integer)"@nl;
     sh:severity sh:Warning.
 imbor-sw:Rioolput_Maaiveldschematisering_card a sh:PropertyShape;
-    sh:path gwsw:hasAspect;
-    sh:qualifiedValueShape [ sh:class gwsw:Maaiveldschematisering ];
+    sh:path imbor-sw:maaiveldschematisering;
     sh:qualifiedMaxCount 1;
-    sh:message "Subject Rioolput, path hasAspect, object Maaiveldschematisering - aantal voorkomens wijkt af (max=1)"@nl;
+    sh:message "Subject Rioolput, path imbor-sw:maaiveldschematisering - aantal voorkomens wijkt af (max=1)"@nl;
     sh:severity sh:Violation.
 imbor-sw:Rioolput_Aantal_ieRecreatie_card a sh:PropertyShape;
-    sh:path gwsw:hasAspect;
-    sh:qualifiedValueShape [ sh:class gwsw:Aantal_ieRecreatie ];
+    sh:path imbor-sw:aantal_ieRecreatie;
     sh:qualifiedMaxCount 1;
-    sh:message "Subject Rioolput, path hasAspect, object Aantal_ieRecreatie - aantal voorkomens wijkt af (max=1)"@nl;
+    sh:message "Subject Rioolput, path imbor-sw:aantal_ieRecreatie - aantal voorkomens wijkt af (max=1)"@nl;
     sh:severity sh:Violation.
 imbor-sw:Overstortput_Duikschot_card a sh:PropertyShape;
     sh:path [
-  sh:alternativePath (gwsw:hasPart [ sh:inversePath gwsw:isPartOf ])
+  sh:alternativePath (nen2660:hasPart [ sh:inversePath nen2660:isPartOf ])
 ];
     sh:qualifiedValueShape [ sh:class gwsw:Duikschot ];
     sh:qualifiedMaxCount 1;

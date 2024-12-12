@@ -1,0 +1,25 @@
+@prefix imbor: <https://data.crow.nl/imbor/def/>.
+@prefix geo: <http://www.opengis.net/ont/geosparql#>.
+@prefix gwsw: <http://data.gwsw.nl/1.6/totaal/>.
+@prefix owl: <http://www.w3.org/2002/07/owl#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix imbor-sw: <https://data.crow.nl/imbor-sw/def/>.
+@prefix ex: <http://sparql.gwsw.nl/repositories/Juinen#> .
+
+ex:Put_1 a imbor:b7168388-9eb9-4c95-b35e-1ba2660849e8 ;
+.
+ex:Rioolput_1 a gwsw:Rioolput ;
+  imbor-sw:maaiveldschematisering gwsw:Verlies ;
+  imbor-sw:aantal_ieRecreatie "B" ;
+.
+ex:Overstortput_1 a gwsw:Overstortput ;
+  imbor-sw:aantal_ieRecreatie 100 ;
+  imbor-sw:maaiveldschematisering gwsw:Gekneveld ;
+  gwsw:hasPart ex:Duikschot_1 ;
+.
+ex:Duikschot_1 a gwsw:Duikschot ;
+  gwsw:isPartOf ex:Overstortput_1 ;
+.
