@@ -49,6 +49,7 @@ Gemodelleerd zijn de fysieke objecten **rioolput** en **overstortput** inclusief
 
 Het test-datamodel in de GWSW/RDF-viewer: [data.gwsw.nl/imbor-sw-test](https://data.gwsw.nl/1.6.1/imbor-sw-test).  
 Het test-datamodel in RDF/Turtle-vorm: [datamodel imbor-sw-test](./datamodel%20imbor-sw-test.ttl).
+De test-dataset in RDF/Turtle-vorm (voor SHACL-test): [dataset imbor-sw-test](./dataset%20imbor-sw-test.ttl).
 
 **SW prefixes**
 * gwsw: voor ongewijzigde SW-concepten
