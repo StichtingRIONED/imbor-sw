@@ -123,26 +123,21 @@ imbor-sw:Overstortput_Duikschot_card
 
 >IMBOR kent ook de inverse relatie nen2660:isPartOf (is ook nodig voor kardinaliteits-definitie)
 
-### Kenmerk - hasReference in IMBOR-vorm
+### Kenmerk - hasReference in IMBOR-basisvorm
 
 <pre>
-imbor-sw:Rioolput_Maaiveldschematisering_card
+imbor-sw:Rioolput_Maaiveldschematisering
         rdf:type                sh:PropertyShape ;
         skos:prefLabel          "maaiveldschematisering vastgezet op Rioolput"@nl ;
-        sh:path                 imbor:f4c31d93-4ed7-47f2-8b91-a24247de7e3d ; # is type rdf:Property
+        sh:path                 imbor-sw:maaiveldschematisering ; # is type rdf:Property
         sh:qualifiedMaxCount    1 ;
-        sh:qualifiedValueShape  [ sh:class  gwsw:Maaiveldschematisering ] .
+        sh:qualifiedValueShape  [ sh:class  imbor-sw:MaaiveldschematiseringColl ] .
 </pre>
-
->**SW-Specifiek**
->* in propertyshapes geen skos:prefLabel
->* wel sh:message en sh:severity opgenomen
->* gescheiden propershapes (met eigen message en severity) voor datatype en kardinaliteit
 
 En de property als object van sh:path:
 
 <pre>
-imbor:f4c31d93-4ed7-47f2-8b91-a24247de7e3d
+imbor-sw:maaiveldschematisering
         rdf:type         rdf:Property ;
         rdfs:seeAlso     imbor-term:8e33d96c-1640-4edc-9123-87448cb9176f ;
         skos:definition  "Aanduiding schematisering maaiveld bij uitstroom van water via de putdeksel."@nl ;
@@ -150,36 +145,42 @@ imbor:f4c31d93-4ed7-47f2-8b91-a24247de7e3d
         skos:prefLabel   "maaiveldschematisering"@nl .
 </pre>
 
+>**SW-Specifiek**
+>* in propertyshapes geen skos:prefLabel
+>* wel sh:message en sh:severity opgenomen
+>* gescheiden propershapes (met eigen message en severity) voor datatype en kardinaliteit
+>* geen skos:note in property
+
 En de enumeratie: "Gekneveld" is een individu van type "RioolputMaaiveldschematisering"
 
 <pre>
-imbor:90b87700-9800-4394-89d5-377291331901 # De klasse "RioolputMaaiveldschematisering"
-        rdf:type         owl:Class ;
+imbor-sw:MaaiveldschematiseringColl # De collectie-klasse
+        rdf:type         rdfs:Class ;
         rdfs:seeAlso     imbor-term:2dfe6c5a-74cf-48a5-9f53-97f1cf50d655 ;
         rdfs:subClassOf  nen2660:EnumerationType ;
         skos:definition  "Het enumeratietype RioolputMaaiveldschematisering is de naam voor de domeinwaardenlijst van de klasse Rioolput en het attribuut maaiveldschematisering."@nl ;
-        skos:prefLabel   "RioolputMaaiveldschematisering"@nl ;
+        skos:prefLabel   "Maaiveldschematisering (coll)"@nl ;
         imbor:typeLijst  "Enumeratielijst"@nl .
 
 imbor-domeinwaarde:184c2d2e-6990-4b84-a334-875dc4c0b09b # Het individu "Gekneveld"
-        rdf:type         imbor:90b87700-9800-4394-89d5-377291331901 ;
+        rdf:type         imbor:MaaiveldschematiseringColl ;
         rdfs:seeAlso     imbor-term:90139b60-08e5-4dd8-8899-0af7882c6505 ;
         skos:definition  "Een maaiveldschematisering die op een bepaalde manier gesloten is met knevels, dat wil zeggen met voorzieningen bedoeld om een afdekking af te dichten."@nl ;
         skos:prefLabel   "Gekneveld"@nl .
 
-imbor:90b87700-9800-4394-89d5-377291331901-list-0 # Maak een lijst met individuen
+imbor:MaaiveldschematiseringColl-list-0 # Maak een lijst met individuen
         rdf:type   rdf:List ;
         rdf:first  imbor-domeinwaarde:184c2d2e-6990-4b84-a334-875dc4c0b09b ;
-        rdf:rest   imbor:90b87700-9800-4394-89d5-377291331901-list-1 .
+        rdf:rest   imbor:MaaiveldschematiseringColl-list-1 . # sluit af met "rdf:rest rdf:nil"
 
-imbor:00910ff5-f2c7-4f22-ad64-787552e3dd38 # de PropertyShape, zie "Kenmerk - hasReference in IMBOR-vorm"
-        sh:in   imbor:90b87700-9800-4394-89d5-377291331901-list-0 .
+imbor-sw:Rioolput_Maaiveldschematisering # de PropertyShape
+        sh:in   imbor:MaaiveldschematiseringColl-list-0 .
 </pre>
 
 >sh:qualifiedValueShape staat in IMBOR als achtervang, voor het geval het individu niet voorkomt. 
 In IMBOR-SW is sh:in voldoende (SW-individuen zijn er altijd)
 
-### Kenmerk - hasAspect in IMBOR-vorm
+### Kenmerk - hasAspect in IMBOR-basisvorm
 <pre>
 imbor-sw:Rioolput_Aantal_ieRecreatie
         rdf:type            sh:PropertyShape ;
