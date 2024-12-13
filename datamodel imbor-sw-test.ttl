@@ -18,13 +18,13 @@
 @prefix imbor-sw: <https://data.crow.nl/imbor-sw/def/>.
 @prefix imbor-term: <https://data.crow.nl/imbor/term/>.
 
-gwsw:Rioolput a rdfs:Class;
+gwsw:Rioolput a owl:Class;
     rdfs:subClassOf imbor:b7168388-9eb9-4c95-b35e-1ba2660849e8;
     skos:prefLabel "Rioolput"@nl;
     skos:altLabel "Node reference"@en;
     rdfs:seeAlso "file:///img/Rioolput.jpg", "[EN13508-2+A1] The node reference of the manhole or inspection chamber as specified by the employing authority."@en, "[NEN 3300:1996] constructie toegang gevend tot het rioolstelsel"@nl;
     skos:definition "Een put met een verwijderbare deksel, dat toegang geeft tot de aangesloten rioolleidingen"@nl.
-gwsw:Overstortput a rdfs:Class;
+gwsw:Overstortput a owl:Class;
     rdfs:subClassOf gwsw:Rioolput;
     skos:prefLabel "Combined sewer overflow"@en, "Overstortput"@nl;
     skos:altLabel "Overstort"@nl, "Riooloverstort"@nl;
@@ -49,7 +49,7 @@ nen3610:Constructie a rdfs:Class;
     skos:prefLabel "Constructie"@nl;
     rdfs:seeAlso "http://modellen.geostandaarden.nl/def/nen3610-2022#Constructie";
     skos:definition "Gebouwd object dat direct of indirect met de grond is verbonden en bedoeld is om ter plaatse te functioneren."@nl.
-imbor:b7168388-9eb9-4c95-b35e-1ba2660849e8 a rdfs:Class;
+imbor:b7168388-9eb9-4c95-b35e-1ba2660849e8 a owl:Class;
     rdfs:subClassOf nen3610:Constructie;
     skos:prefLabel "Put"@nl;
     rdfs:seeAlso "https://data.crow.nl/imbor/def/B7168388-9EB9-4C95-B35E-1BA2660849E8";

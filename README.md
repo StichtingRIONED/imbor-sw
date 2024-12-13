@@ -61,21 +61,22 @@ Voorbeeld Rioolput en Overstortput
 
 <pre>
 gwsw:Rioolput
-        rdf:type         rdfs:Class , sh:NodeShape ;
+        rdf:type         rdfs:Class, sh:NodeShape ;
         rdfs:seeAlso     imbor-term:100c3a15-3342-46fd-9f48-843c076571e9 ; # verwijst naar vocabulaire-model
         rdfs:subClassOf  imbor:b7168388-9eb9-4c95-b35e-1ba2660849e8 ; # verwijst naar IMBOR-concept Put (neutrale/taalonafhankelijke identificatie)
         skos:definition  "Constructie toegang gevend tot het rioolstelsel."@nl  ;
         skos:prefLabel   "Rioolput"@nl  ;
-        sh:property      imbor:0579a2c5-bff7-417f-860c-8299a806c419 ; # verwijst naar onderscheidend kenmerk "Functie"
-        sh:property      imbor:00910ff5-f2c7-4f22-ad64-787552e3dd38 ; # verwijst naar referentie "Maaiveldschematisering"
-        sh:property      imbor:b6ac17af-8019-4d03-9a72-096b51b0cebe ; # verwijst naar waarde "LengteToegang"
-        sh:property      imbor:7ad9fafd-6eb1-4853-9b23-2e8f0e7003d4 . # verwijst naar waarde "Aantal i.e. recreatie-eenheden."
+        sh:property      imbor-sw:Rioolput_Functie_LeidingenAansluiten ; # zie volgende paragrafen
+        sh:property      imbor-sw:Rioolput_Maaiveldschematisering ; # zie volgende paragrafen
+        sh:property      imbor-sw:Rioolput_Aantal_ieRecreatie . # zie volgende paragrafen
         # enzovoort: totaal 62 objects bij sh:property
 gwsw:Overstortput
         rdf:type         rdfs:Class , sh:NodeShape ;
         rdfs:subClassOf  gwsw:Rioolput ;
         sh:property      imbor:8e3ccb03-a015-420d-a646-bfd05ae734bb . # verwijst naar relatie "hasPart"
 </pre>
+
+De propertyshapes (object bij sh:property) worden in de volgende paragrafen uitgewerkt.
 
 ### Abstracte klassen
 
@@ -96,13 +97,24 @@ imbor-sw:CfkTypes
 Functie in IMBOR-vorm
 
 <pre>
-imbor:0579a2c5-bff7-417f-860c-8299a806c419
+imbor-sw:Rioolput_Functie_LeidingenAansluiten
         rdf:type                sh:PropertyShape ;
         skos:prefLabel          "Rioolput voert uit Leidingen aansluiten"@nl ;
         sh:path                 nen2660:executes ; # verwijst naar de rdf:Property (analoog aan gwsw:functie)
         sh:qualifiedMaxCount    1 ;
         sh:qualifiedMinCount    0 ;
         sh:qualifiedValueShape  [ sh:class  imbor:8a328d2a-120f-4fd7-a3ab-eed6a61c2539 ] . # verwijst naar de (functie) klasse "Leidingen aansluiten"
+</pre>
+
+En de definitie van de functie-klasse
+
+<pre>
+imbor-sw:LeidingenAansluiten a rdfs:Class, sh:NodeShape;
+        dash:abstract           false;
+        rdfs:seeAlso            imbor-term:f584ecc4-8c48-4494-b75d-fbbf3901be13;
+        rdfs:subClassOf         sml:Function;
+        skos:definition         "Het object wordt gebruikt om leidingen aan te sluiten."@nl;
+        skos:prefLabel          "Leidingen aansluiten"@nl.
 </pre>
 
 >IMBOR hanteert functie voor lokale definities. Daarmee kan een IMBOR-object lokaal een andere betekenis krijgen. 

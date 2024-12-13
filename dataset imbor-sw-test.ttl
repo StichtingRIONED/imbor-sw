@@ -12,11 +12,11 @@
 ex:Put_1 a imbor:b7168388-9eb9-4c95-b35e-1ba2660849e8 ;
 .
 ex:Rioolput_1 a gwsw:Rioolput ;
+  imbor-sw:aantal_ieRecreatie 100 ;
   imbor-sw:maaiveldschematisering gwsw:Verlies ;
-  imbor-sw:aantal_ieRecreatie "B" ;
 .
 ex:Overstortput_1 a gwsw:Overstortput ;
-  imbor-sw:aantal_ieRecreatie 100 ;
+  imbor-sw:aantal_ieRecreatie "B" ; # Test inferencing: NodeShape = Rioolput
   imbor-sw:maaiveldschematisering gwsw:Gekneveld ;
   gwsw:hasPart ex:Duikschot_1 ;
 .
