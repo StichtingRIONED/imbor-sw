@@ -106,6 +106,9 @@ imbor-sw:Rioolput_Functie_LeidingenAansluiten
         sh:qualifiedValueShape  [ sh:class  imbor:8a328d2a-120f-4fd7-a3ab-eed6a61c2539 ] . # verwijst naar de (functie) klasse "Leidingen aansluiten"
 </pre>
 
+>**SW-Specifiek**
+>* sh:qualifiedCount 1, de functie is onderdeel van de rioolput-definitie 
+
 En de definitie van de functie-klasse
 
 <pre>
@@ -118,8 +121,7 @@ imbor-sw:LeidingenAansluiten a rdfs:Class, sh:NodeShape;
 </pre>
 
 >IMBOR hanteert functie voor lokale definities. Daarmee kan een IMBOR-object lokaal een andere betekenis krijgen. 
-Dat is principieel heel anders dan het GWSW, daar is een eenduidige definitie/betekenis bij de objectnaam een voorwaarde. 
-Afgesproken om in de omzetter de IMBOR-syntax op te nemen, mogelijk met sh:qualifiedMinCount 1?
+Dat is principieel heel anders dan het GWSW, daar is een eenduidige definitie/betekenis bij de objectnaam een voorwaarde.
 
 >Nog bepalen of andere onderscheidende kenmerken (gwsw:Uitvoering) meegeleverd worden via de prop gwsw:uitvoering
 
