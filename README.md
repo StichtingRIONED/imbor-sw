@@ -9,11 +9,11 @@ Het ontwerp omvat het volgende:
 
 ## GWSW Deelmodel IMBOR-SW 
 
-Zie [data.gwsw.nl/imbor-sw](https://data.gwsw.nl/imbor-sw/index.html?menu_item=classes).  
+Zie [data.gwsw.nl/imbor-sw](https://data.gwsw.nl/1.6.1/imbor-sw/index.html?menu_item=classes).  
 
 Indeling (vergelijkbaar met deelmodel GWSW Basis): CoF-en TOP, BAS, MDS, HYD (excl. NLCS). Gebruik conformiteitsklasse 6.
 
-Om te komen tot de presentatie op [data.gwsw.nl/imbor-sw](https://data.gwsw.nl/imbor-sw/index.html?menu_item=classes) worden de volgende stappen doorlopen:
+Om te komen tot de presentatie op [data.gwsw.nl/imbor-sw](https://data.gwsw.nl/1.6.1/imbor-sw/index.html?menu_item=classes) worden de volgende stappen doorlopen:
 - converteer het model IMBOR-Kern naar het GWSW-conforme RDF 
 - koppel het omgezette model IMBOR-Kern aan het datamodel GWSW
 - voer de mapping GWSW-IMBOR uit op deze model-koppeling
