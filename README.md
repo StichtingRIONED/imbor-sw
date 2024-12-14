@@ -5,7 +5,7 @@ Deze repository bevat het ontwerp voor de directe aanmaak van het deelmodel IMBO
 Het ontwerp omvat het volgende:
 * Definiëren van het deelmodel IMBOR-SW binnen het GWSW-datamodel [GWSW Deelmodel IMBOR-SW](#gwsw-deelmodel-imbor-sw)
 * Maak de mapping GWSW-IMBOR, overnemen TOP-concepten uit IMBOR in het GWSW-datamodel [Mapping GWSW-IMBOR](#mapping-gwsw-imbor)
-* Functionele beschrijving van de conversie GWSW naar IMBOR-SW [IMBOR in RDF](#imbor-in-rdf)
+* Functionele beschrijving van de conversie GWSW naar IMBOR-SW [GWSW in IMBOR-vorm](#gwsw-in-imbor-vorm)
 
 ## GWSW Deelmodel IMBOR-SW 
 
@@ -38,9 +38,9 @@ Map GWSW-concepten vanuit Excel op basis van:
 - altLabel GWSW versus label IMBOR
 - alleen concepten binnen IMBOR-module TOP en ?
 
-## IMBOR in RDF
+## GWSW in IMBOR-vorm
 
-### SW-deel (omgezet vanuit GWSW)
+### Deelmodel GWSW-IMBOR-SW omgezet naar IMBOR-vorm
 
 In de volgende paragrafen is als voorbeeld een datamodel IMBOR-conform uitgewerkt.  
 In dit voorbeeld zijn enkele omgezette concepten van GWSW en bijbehorende topconcepten van IMBOR-Kern opgenomen.
@@ -48,8 +48,9 @@ In dit voorbeeld zijn enkele omgezette concepten van GWSW en bijbehorende topcon
 Gemodelleerd zijn de fysieke objecten **rioolput** en **overstortput** inclusief enkele **kenmerken**.
 
 Het test-datamodel in de GWSW/RDF-viewer: [data.gwsw.nl/imbor-sw-test](https://data.gwsw.nl/1.6.1/imbor-sw-test/index.html?menu_item=classes).  
-Het test-datamodel in RDF/Turtle-vorm: [datamodel imbor-sw-test](./datamodel%20imbor-sw-test.ttl).  
-De test-dataset in RDF/Turtle-vorm (voor SHACL-test): [dataset imbor-sw-test](./dataset%20imbor-sw-test.ttl).
+Het test-datamodel in RDF/Turtle-vorm inclusief IMBOR-Kern: [datamodel imbor-sw-test inclusief Kern](./datamodel%20imbor-sw-test%20inclusief%20Kern.ttl).  
+Het test-datamodel in RDF/Turtle-vorm met alleen IMBOR-SW: [datamodel imbor-sw-test](./datamodel%20imbor-sw-test.ttl).  
+Een test-dataset in RDF/Turtle-vorm (voor SHACL-test): [dataset imbor-sw-test](./dataset%20imbor-sw-test.ttl).
 
 **SW prefixes**
 * gwsw: voor ongewijzigde SW-concepten
@@ -92,7 +93,7 @@ imbor-sw:CfkTypes
 
 >Gebruik een SHACL construct ipv dash:abstract, deze expliciete variant is bruikbaar voor validatie.
 
-### Onderscheidend kenmerk in IMBOR-vorm (Functie, Voert uit)
+### Onderscheidend kenmerk in IMBOR-vorm (functie, voert uit)
 
 Functie in IMBOR-vorm
 
@@ -141,7 +142,7 @@ imbor-sw:Overstortput_Duikschot_card
 
 >IMBOR kent ook de inverse relatie nen2660:isPartOf (is ook nodig voor kardinaliteits-definitie)
 
-### Kenmerk - hasAspect in IMBOR-vorm (Kwantitatief attribuut)
+### Kenmerk - hasAspect in IMBOR-vorm (kwantitatief attribuut)
 <pre>
 imbor-sw:Rioolput_Aantal_ieRecreatie
         rdf:type            sh:PropertyShape ;
@@ -168,7 +169,7 @@ imbor-sw:aantal_ieRecreatie
 >* gescheiden propershapes (met eigen message en severity) voor datatype en kardinaliteit
 >* geen skos:note in property
 
-### Kenmerk - hasReference in IMBOR-basisvorm (Kwalitatief attribuut, enumeraties)
+### Kenmerk - hasReference in IMBOR-basisvorm (kwalitatief attribuut, enumeratie)
 
 <pre>
 imbor-sw:Rioolput_Maaiveldschematisering
