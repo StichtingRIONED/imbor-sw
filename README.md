@@ -40,7 +40,7 @@ Map GWSW-concepten vanuit Excel op basis van:
 
 ## GWSW in IMBOR-vorm
 
-### Deelmodel GWSW-IMBOR-SW omgezet naar IMBOR-vorm
+### Deelmodel GWSW-IMBOR-SW omgezet in IMBOR-vorm
 
 In de volgende paragrafen is als voorbeeld een datamodel IMBOR-conform uitgewerkt.  
 In dit voorbeeld zijn enkele omgezette concepten van GWSW en bijbehorende topconcepten van IMBOR-Kern opgenomen.
@@ -48,7 +48,7 @@ In dit voorbeeld zijn enkele omgezette concepten van GWSW en bijbehorende topcon
 Gemodelleerd zijn de fysieke objecten **rioolput** en **overstortput** inclusief enkele **kenmerken**.
 
 Het test-datamodel in de GWSW/RDF-viewer: [data.gwsw.nl/imbor-sw-test](https://data.gwsw.nl/1.6.1/imbor-sw-test/index.html?menu_item=classes).  
-Het test-datamodel in RDF/Turtle-vorm inclusief IMBOR-Kern: [datamodel imbor-sw-test inclusief Kern](./datamodel%20imbor-sw-test%20inclusief%20Kern.ttl).  
+Het test-datamodel in RDF/Turtle-vorm inclusief IMBOR-Kern: [datamodel imbor-sw-test inclusief Kern](./datamodel%20imbor-sw-test%20inclusief%20kern.ttl).  
 Het test-datamodel in RDF/Turtle-vorm met alleen IMBOR-SW: [datamodel imbor-sw-test](./datamodel%20imbor-sw-test.ttl).  
 Een test-dataset in RDF/Turtle-vorm (voor SHACL-test): [dataset imbor-sw-test](./dataset%20imbor-sw-test.ttl).
 
