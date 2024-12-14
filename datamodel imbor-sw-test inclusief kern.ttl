@@ -43,7 +43,40 @@ imbor-sw:maaiveldschematisering a rdf:Property;
     skos:note "Enumeratie"@nl.
 imbor-sw:aantal_ieRecreatie a rdf:Property;
     rdfs:subPropertyOf imbor-sw:aantal_ie.
+imbor-sw:d70fd28a-a989-4697-8547-938be6019b5f a rdf:Property.
+nen3610:Constructie a rdfs:Class;
+    rdfs:subClassOf nen3610:ReeelObject;
+    skos:prefLabel "Constructie"@nl;
+    rdfs:seeAlso "http://modellen.geostandaarden.nl/def/nen3610-2022#Constructie";
+    skos:definition "Gebouwd object dat direct of indirect met de grond is verbonden en bedoeld is om ter plaatse te functioneren."@nl.
+imbor:b7168388-9eb9-4c95-b35e-1ba2660849e8 a rdfs:Class;
+    rdfs:subClassOf nen3610:Constructie;
+    skos:prefLabel "Put"@nl;
+    rdfs:seeAlso "https://data.crow.nl/imbor/def/B7168388-9EB9-4C95-B35E-1BA2660849E8";
+    skos:definition "Gegraven of geboorde kokervormige diepte waarin zich (vloei)stoffen bevinden."@nl.
 imbor-sw:aantal_ie a rdf:Property.
+imbor:AttribuutKwalKwan a rdfs:Class;
+    skos:prefLabel "Attribuut (kwalitatief/kwantitatief)"@nl.
+imbor:7f573337-00f1-41a0-98e0-1936837802fa a rdfs:Class;
+    rdfs:subClassOf nen3610:Constructie;
+    skos:prefLabel "Constructieonderdeel"@nl;
+    rdfs:seeAlso "https://data.crow.nl/imbor/def/7F573337-00F1-41A0-98E0-1936837802FA";
+    skos:definition "Een onderdeel van een objecttype dat als zelfstandig objecttype beheerd kan worden."@nl.
+nen2660:EnumerationType a rdfs:Class;
+    skos:prefLabel "Enumeratietype"@nl.
+nen3610:ReeelObject a rdfs:Class;
+    skos:prefLabel "Reëel object"@nl;
+    rdfs:seeAlso "http://modellen.geostandaarden.nl/def/nen3610-2022#ReeelObject";
+    skos:definition "Geo-object dat zich geheel materieel manifesteert."@nl.
+nen2660:Activity a rdfs:Class;
+    skos:prefLabel "Activiteit"@nl;
+    rdfs:seeAlso "https://w3id.org/nen2660/def#Activity";
+    skos:definition "Iets dat mogelijk of daadwerkelijke gebeurt in ruimte en tijd."@nl.
+sml:Function a rdfs:Class;
+    rdfs:subClassOf nen2660:Activity;
+    skos:prefLabel "Functie"@nl;
+    rdfs:seeAlso "https://w3id.org/sml/def#Function";
+    skos:definition "Een activiteit die het externe gedrag beschrijft van het object die de activiteit uitvoert."@nl.
 gwsw:VerhinderenDatOpdrijvendMateriaalAfstroomt a rdfs:Class, sh:NodeShape;
     rdfs:subClassOf sml:Functie.
 gwsw:VerhinderenDatOpdrijvendMateriaalAfstroomt skos:prefLabel "Verhinderen dat opdrijvend materiaal afstroomt."@nl.

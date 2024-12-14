@@ -92,7 +92,7 @@ imbor-sw:CfkTypes
 
 >Gebruik een SHACL construct ipv dash:abstract, deze expliciete variant is bruikbaar voor validatie.
 
-### Onderscheidend kenmerk 
+### Onderscheidend kenmerk in IMBOR-vorm (Functie, Voert uit)
 
 Functie in IMBOR-vorm
 
@@ -123,10 +123,10 @@ gwsw:LeidingenAansluiten a rdfs:Class, sh:NodeShape;
         skos:prefLabel          "Leidingen aansluiten"@nl.
 </pre>
 
->Nog bepalen of andere onderscheidende kenmerken (gwsw:Uitvoering) meegeleverd worden via de prop gwsw:uitvoering.
-Hangt ervan af of de prop in de NEN2660 staat (analoog aan nen2660:executes).
+>In de NEN2660 is de relatie nen2660:executes gedefinieerd, die is vergelijkbaar met gwsw:functie.
+Van de andere onderscheidende kenmerken binnen het GWSW (gwsw:uitvoering, gwsw:mechanisme, ...) is nog geen vergelijkbare relatie in de NEN26660 opgenomen.
 
->Het GWSW-concept gwsw:LeidingenAansluiten is een individu (van het type gwsw:Functie). Wordt binnen IMBOR als class gedefinieerd.
+>Het GWSW-concept gwsw:LeidingenAansluiten is een individu (van het type gwsw:Functie) en wordt binnen IMBOR als class gedefinieerd.
 
 ### Relatie hasPart in IMBOR-vorm
 
@@ -141,7 +141,7 @@ imbor-sw:Overstortput_Duikschot_card
 
 >IMBOR kent ook de inverse relatie nen2660:isPartOf (is ook nodig voor kardinaliteits-definitie)
 
-### Kenmerk - hasAspect in IMBOR-basisvorm
+### Kenmerk - hasAspect in IMBOR-vorm (Kwantitatief attribuut)
 <pre>
 imbor-sw:Rioolput_Aantal_ieRecreatie
         rdf:type            sh:PropertyShape ;
@@ -168,7 +168,7 @@ imbor-sw:aantal_ieRecreatie
 >* gescheiden propershapes (met eigen message en severity) voor datatype en kardinaliteit
 >* geen skos:note in property
 
-### Kenmerk - hasReference in IMBOR-basisvorm
+### Kenmerk - hasReference in IMBOR-basisvorm (Kwalitatief attribuut, enumeraties)
 
 <pre>
 imbor-sw:Rioolput_Maaiveldschematisering
