@@ -90,7 +90,7 @@ imbor-sw:CfkTypes
         ] .
 </pre>
 
->Gebruik een SHACL construct ipv dash:abstract, deze expliciete variant is nodig voor validatie.
+>Gebruik een SHACL construct ipv dash:abstract, deze expliciete variant is bruikbaar voor validatie.
 
 ### Onderscheidend kenmerk 
 
@@ -103,8 +103,11 @@ imbor-sw:Rioolput_Functie_LeidingenAansluiten
         sh:path                 nen2660:executes ; # verwijst naar de rdf:Property (analoog aan gwsw:functie)
         sh:qualifiedMaxCount    1 ;
         sh:qualifiedMinCount    0 ;
-        sh:qualifiedValueShape  [ sh:class  imbor:8a328d2a-120f-4fd7-a3ab-eed6a61c2539 ] . # verwijst naar de (functie) klasse "Leidingen aansluiten"
+        sh:qualifiedValueShape  [ sh:class  gwsw:LeidingenAansluiten ] . # verwijst naar de (functie) klasse "Leidingen aansluiten"
 </pre>
+
+>IMBOR hanteert functie voor lokale definities. Daarmee kan een IMBOR-object lokaal een andere betekenis krijgen. 
+Dat is principieel heel anders dan het GWSW, daar is een eenduidige definitie/betekenis bij de objectnaam een voorwaarde.
 
 >**SW-Specifiek**
 >* sh:qualifiedCount 1, de functie is onderdeel van de rioolput-definitie 
@@ -112,7 +115,7 @@ imbor-sw:Rioolput_Functie_LeidingenAansluiten
 En de definitie van de functie-klasse
 
 <pre>
-imbor-sw:LeidingenAansluiten a rdfs:Class, sh:NodeShape;
+gwsw:LeidingenAansluiten a rdfs:Class, sh:NodeShape;
         dash:abstract           false;
         rdfs:seeAlso            imbor-term:f584ecc4-8c48-4494-b75d-fbbf3901be13;
         rdfs:subClassOf         sml:Function;
@@ -120,10 +123,10 @@ imbor-sw:LeidingenAansluiten a rdfs:Class, sh:NodeShape;
         skos:prefLabel          "Leidingen aansluiten"@nl.
 </pre>
 
->IMBOR hanteert functie voor lokale definities. Daarmee kan een IMBOR-object lokaal een andere betekenis krijgen. 
-Dat is principieel heel anders dan het GWSW, daar is een eenduidige definitie/betekenis bij de objectnaam een voorwaarde.
+>Nog bepalen of andere onderscheidende kenmerken (gwsw:Uitvoering) meegeleverd worden via de prop gwsw:uitvoering.
+Hangt ervan af of de prop in de NEN2660 staat (analoog aan nen2660:executes).
 
->Nog bepalen of andere onderscheidende kenmerken (gwsw:Uitvoering) meegeleverd worden via de prop gwsw:uitvoering
+>Het GWSW-concept gwsw:LeidingenAansluiten is een individu (van het type gwsw:Functie). Wordt binnen IMBOR als class gedefinieerd.
 
 ### Relatie hasPart in IMBOR-vorm
 

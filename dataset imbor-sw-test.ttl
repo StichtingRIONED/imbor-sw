@@ -1,4 +1,5 @@
 @prefix imbor: <https://data.crow.nl/imbor/def/>.
+@prefix nen2660: <https://w3id.org/nen2660/def#>.
 @prefix geo: <http://www.opengis.net/ont/geosparql#>.
 @prefix gwsw: <http://data.gwsw.nl/1.6/totaal/>.
 @prefix owl: <http://www.w3.org/2002/07/owl#>.
@@ -18,8 +19,8 @@ ex:Rioolput_1 a gwsw:Rioolput ;
 ex:Overstortput_1 a gwsw:Overstortput ;
   imbor-sw:aantal_ieRecreatie "B" ; # Test inferencing: NodeShape = Rioolput
   imbor-sw:maaiveldschematisering gwsw:Gekneveld ;
-  gwsw:hasPart ex:Duikschot_1 ;
+  nen2660:hasPart ex:Duikschot_1 ;
 .
 ex:Duikschot_1 a gwsw:Duikschot ;
-  gwsw:isPartOf ex:Overstortput_1 ;
+  nen2660:isPartOf ex:Overstortput_1 ;
 .

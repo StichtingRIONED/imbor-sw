@@ -21,9 +21,14 @@
 @prefix unit: <http://qudt.org/vocab/unit/>.
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
+@prefix sml: <https://w3id.org/sml/def#>. # 20241213/mv: gebruik prefix, dan komt de class-definitie van <https://w3id.org/sml/def#Function> wel mee in SPARQL 
 @prefix gwsw: <http://data.gwsw.nl/1.6/totaal/> . # 20231214/mv: zodat we gwsw-apps/upload kunnen gebruiken
 
-nen2660:EnumerationType a rdfs:Class; # 20241213/mv: ontbreekt in dit datamodel (nodig voor SPARQL)
+nen2660:EnumerationType a rdfs:Class; # 20241212/mv: ontbreekt in dit datamodel (nodig voor SPARQL)
+  dash:abstract true;
+  skos:prefLabel "Enumeratietype"@nl.
+
+sml:Functie a rdfs:Class; # 20241213/mv: ontbreekt in dit datamodel (nodig voor SPARQL)
   dash:abstract true;
   skos:prefLabel "Enumeratietype"@nl.
 
@@ -44310,7 +44315,8 @@ nen2660:TechnicalEntity a rdfs:Class, sh:NodeShape;
   skos:definition "Entiteit waarbij het gaat om de technische eigenschappen die nul of meerdere functionele entiteiten implementeert of speelt."@nl;
   skos:prefLabel "TechnischeEntiteit"@nl.
 
-<https://w3id.org/sml/def#Function> a rdfs:Class, sh:NodeShape;
+# 20241213/mv: gebruik prefix tbv SPARQL
+sml:Function a rdfs:Class, sh:NodeShape; 
   dash:abstract true;
   rdfs:seeAlso imbor-term:d115bf9e-495e-4857-9516-2d0512563fd3;
   rdfs:subClassOf
