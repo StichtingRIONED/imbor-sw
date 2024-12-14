@@ -1,4 +1,5 @@
 @prefix imbor: <https://data.crow.nl/imbor/def/>.
+@prefix imbor-term: <https://data.crow.nl/imbor/term/>.
 @prefix inspire: <http://inspire.ec.europa.eu/ont/net#>.
 @prefix nen2660: <https://w3id.org/nen2660/def#>.
 @prefix sml: <https://w3id.org/sml/def#>.
@@ -16,5 +17,32 @@
 @prefix gwsw_gen: <http://shacl.gwsw.nl/generic#>.
 @prefix dash: <http://datashapes.org/dash#>.
 @prefix imbor-sw: <https://data.crow.nl/imbor-sw/def/>.
-@prefix imbor-term: <https://data.crow.nl/imbor/term/>.
 
+imbor-term:Rioolput a skos:Concept;
+    skos:prefLabel "Rioolput"@nl;
+    skos:definition "Een put met een verwijderbare deksel, dat toegang geeft tot de aangesloten rioolleidingen"@nl;
+    skos:broader <https://data.crow.nl/imbor/term/291e6f76-66af-4c3c-b37f-12c4f5675429>.
+imbor-term:Overstortput a skos:Concept;
+    skos:prefLabel "Combined sewer overflow"@en, "Overstortput"@nl;
+    skos:definition "Een rioolput voorzien van een overstortdrempel met een ontworpen drempellengte en -hoogte."@nl;
+    skos:broader imbor-term:Rioolput.
+imbor-term:MaaiveldschematiseringColl a skos:Concept;
+    skos:prefLabel "Maaiveldschematisering (coll)"@nl.
+imbor-term:Duikschot a skos:Concept;
+    skos:prefLabel "Duikschot"@nl;
+    skos:definition "Constructie die verhindert dat opdrijvend materiaal dat zich aan het oppervlak heeft verzameld, wordt meegesleurd over de overstortrand."@nl;
+    skos:broader <https://data.crow.nl/imbor/term/839083ee-2433-4c81-b43c-4cf16432c5d3>.
+imbor-term:VerhinderenDatOpdrijvendMateriaalAfstroomt a skos:Concept;
+    skos:prefLabel "Verhinderen dat opdrijvend materiaal afstroomt."@nl.
+imbor-term:OvertolligAfvalwaterLatenWegstromen a skos:Concept;
+    skos:prefLabel "Overtollig afvalwater laten wegstromen"@nl.
+imbor-term:LeidingenAansluiten a skos:Concept;
+    skos:prefLabel "Leidingen aansluiten"@nl.
+imbor-term:RioolleidingenAansluiten a skos:Concept;
+    skos:prefLabel "Rioolleidingen aansluiten"@nl.
+imbor-term:ReservoirMaaiveldschema a skos:Concept;
+    skos:prefLabel "Reservoir (maaiveldschematisering)"@nl.
+imbor-term:Gekneveld a skos:Concept;
+    skos:prefLabel "Gekneveld"@nl.
+imbor-term:Verlies a skos:Concept;
+    skos:prefLabel "Verlies"@nl.
