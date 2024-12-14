@@ -47,13 +47,14 @@ In dit voorbeeld zijn enkele omgezette concepten van GWSW en bijbehorende topcon
 
 Gemodelleerd zijn de fysieke objecten **rioolput** en **overstortput** inclusief enkele **kenmerken**.
 
-Het test-datamodel in de GWSW/RDF-viewer: [data.gwsw.nl/imbor-sw-test](https://data.gwsw.nl/1.6.1/imbor-sw-test/index.html?menu_item=classes).  
-Het test-datamodel in RDF/Turtle-vorm inclusief IMBOR-Kern: [datamodel imbor-sw-test inclusief Kern](./datamodel%20imbor-sw-test%20inclusief%20kern.ttl).   
+Voor koppeling met IMBOR-Kern:
+>Het test-datamodel in RDF/Turtle-vorm (alleen IMBOR-SW): [datamodel imbor-sw-test](./datamodel%20imbor-sw-test.ttl).  
+>De test-vocabulaire in RDF/Turtle-vorm (alleen IMBOR-SW): [vocabulaire imbor-sw-test](./vocabulaire%20imbor-sw-test.ttl).  
 
-Het test-datamodel in RDF/Turtle-vorm (alleen IMBOR-SW): [datamodel imbor-sw-test](./datamodel%20imbor-sw-test.ttl).  
-De test-vocabulaire in RDF/Turtle-vorm (alleen IMBOR-SW): [vocabulaire imbor-sw-test](./vocabulaire%20imbor-sw-test.ttl).   
-
-Een test-dataset in RDF/Turtle-vorm (voor SHACL-test): [dataset imbor-sw-test](./dataset%20imbor-sw-test.ttl).
+Ter informatie en voor proefnemingen:
+>Het test-datamodel in de GWSW/RDF-viewer: [data.gwsw.nl/imbor-sw-test](https://data.gwsw.nl/1.6.1/imbor-sw-test/index.html?menu_item=classes).  
+>Het test-datamodel in RDF/Turtle-vorm inclusief IMBOR-Kern: [datamodel imbor-sw-test inclusief Kern](./datamodel%20imbor-sw-test%20inclusief%20kern.ttl).   
+>Een test-dataset in RDF/Turtle-vorm (voor SHACL-test): [dataset imbor-sw-test](./dataset%20imbor-sw-test.ttl).
 
 **SW prefixes**
 * gwsw: voor ongewijzigde SW-concepten
