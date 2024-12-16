@@ -28,7 +28,7 @@ nen2660:EnumerationType a rdfs:Class; # 20241212/mv: ontbreekt in dit datamodel 
   dash:abstract true;
   skos:prefLabel "Enumeratietype"@nl.
 
-sml:Functie a rdfs:Class; # 20241213/mv: ontbreekt in dit datamodel (nodig voor SPARQL)
+sml:Function a rdfs:Class; # 20241213/mv: ontbreekt in dit datamodel (nodig voor SPARQL)
   dash:abstract true;
   skos:prefLabel "Enumeratietype"@nl.
 

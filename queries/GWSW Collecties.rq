@@ -1,4 +1,4 @@
-# GWSW Individuals/Collecties - gebruik in mapping-spreadsheet (20241122) (20231218)
+# GWSW Individuals van Functies/Collecties - gebruik in mapping-spreadsheet (20241215) (20241122) (20231218)
 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -6,21 +6,26 @@ PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
-PREFIX : <http://data.gwsw.nl/1.6/totaal/>
+PREFIX gwsw: <http://data.gwsw.nl/1.6/totaal/>
 
 select ?Name ?Labels ?AltLabels ?Definition ?SeeAlsos (GROUP_CONCAT(?Collection; separator = "|") as ?Collections)
 
 where
 {
-  ?coll rdfs:subClassOf :VerzamelingSoorten .
-  ?coll rdfs:subClassOf ?o1 .
-  ?o1 owl:oneOf ?list .
+  { ?coll rdfs:subClassOf gwsw:VerzamelingSoorten .
+    ?coll rdfs:subClassOf ?o1 .
+    ?o1 owl:oneOf ?list .
 
-  # Deze duurt te lang, wordt afgebroken: (20231217)
-  #voer eerst rdf:rest uit, met object vervolgens rdf:first (rest*: doe voor alle rest-relaties)
-  #?list rdf:rest*/rdf:first ?elem .
+    # Deze duurt te lang, wordt afgebroken: (20231217)
+    #voer eerst rdf:rest uit, met object vervolgens rdf:first (rest*: doe voor alle rest-relaties)
+    #?list rdf:rest*/rdf:first ?elem .
 
-  ?elem rdf:type ?coll .
+    ?elem rdf:type ?coll .
+  }
+  UNION {
+    BIND (IRI(gwsw:Functie) as ?coll)
+    ?elem rdf:type gwsw:Functie .
+  }
 
   { 
   SELECT ?elem (GROUP_CONCAT(?Label; separator = " | ") as ?Labels)
@@ -66,7 +71,7 @@ where
   }
   BIND (COALESCE(?_Definition, "") AS ?Definition) # Hou gevuld, tbv CSV-export
   
-  BIND (str(iri(:)) AS ?aft)
+  BIND (str(iri(gwsw:)) AS ?aft)
   BIND (strafter(str(?coll), ?aft) AS ?Collection)
   BIND (strafter(str(?elem), ?aft) AS ?Name)
 }
