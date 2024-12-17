@@ -48,6 +48,14 @@ Map GWSW-concepten vanuit Excel op basis van:
 
 ## GWSW in IMBOR-vorm
 
+### Algemene modelleerprincipes IMBOR
+
+- Externe datamodellen voegen geen properties of relaties tot aan de concepten in IMBOR-Kern
+- Externe datamodellen mogen wel annotaties toevoegen aan de concepten in IMBOR-Kern (zie Installatiedatum). Bijvoorbeeld:
+  - comments over niet gebruikte maar wel geërfde IMBOR-Kern-properties
+  - comments over uitwisselingsvorm (verwijzing naar GWSW-OroX)
+- Subproperties zijn toegestaan. Werkt wel RDF-conform, als een Rioolleiding een gwsw:diameterLeiding heeft dan heeft de Rioolleiding ook een imbor:diameter.
+
 ### Deelmodel GWSW-IMBOR-SW omgezet in IMBOR-vorm
 
 In de volgende paragrafen is als voorbeeld een datamodel IMBOR-conform uitgewerkt.  
