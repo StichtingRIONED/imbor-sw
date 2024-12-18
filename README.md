@@ -3,7 +3,7 @@
 Deze repository bevat het ontwerp voor de directe aanmaak van het deelmodel IMBOR Stedelijk Water vanuit het GWSW-datamodel .
 
 Zie [data.gwsw.nl/imbor-sw](https://data.gwsw.nl/1.6.1/imbor-sw/index.html?menu_item=classes).  
-In kleur de gebruikte RDF-schema's <span style="color: blue;">IMBOR-Kern</span>, <span style="color: orangered;">NEN2660</span>
+In kleur de gebruikte RDF-schema's <span style="color: blue;">blauw=IMBOR-Kern</span>, <span style="color: orangered;">rood=NEN2660</span>
 
 Het ontwerp omvat het volgende:
 * Definiëren van het deelmodel IMBOR-SW binnen het GWSW-datamodel [GWSW Deelmodel IMBOR-SW](#gwsw-deelmodel-imbor-sw)
@@ -95,17 +95,16 @@ imbor-sw:aanlegdiepte rdf:type           rdf:Property ;
 
 ### Deelmodel GWSW-IMBOR-SW omgezet in IMBOR-vorm
 
-In de volgende paragrafen is als voorbeeld een datamodel IMBOR-conform uitgewerkt.  
-In dit voorbeeld zijn enkele omgezette concepten van GWSW en bijbehorende topconcepten van IMBOR-Kern opgenomen.
+In de volgende paragrafen is als voorbeeld een datamodel IMBOR-conform uitgewerkt, het voorbeeld bevat enkele omgezette concepten van GWSW en bijbehorende topconcepten van IMBOR-Kern.
 
 Gemodelleerd zijn de fysieke objecten **rioolput** en **overstortput** inclusief enkele **kenmerken**.
+Zie ook het test-datamodel in de GWSW/RDF-viewer: [data.gwsw.nl/imbor-sw-test](https://data.gwsw.nl/1.6.1/imbor-sw-test/index.html?menu_item=classes).   
 
 Voor koppeling met IMBOR-Kern:
 >Het test-datamodel in RDF/Turtle-vorm (alleen IMBOR-SW): [datamodel imbor-sw-test](./data%20models%20target/datamodel%20imbor-sw-test.ttl).  
 >De test-vocabulaire in RDF/Turtle-vorm (alleen IMBOR-SW): [vocabulaire imbor-sw-test](./data%20models%20target/vocabulaire%20imbor-sw-test.ttl).  
 
 Ter informatie en voor proefnemingen:
->Het test-datamodel in de GWSW/RDF-viewer: [data.gwsw.nl/imbor-sw-test](https://data.gwsw.nl/1.6.1/imbor-sw-test/index.html?menu_item=classes).  
 >Het test-datamodel in RDF/Turtle-vorm inclusief IMBOR-Kern: [datamodel imbor-sw-test inclusief Kern](./data%20models%20target/datamodel%20imbor-sw-test%20inclusief%20kern.ttl).   
 >Een test-dataset in RDF/Turtle-vorm (voor SHACL-test): [dataset imbor-sw-test](./data%20models%20target/dataset%20imbor-sw-test.ttl).
 
