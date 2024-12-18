@@ -27,25 +27,24 @@ wordt aangemaakt vanuit Excel [(bestand Mapping GWSW-IMBOR.xlsm)](./Mapping%20GW
 De mappingfile wordt toegepast in repository StichtingRIONED/gwsw_worker.
 De app in repository gwsw_worker maakt de conversie van het deelmodel GWSW-IMBOR-SW naar de RDF-vorm van IMBOR.
 
-De spreadsheet Mapping GWSW IMBOR.xlsm wordt gevuld:
-- vervallen (202412150): het blad IMBOR: Gebruik de query IMBOR Classes+Props.rq in de map queries. De query draait op IMBOR-Kern (zie map datamodellen).
-- het blad IMBORVoc_Termen: bevat de termen-tabel vanuit MS-Access.
-- het blad GWSW: met de SPARQL-query Klassen binnen GWSW-Lijsten en de query GWSW Collecties.rq in de map queries. 
+De werkbladen in de spreadsheet Mapping GWSW IMBOR.xlsm:
+- *vervallen (202412150): het blad IMBOR: Gebruik de query IMBOR Classes+Props.rq in de map queries. De query draait op IMBOR-Kern (zie map datamodellen).*
+- het blad **IMBORVoc_Termen**: bevat de termen-tabel vanuit MS-Access.
+- het blad **GWSW**: met de SPARQL-query Klassen binnen GWSW-Lijsten en de query GWSW Collecties.rq in de map queries. 
 
->Gegevensbron blad GWSW
->De queries draaien op het deelmodel GWSW-IMBOR-SW. Gebruik GraphDB-repository GWSW_IMBOR-SW_v161 (zie map datamodellen voor de inhoud).
+**Gegevensbron blad GWSW**
+>De SPARQL-queries draaien op het deelmodel GWSW-IMBOR-SW. Gebruik GraphDB-repository GWSW_IMBOR-SW_v161 (zie map datamodellen voor de inhoud).
 De datamodel GWSW_IMBOR-SW_v161 is het filter op GWSW-IMBOR-SW exclusief het IMBOR-Kern datamodel, denk aan de parameter in app.config.json
 (gebruik voor presentaties van GWSW-IMBOR-SW wel het IMBOR-Kern model).
 
-In Excel markeert de kolom IMBOR-module de indeling van de concepten:
-- TOP = kernmodel IMBOR
+In blad GWSW markeert de kolom IMBOR-module de indeling van de concepten:
+- Kern = kernmodel IMBOR
 - SW = disciplinemodel GWSW
-- ? = module-plek nog in overleg
 
-Map GWSW-concepten vanuit Excel op basis van:
+Vergelijk de GWSW en IMBOR-concepten op basis van:
 - label GWSW versus label IMBOR
 - altLabel GWSW versus label IMBOR
-- alleen concepten binnen IMBOR-module TOP en ?
+- alleen concepten binnen IMBOR-module Kern (kolom IMBOR-module)
 
 ## GWSW in IMBOR-vorm
 
