@@ -2,14 +2,15 @@
 
 Deze repository bevat het ontwerp voor de directe aanmaak van het deelmodel IMBOR Stedelijk Water vanuit het GWSW-datamodel .
 
+Zie [data.gwsw.nl/imbor-sw](https://data.gwsw.nl/1.6.1/imbor-sw/index.html?menu_item=classes).  
+In kleur de gebruikte RDF-schema's <span style="color: blue;">IMBOR-Kern</span>, <span style="color: orangered;">NEN2660</span>
+
 Het ontwerp omvat het volgende:
 * Definiëren van het deelmodel IMBOR-SW binnen het GWSW-datamodel [GWSW Deelmodel IMBOR-SW](#gwsw-deelmodel-imbor-sw)
 * Maak de mapping GWSW-IMBOR, overnemen TOP-concepten uit IMBOR in het GWSW-datamodel [Mapping GWSW-IMBOR](#mapping-gwsw-imbor)
 * Functionele beschrijving van de conversie GWSW naar IMBOR-SW [GWSW in IMBOR-vorm](#gwsw-in-imbor-vorm)
 
 ## GWSW Deelmodel IMBOR-SW 
-
-Zie [data.gwsw.nl/imbor-sw](https://data.gwsw.nl/1.6.1/imbor-sw/index.html?menu_item=classes).  
 
 Indeling (vergelijkbaar met deelmodel GWSW Basis): CoF-en TOP, BAS, MDS, HYD (excl. NLCS). Gebruik conformiteitsklasse 6.
 
@@ -50,11 +51,47 @@ Map GWSW-concepten vanuit Excel op basis van:
 
 ### Algemene modelleerprincipes IMBOR
 
-- Externe datamodellen voegen geen properties of relaties tot aan de concepten in IMBOR-Kern
-- Externe datamodellen mogen wel annotaties toevoegen aan de concepten in IMBOR-Kern (zie Installatiedatum). Bijvoorbeeld:
-  - comments over niet gebruikte maar wel geërfde IMBOR-Kern-properties
-  - comments over uitwisselingsvorm (verwijzing naar GWSW-OroX)
-- Subproperties zijn toegestaan. Werkt wel RDF-conform, als een Rioolleiding een gwsw:diameterLeiding heeft dan heeft de Rioolleiding ook een imbor:diameter.
+Externe datamodellen kunnen **annotaties** toevoegen aan de concepten in IMBOR-Kern (zie Installatiedatum).
+Zoals comments over niet gebruikte maar wel geërfde IMBOR-Kern-properties of over uitwisselingsvorm (verwijzing naar GWSW-OroX).
+Bijvoorbeeld:
+<pre>
+imbor:f65dd67b-8c4c-47f6-9ed2-4ab87763bbac rdfs:comment "[GWSW-OroX] gwsw:hasApect gwsw:Begindatum"@nl . # label in IMBOR-Kern = Installatiedatum
+</pre>
+
+Externe datamodellen kunnen **properties** toevoegen aan de concepten in IMBOR-Kern.  
+Bijvoorbeeld (zie [data.gwsw.nl/imbor-sw/einddatum](https://data.gwsw.nl/1.6.1/imbor-sw/index.html?menu_item=classes&item=../../def/1.6.1/IMBOR-SW/Einddatum)):
+
+<pre>
+imbor-sw:einddatum                     rdf:type           rdf:Property ;
+                                       rdfs:subPropertyOf imbor-sw:107332e5-5843-46b7-901d-13633fba7ef7 . # label in IMBOR-Kern = datum
+imbor-sw:DiscreteObject_Einddatum_card rdf:type           sh:PropertyShape;
+    sh:path imbor-sw:einddatum;
+    sh:qualifiedMaxCount 1;
+    sh:message "Subject DiscreteObject, path imbor-sw:einddatum - aantal voorkomens wijkt af (max=1)"@nl;
+    sh:severity sh:Violation.
+</pre>
+
+Externe datamodellen kunnen **relaties** toevoegen aan de concepten in IMBOR-Kern. 
+Bijvoorbeeld (zie [data.gwsw.nl/imbor-sw/Stellaag](https://data.gwsw.nl/1.6.1/imbor-sw/index.html?menu_item=classes&item=../../def/1.6.1/IMBOR-SW/Stellaag)),
+Stellaag is deel van Put:
+
+<pre>
+imbor-sw:b7168388-9eb9-4c95-b35e-1ba2660849e8_Stellaag_card rdf:type sh:PropertyShape;
+    sh:path [
+      sh:alternativePath (nen2660:hasPart [ sh:inversePath nen2660:isPartOf ])
+    ];
+    sh:qualifiedValueShape [ sh:class gwsw:Stellaag ];
+    sh:qualifiedMaxCount 1;
+    sh:message "Subject b7168388-9eb9-4c95-b35e-1ba2660849e8, path hasPart, object Stellaag - aantal voorkomens wijkt af (max=1)"@nl;
+    sh:severity sh:Violation.
+</pre>
+
+Externe datamodellen kunnen **subproperties** toevoegen aan de concepten in IMBOR-Kern.
+Bijvoorbeeld (zie [data.gwsw.nl/imbor-sw/aanlegdiepte](https://data.gwsw.nl/1.6.1/imbor-sw/index.html?menu_item=classes&item=../../def/1.6.1/IMBOR-SW/Aanlegdiepte)).
+<pre>
+imbor-sw:aanlegdiepte rdf:type           rdf:Property ; 
+                      rdfs:subPropertyOf imbor-sw:0dac7828-b6e7-46eb-b538-dd6ac0005eca . # label in IMBOR-Kern = eendimensionale eigenschap 
+</pre>
 
 ### Deelmodel GWSW-IMBOR-SW omgezet in IMBOR-vorm
 
