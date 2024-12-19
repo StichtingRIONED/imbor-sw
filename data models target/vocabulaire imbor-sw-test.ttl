@@ -16,33 +16,79 @@
 @prefix sh: <http://www.w3.org/ns/shacl#>.
 @prefix gwsw_gen: <http://shacl.gwsw.nl/generic#>.
 @prefix dash: <http://datashapes.org/dash#>.
+@prefix imbor-sw-term: <https://data.crow.nl/imbor-sw/term/>.
 @prefix imbor-sw: <https://data.crow.nl/imbor-sw/def/>.
+@prefix dct: <http://purl.org/dc/terms/>.
 
-imbor-term:Rioolput a skos:Concept;
+imbor-sw-term:Rioolput a skos:Concept;
     skos:prefLabel "Rioolput"@nl;
+    skos:altLabel "Node reference"@en;
     skos:definition "Een put met een verwijderbare deksel, dat toegang geeft tot de aangesloten rioolleidingen"@nl;
-    skos:broader <https://data.crow.nl/imbor/term/291e6f76-66af-4c3c-b37f-12c4f5675429>.
-imbor-term:Overstortput a skos:Concept;
+    skos:inScheme imbor-sw-term:term-sw-schema.
+imbor-term:41ab4cca-c6d7-4bfb-9748-28def30e0a3f skos:member imbor-sw-term:Rioolput.
+imbor-sw-term:Overstortput a skos:Concept;
     skos:prefLabel "Combined sewer overflow"@en, "Overstortput"@nl;
+    skos:altLabel "Overstort"@nl, "Riooloverstort"@nl;
     skos:definition "Een rioolput voorzien van een overstortdrempel met een ontworpen drempellengte en -hoogte."@nl;
-    skos:broader imbor-term:Rioolput.
-imbor-term:MaaiveldschematiseringColl a skos:Concept;
-    skos:prefLabel "Maaiveldschematisering (coll)"@nl.
-imbor-term:Duikschot a skos:Concept;
+    skos:inScheme imbor-sw-term:term-sw-schema;
+    skos:broader imbor-sw-term:Rioolput.
+imbor-term:41ab4cca-c6d7-4bfb-9748-28def30e0a3f skos:member imbor-sw-term:Overstortput.
+imbor-sw-term:MaaiveldschematiseringColl a skos:Concept;
+    skos:prefLabel "Maaiveldschematisering (coll)"@nl;
+    skos:inScheme imbor-sw-term:term-sw-schema.
+imbor-term:ce768ba5-792d-4df9-a5d9-a308c8d6788b skos:member imbor-sw-term:MaaiveldschematiseringColl.
+imbor-sw-term:Duikschot a skos:Concept;
     skos:prefLabel "Duikschot"@nl;
+    skos:altLabel "Drijfschot"@nl;
     skos:definition "Constructie die verhindert dat opdrijvend materiaal dat zich aan het oppervlak heeft verzameld, wordt meegesleurd over de overstortrand."@nl;
-    skos:broader <https://data.crow.nl/imbor/term/839083ee-2433-4c81-b43c-4cf16432c5d3>.
-imbor-term:VerhinderenDatOpdrijvendMateriaalAfstroomt a skos:Concept;
-    skos:prefLabel "Verhinderen dat opdrijvend materiaal afstroomt."@nl.
-imbor-term:OvertolligAfvalwaterLatenWegstromen a skos:Concept;
-    skos:prefLabel "Overtollig afvalwater laten wegstromen"@nl.
-imbor-term:LeidingenAansluiten a skos:Concept;
-    skos:prefLabel "Leidingen aansluiten"@nl.
-imbor-term:RioolleidingenAansluiten a skos:Concept;
-    skos:prefLabel "Rioolleidingen aansluiten"@nl.
-imbor-term:ReservoirMaaiveldschema a skos:Concept;
-    skos:prefLabel "Reservoir (maaiveldschematisering)"@nl.
-imbor-term:Gekneveld a skos:Concept;
-    skos:prefLabel "Gekneveld"@nl.
-imbor-term:Verlies a skos:Concept;
-    skos:prefLabel "Verlies"@nl.
+    skos:inScheme imbor-sw-term:term-sw-schema.
+imbor-term:41ab4cca-c6d7-4bfb-9748-28def30e0a3f skos:member imbor-sw-term:Duikschot.
+imbor-sw-term:maaiveldschematisering a skos:Concept;
+    skos:prefLabel "Maaiveldschematisering"@nl;
+    skos:inScheme imbor-sw-term:term-sw-schema.
+imbor-term:9cec6048-0358-4d4e-82d7-7804fca70737 skos:member imbor-sw-term:maaiveldschematisering.
+imbor-sw-term:aantal_ieRecreatie a skos:Concept;
+    skos:prefLabel "Aantal i.e. recreatie"@nl;
+    skos:definition "Aantal inwonerequivalenten afkomstig van recreatie"@nl;
+    skos:inScheme imbor-sw-term:term-sw-schema;
+    skos:broader imbor-sw-term:Aantal_ie.
+imbor-term:9cec6048-0358-4d4e-82d7-7804fca70737 skos:member imbor-sw-term:aantal_ieRecreatie.
+imbor-sw-term:aantal_ie a skos:Concept;
+    skos:prefLabel "Aantal i.e."@nl;
+    skos:altLabel "Aantal inwonerequivalenten"@nl;
+    skos:inScheme imbor-sw-term:term-sw-schema.
+imbor-term:9cec6048-0358-4d4e-82d7-7804fca70737 skos:member imbor-sw-term:aantal_ie.
+imbor-sw-term:VerhinderenDatOpdrijvendMateriaalAfstroomt a skos:Concept;
+    skos:prefLabel "Verhinderen dat opdrijvend materiaal afstroomt."@nl;
+    skos:inScheme imbor-sw-term:term-sw-schema.
+imbor-term:510136cc-4e34-4332-967b-6d951fd47755 skos:member imbor-sw-term:VerhinderenDatOpdrijvendMateriaalAfstroomt.
+imbor-sw-term:OvertolligAfvalwaterLatenWegstromen a skos:Concept;
+    skos:prefLabel "Overtollig afvalwater laten wegstromen"@nl;
+    skos:inScheme imbor-sw-term:term-sw-schema.
+imbor-term:510136cc-4e34-4332-967b-6d951fd47755 skos:member imbor-sw-term:OvertolligAfvalwaterLatenWegstromen.
+imbor-sw-term:LeidingenAansluiten a skos:Concept;
+    skos:prefLabel "Leidingen aansluiten"@nl;
+    skos:inScheme imbor-sw-term:term-sw-schema.
+imbor-term:510136cc-4e34-4332-967b-6d951fd47755 skos:member imbor-sw-term:LeidingenAansluiten.
+imbor-sw-term:RioolleidingenAansluiten a skos:Concept;
+    skos:prefLabel "Rioolleidingen aansluiten"@nl;
+    skos:inScheme imbor-sw-term:term-sw-schema.
+imbor-term:510136cc-4e34-4332-967b-6d951fd47755 skos:member imbor-sw-term:RioolleidingenAansluiten.
+imbor-sw-term:ReservoirMaaiveldschema a skos:Concept;
+    skos:prefLabel "Reservoir (maaiveldschematisering)"@nl;
+    skos:inScheme imbor-sw-term:term-sw-schema.
+imbor-term:f877efbb-4b6f-48de-9428-46afc0d0bedf skos:member imbor-sw-term:ReservoirMaaiveldschema.
+imbor-sw-term:Gekneveld a skos:Concept;
+    skos:prefLabel "Gekneveld"@nl;
+    skos:inScheme imbor-sw-term:term-sw-schema.
+imbor-term:f877efbb-4b6f-48de-9428-46afc0d0bedf skos:member imbor-sw-term:Gekneveld.
+imbor-sw-term:Verlies a skos:Concept;
+    skos:prefLabel "Verlies"@nl;
+    skos:inScheme imbor-sw-term:term-sw-schema.
+imbor-term:f877efbb-4b6f-48de-9428-46afc0d0bedf skos:member imbor-sw-term:Verlies.
+imbor-sw-term:term-sw-schema a skos:ConceptScheme;
+    skos:prefLabel "IMBOR-SW Vocabulaire (Begrippenkader voor IMBOR-SW)"@nl;
+    dct:creator "IMBOR-SW - Stichting RIONED"@nl;
+    dct:format "SKOS"@nl;
+    dct:language "Nederlands"@nl;
+    dct:description "Omzetting vanuit GWSW versie 1.6, zie verder de beschrijving bij imbor-term:term-schema."@nl.

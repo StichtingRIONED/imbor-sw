@@ -1,4 +1,5 @@
 @prefix imbor: <https://data.crow.nl/imbor/def/>.
+@prefix imbor-term: <https://data.crow.nl/imbor/term/>.
 @prefix inspire: <http://inspire.ec.europa.eu/ont/net#>.
 @prefix nen2660: <https://w3id.org/nen2660/def#>.
 @prefix sml: <https://w3id.org/sml/def#>.
@@ -15,49 +16,65 @@
 @prefix sh: <http://www.w3.org/ns/shacl#>.
 @prefix gwsw_gen: <http://shacl.gwsw.nl/generic#>.
 @prefix dash: <http://datashapes.org/dash#>.
+@prefix imbor-sw-term: <https://data.crow.nl/imbor-sw/term/>.
 @prefix imbor-sw: <https://data.crow.nl/imbor-sw/def/>.
-@prefix imbor-term: <https://data.crow.nl/imbor/term/>.
+@prefix dct: <http://purl.org/dc/terms/>.
 
 gwsw:Rioolput a rdfs:Class;
     rdfs:subClassOf imbor:b7168388-9eb9-4c95-b35e-1ba2660849e8;
     skos:prefLabel "Rioolput"@nl;
-    skos:altLabel "Node reference"@en;
+    rdfs:seeAlso imbor-sw-term:Rioolput;
     rdfs:seeAlso "file:///img/Rioolput.jpg", "[EN13508-2+A1] The node reference of the manhole or inspection chamber as specified by the employing authority."@en, "[NEN 3300:1996] constructie toegang gevend tot het rioolstelsel"@nl;
     skos:definition "Een put met een verwijderbare deksel, dat toegang geeft tot de aangesloten rioolleidingen"@nl.
 gwsw:Overstortput a rdfs:Class;
     rdfs:subClassOf gwsw:Rioolput;
     skos:prefLabel "Combined sewer overflow"@en, "Overstortput"@nl;
-    skos:altLabel "Overstort"@nl, "Riooloverstort"@nl;
+    rdfs:seeAlso imbor-sw-term:Overstortput;
     rdfs:seeAlso "file:///img/Overstortput.jpg", "https://content.omgevingswet.overheid.nl/doc/concept/Riooloverstort", "[EN 16323:2014] device on a combined system that relieves the system of excess flow"@en, "[IRIS-RIOKEN:2012] Een inzamelknooppunt, uitgevoerd als voorziening met drempel, voor het onder bepaalde omstandigheden lozen van afvalwater uit het rioleringsnetwerk naar een ander rioleringsnetwerk of oppervlaktewater in de zin van de Wet verontreiniging oppervlaktewateren. Een riooloverstort is dus een voorziening door middel waarvan bij de neerslag van hemelwater het teveel aan hemelwater, al of niet vermengd met afvalwater dat niet in het stelsel wordt geborgen, kan worden geloosd op oppervlaktewater."@nl, "[NEN 3300:1996] rioolput voorzien van een overstortdrempel"@nl, "[Omgevingswet] Een kunstwerk waarmee rioolwater op het oppervlaktewater wordt geloosd, zodra het riool door te grote neerslaghoeveelheden niet al het rioolwater kan verwerken"@nl;
     skos:definition "Een rioolput voorzien van een overstortdrempel met een ontworpen drempellengte en -hoogte."@nl.
 gwsw:MaaiveldschematiseringColl a rdfs:Class;
     rdfs:subClassOf nen2660:EnumerationType;
     imbor:typeLijst "Enumeratielijst"@nl;
-    skos:prefLabel "Maaiveldschematisering (coll)"@nl.
+    skos:prefLabel "Maaiveldschematisering (coll)"@nl;
+    rdfs:seeAlso imbor-sw-term:MaaiveldschematiseringColl.
 gwsw:Duikschot a rdfs:Class;
     rdfs:subClassOf imbor:7f573337-00f1-41a0-98e0-1936837802fa;
     skos:prefLabel "Duikschot"@nl;
-    skos:altLabel "Drijfschot"@nl;
+    rdfs:seeAlso imbor-sw-term:Duikschot;
     skos:definition "Constructie die verhindert dat opdrijvend materiaal dat zich aan het oppervlak heeft verzameld, wordt meegesleurd over de overstortrand."@nl.
 imbor-sw:maaiveldschematisering a rdf:Property;
-    skos:note "Enumeratie"@nl.
+    skos:note "Enumeratie"@nl;
+    skos:prefLabel "Maaiveldschematisering"@nl;
+    rdfs:seeAlso imbor-sw-term:maaiveldschematisering;
+    rdfs:seeAlso "[HYD] Aanduiding schematisering maaiveld bij uitstroom van water via de putdeksel"@nl.
 imbor-sw:aantal_ieRecreatie a rdf:Property;
-    rdfs:subPropertyOf imbor-sw:aantal_ie.
-imbor-sw:aantal_ie a rdf:Property.
+    rdfs:subPropertyOf imbor-sw:aantal_ie;
+    skos:prefLabel "Aantal i.e. recreatie"@nl;
+    rdfs:seeAlso imbor-sw-term:aantal_ieRecreatie;
+    skos:definition "Aantal inwonerequivalenten afkomstig van recreatie"@nl.
+imbor-sw:aantal_ie a rdf:Property;
+    skos:prefLabel "Aantal i.e."@nl;
+    rdfs:seeAlso imbor-sw-term:aantal_ie;
+    rdfs:seeAlso "[IRIS-RIOKEN:2012] Maat voor de belasting van het afvalwater met organische bestanddelen die een inwoner gemiddeld per dag produceert. Ook het afvalwater van bedrijven wordt in deze maat uitgedrukt."@nl, "[NEN 3300:1996] berekeningseenheid om de hoeveelheid vervuiling in afvalwater per inwoner per dag aan te geven"@nl.
 gwsw:VerhinderenDatOpdrijvendMateriaalAfstroomt a rdfs:Class, sh:NodeShape;
     rdfs:subClassOf sml:Functie.
-gwsw:VerhinderenDatOpdrijvendMateriaalAfstroomt skos:prefLabel "Verhinderen dat opdrijvend materiaal afstroomt."@nl.
+gwsw:VerhinderenDatOpdrijvendMateriaalAfstroomt skos:prefLabel "Verhinderen dat opdrijvend materiaal afstroomt."@nl;
+    rdfs:seeAlso imbor-sw-term:VerhinderenDatOpdrijvendMateriaalAfstroomt.
 gwsw:OvertolligAfvalwaterLatenWegstromen a rdfs:Class, sh:NodeShape;
     rdfs:subClassOf sml:Functie.
-gwsw:OvertolligAfvalwaterLatenWegstromen skos:prefLabel "Overtollig afvalwater laten wegstromen"@nl.
+gwsw:OvertolligAfvalwaterLatenWegstromen skos:prefLabel "Overtollig afvalwater laten wegstromen"@nl;
+    rdfs:seeAlso imbor-sw-term:OvertolligAfvalwaterLatenWegstromen.
 gwsw:LeidingenAansluiten a rdfs:Class, sh:NodeShape;
     rdfs:subClassOf sml:Functie.
-gwsw:LeidingenAansluiten skos:prefLabel "Leidingen aansluiten"@nl.
+gwsw:LeidingenAansluiten skos:prefLabel "Leidingen aansluiten"@nl;
+    rdfs:seeAlso imbor-sw-term:LeidingenAansluiten.
 gwsw:RioolleidingenAansluiten a rdfs:Class, sh:NodeShape;
     rdfs:subClassOf sml:Functie.
-gwsw:RioolleidingenAansluiten skos:prefLabel "Rioolleidingen aansluiten"@nl.
-imbor-sw:CfkTypes a sh:NodeShape;
-    sh:name "Toegestane CFK types";
+gwsw:RioolleidingenAansluiten skos:prefLabel "Rioolleidingen aansluiten"@nl;
+    rdfs:seeAlso imbor-sw-term:RioolleidingenAansluiten.
+imbor-sw:CfkTypes a rdfs:Class, sh:NodeShape;
+    sh:name "Toegestane CFK types"@nl;
+    skos:prefLabel "Toegestane types in datasets (concreet, niet abstract)"@nl;
     sh:targetNode gwsw:Rioolput;
     sh:property imbor-sw:CfkTypes_typ.
 imbor-sw:CfkTypes_typ a sh:PropertyShape;
@@ -67,24 +84,17 @@ imbor-sw:CfkTypes_typ a sh:PropertyShape;
     sh:severity sh:Violation.
 imbor-sw:Maaiveldschematisering_ref a sh:PropertyShape;
     sh:path imbor-sw:maaiveldschematisering;
-    sh:in gwsw:MaaiveldschematiseringColl-list-0;
     sh:message "Kenmerk Maaiveldschematisering - waarde wijkt af (ontbreekt in collectie MaaiveldschematiseringColl)"@nl;
     sh:severity sh:Warning.
 gwsw:ReservoirMaaiveldschema a gwsw:MaaiveldschematiseringColl;
-    skos:prefLabel "Reservoir (maaiveldschematisering)"@nl.
+    skos:prefLabel "Reservoir (maaiveldschematisering)"@nl;
+    rdfs:seeAlso imbor-sw-term:ReservoirMaaiveldschema.
 gwsw:Gekneveld a gwsw:MaaiveldschematiseringColl;
-    skos:prefLabel "Gekneveld"@nl.
+    skos:prefLabel "Gekneveld"@nl;
+    rdfs:seeAlso imbor-sw-term:Gekneveld.
 gwsw:Verlies a gwsw:MaaiveldschematiseringColl;
-    skos:prefLabel "Verlies"@nl.
-gwsw:MaaiveldschematiseringColl-list-0 a rdf:list;
-    rdf:first gwsw:ReservoirMaaiveldschema;
-    rdf:rest gwsw:MaaiveldschematiseringColl-list-1.
-gwsw:MaaiveldschematiseringColl-list-1 a rdf:list;
-    rdf:first gwsw:Gekneveld;
-    rdf:rest gwsw:MaaiveldschematiseringColl-list-2.
-gwsw:MaaiveldschematiseringColl-list-2 a rdf:list;
-    rdf:first gwsw:Verlies;
-    rdf:rest rdf:nil.
+    skos:prefLabel "Verlies"@nl;
+    rdfs:seeAlso imbor-sw-term:Verlies.
 imbor-sw:Aantal_ieRecreatie_dt a sh:PropertyShape;
     sh:path imbor-sw:aantal_ieRecreatie;
     sh:datatype xsd:integer;
@@ -142,11 +152,8 @@ imbor-sw:Duikschot_VerhinderenDatOpdrijvendMateriaalAfstroomt_card a sh:Property
     sh:message "Subject Duikschot, path executes, object VerhinderenDatOpdrijvendMateriaalAfstroomt - aantal voorkomens wijkt af (exact=1)"@nl;
     sh:severity sh:Violation.
 gwsw:Rioolput a sh:NodeShape;
-    sh:property imbor-sw:Maaiveldschematisering_ref, imbor-sw:Aantal_ieRecreatie_dt, imbor-sw:Aantal_ie_dt, imbor-sw:Rioolput_Maaiveldschematisering_card, imbor-sw:Rioolput_Aantal_ieRecreatie_card, imbor-sw:Rioolput_LeidingenAansluiten_card, imbor-sw:Rioolput_RioolleidingenAansluiten_card;
-    sh:closed "false".
+    sh:property imbor-sw:Maaiveldschematisering_ref, imbor-sw:Aantal_ieRecreatie_dt, imbor-sw:Aantal_ie_dt, imbor-sw:Rioolput_Maaiveldschematisering_card, imbor-sw:Rioolput_Aantal_ieRecreatie_card, imbor-sw:Rioolput_LeidingenAansluiten_card, imbor-sw:Rioolput_RioolleidingenAansluiten_card.
 gwsw:Overstortput a sh:NodeShape;
-    sh:property imbor-sw:Overstortput_Duikschot_card, imbor-sw:Overstortput_OvertolligAfvalwaterLatenWegstromen_card;
-    sh:closed "false".
+    sh:property imbor-sw:Overstortput_Duikschot_card, imbor-sw:Overstortput_OvertolligAfvalwaterLatenWegstromen_card.
 gwsw:Duikschot a sh:NodeShape;
-    sh:property imbor-sw:Duikschot_VerhinderenDatOpdrijvendMateriaalAfstroomt_card;
-    sh:closed "false".
+    sh:property imbor-sw:Duikschot_VerhinderenDatOpdrijvendMateriaalAfstroomt_card.

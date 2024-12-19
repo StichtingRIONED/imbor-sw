@@ -15,14 +15,6 @@
   },
   {
     "remarks": [
-      "Item nr 969"
-    ],
-    "gwsw": "BelastingklasseDIN19580_EN1433",
-    "imbor": "imbor:d037985e-ba7f-4146-ac41-92ab1a79438c",
-    "action": "replace"
-  },
-  {
-    "remarks": [
       "Item nr 56",
       "20240327/overleg: GWSW neemt IMBOR-concept over",
       "20231229/tm: Zit inderdaad in IMBOR binnen Communicatieprotocol. Wordt breder gebruikt dan Riolering, dus waar nodig IMBOR lijst aanvullen en IMBOR concept overnemen."
@@ -63,15 +55,6 @@
   },
   {
     "remarks": [
-      "Item nr 456",
-      "20241213/overleg: Is een IMBOR term"
-    ],
-    "gwsw": "Aansluiting",
-    "imbor": "imbor:93e18816-83f8-4e96-86c2-f2127f399d1c",
-    "action": "replace"
-  },
-  {
-    "remarks": [
       "Item nr 1",
       "20241119/mv: Overlegd met Rik: GWSW-activiteiten zoals inspecteren, reinigen kunnen meedoen in IMBOR-SW (Activiteit ingeschakeld in het GWSW-deelmodel)",
       "20231229/tm: inderdaad.  nen2660:Activity vervangt deze GWSW term.",
@@ -89,6 +72,17 @@
     "gwsw": "ADSL",
     "imbor": "imbor:d6a6b309-4a58-48ec-b284-65e732352070",
     "action": "replace"
+  },
+  {
+    "remarks": [
+      "Item nr 4",
+      "20240327/overleg: in IMBOR wordt dit een superprop",
+      "20240307/mv: In GWSW als abstract supertype opgenomen, kan er uit, wordt niet gebruikt in toepassingen (sparql).",
+      "20231229/tm: Bespreekgeval, want dit is een zeer algemeen begrip. Waarom zit dit in GWSW? IMBOR verwijst naar externe informatiemodellen en maakt attributen geen subklassen van abstractere begrippen.",
+      "20231219/ro:  Zit in IMBOR als een aantal specifieke attributen. "
+    ],
+    "gwsw": "Afstand",
+    "action": "remove"
   },
   {
     "remarks": [
@@ -167,6 +161,14 @@
     ],
     "gwsw": "Beheerder",
     "imbor": "imbor:8cb1bf27-67aa-47f5-a85c-b3b19e3f2ef2",
+    "action": "replace"
+  },
+  {
+    "remarks": [
+      "Item nr 969"
+    ],
+    "gwsw": "BelastingklasseDIN19580_EN1433",
+    "imbor": "imbor:d037985e-ba7f-4146-ac41-92ab1a79438c",
     "action": "replace"
   },
   {
@@ -1300,6 +1302,15 @@
   },
   {
     "remarks": [
+      "Item nr 44",
+      "20240327/overleg: GWSW gebruikt nen2660:RuimtelijkGebied, daaronder valt ook compariment",
+      "20231229/tm: Inderdaad een IMBOR term. "
+    ],
+    "gwsw": "Ruimte",
+    "action": "remove"
+  },
+  {
+    "remarks": [
       "Item nr 45",
       "20231229/tm: Inderdaad een IMBOR term. "
     ],
@@ -1685,26 +1696,6 @@
   },
   {
     "remarks": [
-      "Item nr 4",
-      "20240327/overleg: in IMBOR wordt dit een superprop",
-      "20240307/mv: In GWSW als abstract supertype opgenomen, kan er uit, wordt niet gebruikt in toepassingen (sparql).",
-      "20231229/tm: Bespreekgeval, want dit is een zeer algemeen begrip. Waarom zit dit in GWSW? IMBOR verwijst naar externe informatiemodellen en maakt attributen geen subklassen van abstractere begrippen.",
-      "20231219/ro:  Zit in IMBOR als een aantal specifieke attributen. "
-    ],
-    "gwsw": "Afstand",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 44",
-      "20240327/overleg: GWSW gebruikt nen2660:RuimtelijkGebied, daaronder valt ook compariment",
-      "20231229/tm: Inderdaad een IMBOR term. "
-    ],
-    "gwsw": "Ruimte",
-    "action": "remove"
-  },
-  {
-    "remarks": [
       "Item nr 2673"
     ],
     "gwsw": "Aanlegdiepte",
@@ -1783,6 +1774,14 @@
   },
   {
     "remarks": [
+      "Item nr 2675",
+      "20241216/mv: In GWSW-model aangepast: BelastingklasseDIN19580_EN1433 wordt een subtype van kenmerk Belastingklasse."
+    ],
+    "gwsw": "Belastingklasse",
+    "action": "remove"
+  },
+  {
+    "remarks": [
       "Item nr 970"
     ],
     "gwsw": "BelastingklasseDIN19580_EN1433Coll",
@@ -1807,6 +1806,15 @@
   },
   {
     "remarks": [
+      "Item nr 103",
+      "20231229/tm: Attribuut of subklasse maken van IMBOR attribuut, of GWSW constraint maken voor Bouwwerk + IMBOR breedte. (Twee exclusieve offen.)",
+      "20231219/ro:  Als attribuut breedte van Bouwwerk. "
+    ],
+    "gwsw": "BreedteBouwwerk",
+    "action": "remove"
+  },
+  {
+    "remarks": [
       "Item nr 1009",
       "20241207/mv: Deze wordt wel een subproperty, het kenmerk breedte ontbreekt in IMBOR-Kern. Enzovoort voor meer props.",
       "20231229/tm: relateren aan IMBOR breedte"
@@ -1814,6 +1822,49 @@
     "gwsw": "BreedteCompartiment",
     "imbor": "imbor:4af7d3cc-a139-4c7e-83c0-67ea8b628001",
     "action": "parent"
+  },
+  {
+    "remarks": [
+      "Item nr 104",
+      "20241207/mv: Zie verder item 8",
+      "20231229/tm: Attribuut of subklasse maken van IMBOR attribuut, of GWSW constraint maken voor Deksel + IMBOR breedte. (Twee exclusieve offen.)",
+      "20231219/ro:  Als attribuut breedte. "
+    ],
+    "gwsw": "BreedteDeksel",
+    "action": "remove"
+  },
+  {
+    "remarks": [
+      "Item nr 9",
+      "20240327/overleg: zie item 8",
+      "20231229/tm: idem verwerken als bij hoogte bouwwerk",
+      "20231219/ro:  Breedte is een attribuut van Kast. "
+    ],
+    "gwsw": "BreedteKast",
+    "action": "remove"
+  },
+  {
+    "remarks": [
+      "Item nr 105"
+    ],
+    "gwsw": "BreedteLeiding",
+    "action": "remove"
+  },
+  {
+    "remarks": [
+      "Item nr 1011",
+      "20231229/tm: relateren aan IMBOR breedte"
+    ],
+    "gwsw": "BreedteOpening",
+    "action": "remove"
+  },
+  {
+    "remarks": [
+      "Item nr 1012",
+      "20231229/tm: relateren aan IMBOR breedte"
+    ],
+    "gwsw": "BreedtePut",
+    "action": "remove"
   },
   {
     "remarks": [
@@ -1857,11 +1908,34 @@
   },
   {
     "remarks": [
+      "Item nr 135",
+      "20231229/tm: Attribuut of subklasse maken van IMBOR attribuut, of GWSW constraint maken voor Deksel + IMBOR diameter. (Twee exclusieve offen.)",
+      "20231219/ro:  Als attribuut diamter. "
+    ],
+    "gwsw": "DiameterDeksel",
+    "action": "remove"
+  },
+  {
+    "remarks": [
+      "Item nr 136"
+    ],
+    "gwsw": "DiameterLeiding",
+    "action": "remove"
+  },
+  {
+    "remarks": [
       "Item nr 137"
     ],
     "gwsw": "DiameterOpening",
     "imbor": "imbor:638eff22-a320-43ae-889a-0a0b5f83dceb",
     "action": "parent"
+  },
+  {
+    "remarks": [
+      "Item nr 1422"
+    ],
+    "gwsw": "DiameterPut",
+    "action": "remove"
   },
   {
     "remarks": [
@@ -1905,11 +1979,59 @@
   },
   {
     "remarks": [
+      "Item nr 30",
+      "20231229/tm: GWSW term kan vervallen, zie punt",
+      "20231219/ro:  Hoogte is attribuut van Gebouw en Bouwwerk."
+    ],
+    "gwsw": "HoogteBouwwerk",
+    "action": "remove"
+  },
+  {
+    "remarks": [
       "Item nr 2685"
     ],
     "gwsw": "HoogteCompartiment",
     "imbor": "imbor:f46c02ba-18ac-4f9f-856a-64dd56591700",
     "action": "parent"
+  },
+  {
+    "remarks": [
+      "Item nr 190",
+      "20231229/tm: Attribuut of subklasse maken van IMBOR attribuut, of GWSW constraint maken voor Deksel + IMBOR hoogte. (Twee exclusieve offen.)",
+      "20231219/ro:  Als attribuut hoogte. "
+    ],
+    "gwsw": "HoogteDeksel",
+    "action": "remove"
+  },
+  {
+    "remarks": [
+      "Item nr 191",
+      "20231229/tm: Attribuut of subklasse maken van IMBOR attribuut, of GWSW constraint maken voor Kast + IMBOR hoogte. (Twee exclusieve offen.)"
+    ],
+    "gwsw": "HoogteKast",
+    "action": "remove"
+  },
+  {
+    "remarks": [
+      "Item nr 192",
+      "20231229/tm: Attribuut of subklasse maken van IMBOR attribuut, of GWSW constraint maken voor Leiding + IMBOR hoogte. (Twee exclusieve offen.)"
+    ],
+    "gwsw": "HoogteLeiding",
+    "action": "remove"
+  },
+  {
+    "remarks": [
+      "Item nr 1635"
+    ],
+    "gwsw": "HoogteOpening",
+    "action": "remove"
+  },
+  {
+    "remarks": [
+      "Item nr 1636"
+    ],
+    "gwsw": "HoogtePut",
+    "action": "remove"
   },
   {
     "remarks": [
@@ -1937,11 +2059,59 @@
   },
   {
     "remarks": [
+      "Item nr 246",
+      "20231229/tm: Attribuut of subklasse maken van IMBOR attribuut, of GWSW constraint maken voor Bouwwerk + IMBOR lengte. (Twee exclusieve offen.)",
+      "20231219/ro:  Als attribuut lengte van Bouwwerk. "
+    ],
+    "gwsw": "LengteBouwwerk",
+    "action": "remove"
+  },
+  {
+    "remarks": [
+      "Item nr 1774"
+    ],
+    "gwsw": "LengteBuisdeel",
+    "action": "remove"
+  },
+  {
+    "remarks": [
       "Item nr 1775"
     ],
     "gwsw": "LengteCompartiment",
     "imbor": "imbor:2b1b2ffa-6cdd-4c54-b8c3-475757e347ff",
     "action": "parent"
+  },
+  {
+    "remarks": [
+      "Item nr 247",
+      "20231219/ro:  Als attribuut lengte. ",
+      "20231229/tm: Attribuut of subklasse maken van IMBOR attribuut, of GWSW constraint maken voor Deksel + IMBOR lengte. (Twee exclusieve offen.)"
+    ],
+    "gwsw": "LengteDeksel",
+    "action": "remove"
+  },
+  {
+    "remarks": [
+      "Item nr 248",
+      "20231229/tm: Attribuut of subklasse maken van IMBOR attribuut, of GWSW constraint maken voor Kast + IMBOR lengte. (Twee exclusieve offen.)"
+    ],
+    "gwsw": "LengteKast",
+    "action": "remove"
+  },
+  {
+    "remarks": [
+      "Item nr 249",
+      "20231229/tm: Attribuut of subklasse maken van IMBOR attribuut, of GWSW constraint maken voor Leiding + IMBOR lengte. (Twee exclusieve offen.)"
+    ],
+    "gwsw": "LengteLeiding",
+    "action": "remove"
+  },
+  {
+    "remarks": [
+      "Item nr 1776"
+    ],
+    "gwsw": "LengtePut",
+    "action": "remove"
   },
   {
     "remarks": [
@@ -1989,11 +2159,29 @@
   },
   {
     "remarks": [
+      "Item nr 39",
+      "20240327/overleg: zie item 38",
+      "20231229/tm: Exact. Dit is in lijn met de discussie om materiaal eenzijdig te modelleren, d.w.z. conform nen2660:Matter",
+      "20231219/ro:  Materiaal is nen2660:Matter en kan verbonden worden met alle discrete objecten in IMBOR. Er zijn geen directe relaties tussen Gebouw en/of Bouwwerk en materialen nu aanwezig. "
+    ],
+    "gwsw": "MateriaalBouwwerk",
+    "action": "remove"
+  },
+  {
+    "remarks": [
       "Item nr 1821"
     ],
     "gwsw": "MateriaalDekselColl",
     "imbor": "nen2660:EnumerationType",
     "action": "parent"
+  },
+  {
+    "remarks": [
+      "Item nr 262",
+      "20231229/tm: modellering nen2660Matter nastreven."
+    ],
+    "gwsw": "MateriaalLeiding",
+    "action": "remove"
   },
   {
     "remarks": [
@@ -2013,6 +2201,13 @@
   },
   {
     "remarks": [
+      "Item nr 1825"
+    ],
+    "gwsw": "MateriaalPut",
+    "action": "remove"
+  },
+  {
+    "remarks": [
       "Item nr 1826"
     ],
     "gwsw": "MateriaalPutColl",
@@ -2029,6 +2224,13 @@
     "gwsw": "Ondergrond",
     "imbor": "nen3610:GeografischeRuimte",
     "action": "parent"
+  },
+  {
+    "remarks": [
+      "Item nr 2101"
+    ],
+    "gwsw": "OnderscheidendKenmerk",
+    "action": "remove"
   },
   {
     "remarks": [
@@ -2189,6 +2391,13 @@
   },
   {
     "remarks": [
+      "Item nr 2543"
+    ],
+    "gwsw": "VerzamelingSoorten",
+    "action": "remove"
+  },
+  {
+    "remarks": [
       "Item nr 2566"
     ],
     "gwsw": "VoegmateriaalColl",
@@ -2253,6 +2462,13 @@
   },
   {
     "remarks": [
+      "Item nr 2577"
+    ],
+    "gwsw": "VormPut",
+    "action": "remove"
+  },
+  {
+    "remarks": [
       "Item nr 2578"
     ],
     "gwsw": "VormPutColl",
@@ -2306,230 +2522,5 @@
     "gwsw": "Zuiveringsvoorziening",
     "imbor": "nen2660:EnumerationType",
     "action": "parent"
-  },
-  {
-    "remarks": [
-      "Item nr 2675",
-      "20241216/mv: In GWSW-model aangepast: BelastingklasseDIN19580_EN1433 wordt een subtype van kenmerk Belastingklasse."
-    ],
-    "gwsw": "Belastingklasse",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 103",
-      "20231229/tm: Attribuut of subklasse maken van IMBOR attribuut, of GWSW constraint maken voor Bouwwerk + IMBOR breedte. (Twee exclusieve offen.)",
-      "20231219/ro:  Als attribuut breedte van Bouwwerk. "
-    ],
-    "gwsw": "BreedteBouwwerk",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 104",
-      "20241207/mv: Zie verder item 8",
-      "20231229/tm: Attribuut of subklasse maken van IMBOR attribuut, of GWSW constraint maken voor Deksel + IMBOR breedte. (Twee exclusieve offen.)",
-      "20231219/ro:  Als attribuut breedte. "
-    ],
-    "gwsw": "BreedteDeksel",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 9",
-      "20240327/overleg: zie item 8",
-      "20231229/tm: idem verwerken als bij hoogte bouwwerk",
-      "20231219/ro:  Breedte is een attribuut van Kast. "
-    ],
-    "gwsw": "BreedteKast",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 105"
-    ],
-    "gwsw": "BreedteLeiding",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 1011",
-      "20231229/tm: relateren aan IMBOR breedte"
-    ],
-    "gwsw": "BreedteOpening",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 1012",
-      "20231229/tm: relateren aan IMBOR breedte"
-    ],
-    "gwsw": "BreedtePut",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 135",
-      "20231229/tm: Attribuut of subklasse maken van IMBOR attribuut, of GWSW constraint maken voor Deksel + IMBOR diameter. (Twee exclusieve offen.)",
-      "20231219/ro:  Als attribuut diamter. "
-    ],
-    "gwsw": "DiameterDeksel",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 136"
-    ],
-    "gwsw": "DiameterLeiding",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 1422"
-    ],
-    "gwsw": "DiameterPut",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 30",
-      "20231229/tm: GWSW term kan vervallen, zie punt",
-      "20231219/ro:  Hoogte is attribuut van Gebouw en Bouwwerk."
-    ],
-    "gwsw": "HoogteBouwwerk",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 190",
-      "20231229/tm: Attribuut of subklasse maken van IMBOR attribuut, of GWSW constraint maken voor Deksel + IMBOR hoogte. (Twee exclusieve offen.)",
-      "20231219/ro:  Als attribuut hoogte. "
-    ],
-    "gwsw": "HoogteDeksel",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 191",
-      "20231229/tm: Attribuut of subklasse maken van IMBOR attribuut, of GWSW constraint maken voor Kast + IMBOR hoogte. (Twee exclusieve offen.)"
-    ],
-    "gwsw": "HoogteKast",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 192",
-      "20231229/tm: Attribuut of subklasse maken van IMBOR attribuut, of GWSW constraint maken voor Leiding + IMBOR hoogte. (Twee exclusieve offen.)"
-    ],
-    "gwsw": "HoogteLeiding",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 1635"
-    ],
-    "gwsw": "HoogteOpening",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 1636"
-    ],
-    "gwsw": "HoogtePut",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 246",
-      "20231229/tm: Attribuut of subklasse maken van IMBOR attribuut, of GWSW constraint maken voor Bouwwerk + IMBOR lengte. (Twee exclusieve offen.)",
-      "20231219/ro:  Als attribuut lengte van Bouwwerk. "
-    ],
-    "gwsw": "LengteBouwwerk",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 1774"
-    ],
-    "gwsw": "LengteBuisdeel",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 247",
-      "20231219/ro:  Als attribuut lengte. ",
-      "20231229/tm: Attribuut of subklasse maken van IMBOR attribuut, of GWSW constraint maken voor Deksel + IMBOR lengte. (Twee exclusieve offen.)"
-    ],
-    "gwsw": "LengteDeksel",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 248",
-      "20231229/tm: Attribuut of subklasse maken van IMBOR attribuut, of GWSW constraint maken voor Kast + IMBOR lengte. (Twee exclusieve offen.)"
-    ],
-    "gwsw": "LengteKast",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 249",
-      "20231229/tm: Attribuut of subklasse maken van IMBOR attribuut, of GWSW constraint maken voor Leiding + IMBOR lengte. (Twee exclusieve offen.)"
-    ],
-    "gwsw": "LengteLeiding",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 1776"
-    ],
-    "gwsw": "LengtePut",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 39",
-      "20240327/overleg: zie item 38",
-      "20231229/tm: Exact. Dit is in lijn met de discussie om materiaal eenzijdig te modelleren, d.w.z. conform nen2660:Matter",
-      "20231219/ro:  Materiaal is nen2660:Matter en kan verbonden worden met alle discrete objecten in IMBOR. Er zijn geen directe relaties tussen Gebouw en/of Bouwwerk en materialen nu aanwezig. "
-    ],
-    "gwsw": "MateriaalBouwwerk",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 262",
-      "20231229/tm: modellering nen2660Matter nastreven."
-    ],
-    "gwsw": "MateriaalLeiding",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 1825"
-    ],
-    "gwsw": "MateriaalPut",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 2101"
-    ],
-    "gwsw": "OnderscheidendKenmerk",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 2543"
-    ],
-    "gwsw": "VerzamelingSoorten",
-    "action": "remove"
-  },
-  {
-    "remarks": [
-      "Item nr 2577"
-    ],
-    "gwsw": "VormPut",
-    "action": "remove"
   }
 ]

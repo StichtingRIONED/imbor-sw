@@ -92,6 +92,13 @@ imbor-sw:aanlegdiepte rdf:type           rdf:Property ;
                       rdfs:subPropertyOf imbor-sw:0dac7828-b6e7-46eb-b538-dd6ac0005eca . # label in IMBOR-Kern = eendimensionale eigenschap 
 </pre>
 
+**URI's externe datamodellen**  
+
+Voor de module IMBOR Stedelijk Water:
+* https://data.gwsw.nl/1.6/totaal/ (gwsw:) - Voor ongewijzigde SW-concepten
+* https://data.crow.nl/imbor-sw/def/ (imbor-sw:) - Voor IMBOR-conforme toevoegingen van SW-concepten in het kern-model (propertyshapes, kenmerk-attributen)
+* https://data.crow.nl/imbor-sw/term/ (imbor-sw-term:) - Voor IMBOR-conforme toevoegingen van SW-concepten in de vocabulaire
+
 ### Deelmodel GWSW-IMBOR-SW omgezet in IMBOR-vorm
 
 In de volgende paragrafen is als voorbeeld een datamodel IMBOR-conform uitgewerkt, het voorbeeld bevat enkele omgezette concepten van GWSW en bijbehorende topconcepten van IMBOR-Kern.
@@ -106,10 +113,6 @@ Voor koppeling met IMBOR-Kern:
 Ter informatie en voor proefnemingen:
 >Het test-datamodel in RDF/Turtle-vorm inclusief IMBOR-Kern: [datamodel imbor-sw-test inclusief Kern](./data%20models%20target/datamodel%20imbor-sw-test%20inclusief%20kern.ttl).   
 >Een test-dataset in RDF/Turtle-vorm (voor SHACL-test): [dataset imbor-sw-test](./data%20models%20target/dataset%20imbor-sw-test.ttl).
-
-**SW prefixes**
-* gwsw: voor ongewijzigde SW-concepten
-* imbor-sw: voor IMBOR-conforme toevoegingen van SW-concepten (propertyshapes, kenmerk-attributen)
 
 ### Klassen
 
@@ -240,7 +243,7 @@ En de property als object van sh:path:
 <pre>
 imbor-sw:maaiveldschematisering
         rdf:type         rdf:Property ;
-        rdfs:seeAlso     imbor-term:8e33d96c-1640-4edc-9123-87448cb9176f ;
+        rdfs:seeAlso     imbor-sw-term:Rioolput ;
         skos:definition  "Aanduiding schematisering maaiveld bij uitstroom van water via de putdeksel."@nl ;
         skos:note        "Enumeratie"@nl ;
         skos:prefLabel   "maaiveldschematisering"@nl .
@@ -285,16 +288,36 @@ In IMBOR-SW is sh:in voldoende (SW-individuen zijn er altijd)
 
 ## Vocabulaire IMBOR
 
-Bij Rioolput verwijst "rdfs:seeAlso  imbor-term:100c3a15-3342-46fd-9f48-843c076571e9" naar het vocabulaire-concept
+Definieer het conceptschema voor de discipline SW:
+<pre>
+imbor-sw-term:term-sw-schema a skos:ConceptScheme;
+    skos:prefLabel "IMBOR-SW Vocabulaire (Begrippenkader voor IMBOR-SW)"@nl;
+    dct:creator "IMBOR-SW - Stichting RIONED"@nl;
+    dct:format "SKOS"@nl;
+    dct:language "Nederlands"@nl;
+    dct:description "Omzetting vanuit GWSW versie 1.6, zie verder de beschrijving bij imbor-term:term-schema.".
+</pre>
+
+Bij Rioolput verwijst "rdfs:seeAlso  imbor-sw-term:Rioolput" naar het vocabulaire-concept.
+De term Rioolput wordt ingedeeld (via skos:member) bij één van de IMBOR-collecties.
 
 <pre>
-imbor-term:100c3a15-3342-46fd-9f48-843c076571e9
+imbor-sw-term:Rioolput
         rdf:type         skos:Concept ;
         skos:broader     imbor-term:291e6f76-66af-4c3c-b37f-12c4f5675429 ; # Verwijst naar supertype "Put"
         skos:definition  "Constructie toegang gevend tot het rioolstelsel."@nl ;
-        skos:inScheme    imbor-term:term-schema ;
+        skos:inScheme    imbor-sw-term:term-sw-schema ;
         skos:prefLabel   "Rioolput"@nl .
+imbor-term:41ab4cca-c6d7-4bfb-9748-28def30e0a3f # IMBOR-collectie "Objecttype"
+        skos:member      imbor-sw-term:Rioolput .
 </pre>
 
 >**SW-Specifiek**
->* conform voorbeeld, behalve skos:inScheme
+- SW-terms zijn member van één van deze IMBOR-collecties:
+  - Objecttype
+  - Attribuut
+  - Enumeratietype
+  - Domeinwaarde
+  - Functie
+
+
