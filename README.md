@@ -62,7 +62,7 @@ Neem altijd de volgende annotaties op:
 
 Definieer restricties voor properties in SHACL-vorm (sh:PropertyShape):
 * de restrictie op datatype
-* de restrictie op waarden (numerieke grenzen, domeintabellen)
+* de restrictie op waarde (numerieke grenzen, domeintabellen)
 * de restrictie op kardinaliteit
 
 **URI's externe datamodellen**  
@@ -254,7 +254,7 @@ imbor-sw:Rioolput_Maaiveldschematisering
         skos:prefLabel          "maaiveldschematisering vastgezet op Rioolput"@nl ;
         sh:path                 imbor-sw:maaiveldschematisering ; # is type rdf:Property
         sh:qualifiedMaxCount    1 ;
-        sh:qualifiedValueShape  [ sh:class  imbor-sw:MaaiveldschematiseringColl ] .
+        sh:qualifiedValueShape  [ sh:class  imbor-sw:MaaiveldschematiseringColl ] . # Achtervang, equivalent aan sh:in 
 </pre>
 
 En de property als object van sh:path:
@@ -274,14 +274,14 @@ imbor-sw:maaiveldschematisering
 >* gescheiden propershapes (met eigen message en severity) voor datatype en kardinaliteit
 >* geen skos:note in property
 
-En de enumeratie: "Gekneveld" is een individu van type "RioolputMaaiveldschematisering"
+En de enumeratie: "Gekneveld" is een individu van type "MaaiveldschematiseringColl"
 
 <pre>
 gwsw:MaaiveldschematiseringColl # De collectie-klasse
         rdf:type         rdfs:Class ;
         rdfs:seeAlso     imbor-sw-term:MaaiveldschematiseringColl ;
         rdfs:subClassOf  nen2660:EnumerationType ;
-        skos:definition  "Het enumeratietype RioolputMaaiveldschematisering is de naam voor de domeinwaardenlijst van de klasse Rioolput en het attribuut maaiveldschematisering."@nl ;
+        skos:definition  "Het enumeratietype MaaiveldschematiseringColl is de naam voor de domeinwaardenlijst van het attribuut maaiveldschematisering."@nl ;
         skos:prefLabel   "Maaiveldschematisering (coll)"@nl ;
         imbor:typeLijst  "Enumeratielijst"@nl .
 
@@ -298,12 +298,12 @@ imbor-sw:MaaiveldschematiseringColl-list-0 # Maak een lijst met individuen
 # Enzovoort, sluit af met
         rdf:rest rdf:nil .
 
-imbor-sw:Maaiveldschematisering # de PropertyShape
+imbor-sw:Rioolput_Maaiveldschematisering # de PropertyShape verwijst naar de lijst
         sh:in   imbor:MaaiveldschematiseringColl-list-0 .
 </pre>
 
 >sh:qualifiedValueShape staat in IMBOR als achtervang, voor het geval het individu niet voorkomt. 
-In IMBOR-SW is sh:in voldoende (SW-individuen zijn er altijd)
+In IMBOR-SW is sh:in voldoende (SW-individuen zijn er)
 
 ## Vocabulaire IMBOR
 
