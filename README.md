@@ -50,14 +50,38 @@ Vergelijk de GWSW en IMBOR-concepten op basis van:
 
 ### Algemene modelleerprincipes IMBOR
 
-Externe datamodellen kunnen **annotaties** toevoegen aan de concepten in IMBOR-Kern (zie Installatiedatum).
+**Definitie klasse en property**
+* een klasse is altijd van het type rdfs:Class (wordt daarmee impliciet sh:TargetClass) 
+* een klasse is ook altijd van het type sh:NodeShape
+* een property is altijd van het type rdf:Property
+
+Neem altijd de volgende annotaties op:
+* rdfs:seeAlso - verwijs naar de vocabulaire-term
+* skos:prefLabel - de voorkeursnaam
+* skos:definition - de definitie
+
+Definieer restricties voor properties in SHACL-vorm (sh:PropertyShape):
+* de restrictie op datatype
+* de restrictie op waarden (numerieke grenzen, domeintabellen)
+* de restrictie op kardinaliteit
+
+**URI's externe datamodellen**  
+
+Voor de module IMBOR Stedelijk Water:
+* https://data.gwsw.nl/1.6/totaal/ (gwsw:) - Voor ongewijzigde SW-concepten
+* https://data.crow.nl/imbor-sw/def/ (imbor-sw:) - Voor IMBOR-conforme toevoegingen van SW-concepten in het kern-model (propertyshapes, kenmerk-attributen)
+* https://data.crow.nl/imbor-sw/term/ (imbor-sw-term:) - Voor IMBOR-conforme toevoegingen van SW-concepten in de vocabulaire
+
+**Annotaties toevoegen**  
+Externe datamodellen kunnen annotaties toevoegen aan de concepten in IMBOR-Kern (zie Installatiedatum).
 Zoals comments over niet gebruikte maar wel geërfde IMBOR-Kern-properties of over uitwisselingsvorm (verwijzing naar GWSW-OroX).
 Bijvoorbeeld:
 <pre>
 imbor:f65dd67b-8c4c-47f6-9ed2-4ab87763bbac rdfs:comment "[GWSW-OroX] gwsw:hasApect gwsw:Begindatum"@nl . # label in IMBOR-Kern = Installatiedatum
 </pre>
 
-Externe datamodellen kunnen **properties** toevoegen aan de concepten in IMBOR-Kern.  
+**Properties toevoegen**  
+Externe datamodellen kunnen properties toevoegen aan de concepten in IMBOR-Kern.  
 Bijvoorbeeld (zie [data.gwsw.nl/imbor-sw/einddatum](https://data.gwsw.nl/1.6.1/imbor-sw/index.html?menu_item=classes&item=../../def/1.6.1/IMBOR-SW/Einddatum)):
 
 <pre>
@@ -70,7 +94,16 @@ imbor-sw:DiscreteObject_Einddatum_card rdf:type           sh:PropertyShape;
     sh:severity sh:Violation.
 </pre>
 
-Externe datamodellen kunnen **relaties** toevoegen aan de concepten in IMBOR-Kern. 
+**Subproperties toevoegen**   
+Externe datamodellen kunnen subproperties toevoegen aan de concepten in IMBOR-Kern.
+Bijvoorbeeld (zie [data.gwsw.nl/imbor-sw/aanlegdiepte](https://data.gwsw.nl/1.6.1/imbor-sw/index.html?menu_item=classes&item=../../def/1.6.1/IMBOR-SW/Aanlegdiepte)).
+<pre>
+imbor-sw:aanlegdiepte rdf:type           rdf:Property ; 
+                      rdfs:subPropertyOf imbor-sw:0dac7828-b6e7-46eb-b538-dd6ac0005eca . # label in IMBOR-Kern = eendimensionale eigenschap 
+</pre>
+
+**Relaties toevoegen**  
+Externe datamodellen kunnen relaties toevoegen aan de concepten in IMBOR-Kern. 
 Bijvoorbeeld (zie [data.gwsw.nl/imbor-sw/Stellaag](https://data.gwsw.nl/1.6.1/imbor-sw/index.html?menu_item=classes&item=../../def/1.6.1/IMBOR-SW/Stellaag)),
 Stellaag is deel van Put:
 
@@ -84,34 +117,6 @@ imbor-sw:b7168388-9eb9-4c95-b35e-1ba2660849e8_Stellaag_card rdf:type sh:Property
     sh:message "Subject b7168388-9eb9-4c95-b35e-1ba2660849e8, path hasPart, object Stellaag - aantal voorkomens wijkt af (max=1)"@nl;
     sh:severity sh:Violation.
 </pre>
-
-Externe datamodellen kunnen **subproperties** toevoegen aan de concepten in IMBOR-Kern.
-Bijvoorbeeld (zie [data.gwsw.nl/imbor-sw/aanlegdiepte](https://data.gwsw.nl/1.6.1/imbor-sw/index.html?menu_item=classes&item=../../def/1.6.1/IMBOR-SW/Aanlegdiepte)).
-<pre>
-imbor-sw:aanlegdiepte rdf:type           rdf:Property ; 
-                      rdfs:subPropertyOf imbor-sw:0dac7828-b6e7-46eb-b538-dd6ac0005eca . # label in IMBOR-Kern = eendimensionale eigenschap 
-</pre>
-
-**Definitie klasse en property**
-* een klasse is altijd van het type rdfs:Class (wordt daarmee impliciet sh:TargetClass) en sh:NodeShape
-* een property is altijd van het type rdf:Property
-
-Neem altijd de volgende annotaties op:
-* rdfs:seeAlso - verwijs naar de vocabulaire-term
-* skos:prefLabel - de voorkeursnaam
-* skos:definition - de definitie
-
-Definieer voor properties in SHACL-vorm (sh:PropertyShape):
-* de restrictie op datatype
-* de restrictie op waarden (numerieke grenzen, domeintabellen)
-* de restrictie op kardinaliteit
-
-**URI's externe datamodellen**  
-
-Voor de module IMBOR Stedelijk Water:
-* https://data.gwsw.nl/1.6/totaal/ (gwsw:) - Voor ongewijzigde SW-concepten
-* https://data.crow.nl/imbor-sw/def/ (imbor-sw:) - Voor IMBOR-conforme toevoegingen van SW-concepten in het kern-model (propertyshapes, kenmerk-attributen)
-* https://data.crow.nl/imbor-sw/term/ (imbor-sw-term:) - Voor IMBOR-conforme toevoegingen van SW-concepten in de vocabulaire
 
 ### Deelmodel GWSW-IMBOR-SW omgezet in IMBOR-vorm
 
