@@ -92,6 +92,20 @@ imbor-sw:aanlegdiepte rdf:type           rdf:Property ;
                       rdfs:subPropertyOf imbor-sw:0dac7828-b6e7-46eb-b538-dd6ac0005eca . # label in IMBOR-Kern = eendimensionale eigenschap 
 </pre>
 
+**Definitie klasse en property**
+* een klasse is altijd van het type rdfs:Class (wordt daarmee impliciet sh:TargetClass) en sh:NodeShape
+* een property is altijd van het type rdf:Property
+
+Neem altijd de volgende annotaties op:
+* rdfs:seeAlso - verwijs naar de vocabulaire-term
+* skos:prefLabel - de voorkeursnaam
+* skos:definition - de definitie
+
+Definieer voor properties in SHACL-vorm (sh:PropertyShape):
+* de restrictie op datatype
+* de restrictie op waarden (numerieke grenzen, domeintabellen)
+* de restrictie op kardinaliteit
+
 **URI's externe datamodellen**  
 
 Voor de module IMBOR Stedelijk Water:
@@ -121,8 +135,8 @@ Voorbeeld Rioolput en Overstortput
 <pre>
 gwsw:Rioolput
         rdf:type         rdfs:Class, sh:NodeShape ;
-        rdfs:seeAlso     imbor-term:100c3a15-3342-46fd-9f48-843c076571e9 ; # verwijst naar vocabulaire-model
-        rdfs:subClassOf  imbor:b7168388-9eb9-4c95-b35e-1ba2660849e8 ; # verwijst naar IMBOR-concept Put (neutrale/taalonafhankelijke identificatie)
+        rdfs:seeAlso     imbor-sw-term:Rioolput ; # verwijst naar vocabulaire-model
+        rdfs:subClassOf  imbor:b7168388-9eb9-4c95-b35e-1ba2660849e8 ; # supertype is IMBOR-concept Put (neutrale/taalonafhankelijke identificatie)
         skos:definition  "Constructie toegang gevend tot het rioolstelsel."@nl  ;
         skos:prefLabel   "Rioolput"@nl  ;
         sh:property      imbor-sw:Rioolput_Functie_LeidingenAansluiten ; # zie volgende paragrafen
@@ -176,7 +190,7 @@ En de definitie van de functie-klasse
 <pre>
 gwsw:LeidingenAansluiten a rdfs:Class, sh:NodeShape;
         dash:abstract           false;
-        rdfs:seeAlso            imbor-term:f584ecc4-8c48-4494-b75d-fbbf3901be13;
+        rdfs:seeAlso            imbor-sw-term:LeidingenAansluiten;
         rdfs:subClassOf         sml:Function;
         skos:definition         "Het object wordt gebruikt om leidingen aan te sluiten."@nl;
         skos:prefLabel          "Leidingen aansluiten"@nl.
@@ -215,7 +229,7 @@ En de property als object van sh:path:
 <pre>
 imbor-sw:aantal_ieRecreatie
         rdf:type         rdf:Property ;
-        rdfs:seeAlso     imbor-term:c3f45eea-738c-4a37-906b-d872192e0c08 ;
+        rdfs:seeAlso     imbor-sw-term:aantal_ieRecreatie ;
         skos:definition  "Aantal i.e. recreatie-eenheden."@nl ;
         skos:note        "Vrij invoerveld"@nl ;
         skos:prefLabel   "aantal i.e. recreatie"@nl .
@@ -243,7 +257,7 @@ En de property als object van sh:path:
 <pre>
 imbor-sw:maaiveldschematisering
         rdf:type         rdf:Property ;
-        rdfs:seeAlso     imbor-sw-term:Rioolput ;
+        rdfs:seeAlso     imbor-sw-term:maaiveldschematisering ;
         skos:definition  "Aanduiding schematisering maaiveld bij uitstroom van water via de putdeksel."@nl ;
         skos:note        "Enumeratie"@nl ;
         skos:prefLabel   "maaiveldschematisering"@nl .
@@ -258,28 +272,28 @@ imbor-sw:maaiveldschematisering
 En de enumeratie: "Gekneveld" is een individu van type "RioolputMaaiveldschematisering"
 
 <pre>
-imbor-sw:MaaiveldschematiseringColl # De collectie-klasse
+gwsw:MaaiveldschematiseringColl # De collectie-klasse
         rdf:type         rdfs:Class ;
-        rdfs:seeAlso     imbor-term:2dfe6c5a-74cf-48a5-9f53-97f1cf50d655 ;
+        rdfs:seeAlso     imbor-sw-term:MaaiveldschematiseringColl ;
         rdfs:subClassOf  nen2660:EnumerationType ;
         skos:definition  "Het enumeratietype RioolputMaaiveldschematisering is de naam voor de domeinwaardenlijst van de klasse Rioolput en het attribuut maaiveldschematisering."@nl ;
         skos:prefLabel   "Maaiveldschematisering (coll)"@nl ;
         imbor:typeLijst  "Enumeratielijst"@nl .
 
-imbor-domeinwaarde:184c2d2e-6990-4b84-a334-875dc4c0b09b # Het individu "Gekneveld"
+gwsw:Gekneveld # Het individu "Gekneveld"
         rdf:type         imbor:MaaiveldschematiseringColl ;
-        rdfs:seeAlso     imbor-term:90139b60-08e5-4dd8-8899-0af7882c6505 ;
+        rdfs:seeAlso     imbor-sw-term:Gekneveld ;
         skos:definition  "Een maaiveldschematisering die op een bepaalde manier gesloten is met knevels, dat wil zeggen met voorzieningen bedoeld om een afdekking af te dichten."@nl ;
         skos:prefLabel   "Gekneveld"@nl .
 
-imbor:MaaiveldschematiseringColl-list-0 # Maak een lijst met individuen
+imbor-sw:MaaiveldschematiseringColl-list-0 # Maak een lijst met individuen
         rdf:type   rdf:List ;
-        rdf:first  imbor-domeinwaarde:184c2d2e-6990-4b84-a334-875dc4c0b09b ; # het collectie-element (individu)
+        rdf:first  imbor-domeinwaarde:Gekneveld ; # het collectie-element (individu)
         rdf:rest   imbor:MaaiveldschematiseringColl-list-1 . 
 # Enzovoort, sluit af met
         rdf:rest rdf:nil .
 
-imbor-sw:Rioolput_Maaiveldschematisering # de PropertyShape
+imbor-sw:Maaiveldschematisering # de PropertyShape
         sh:in   imbor:MaaiveldschematiseringColl-list-0 .
 </pre>
 
@@ -307,6 +321,8 @@ imbor-sw-term:Rioolput
         skos:broader     imbor-term:291e6f76-66af-4c3c-b37f-12c4f5675429 ; # Verwijst naar supertype "Put"
         skos:definition  "Constructie toegang gevend tot het rioolstelsel."@nl ;
         skos:inScheme    imbor-sw-term:term-sw-schema ;
+        skos:altLabel    "Voorbeeld"@nl ; # Neem synoniemen ook in de vocabulaire op
+        skos:note        "Voorbeeld"@nl ; # En eventuele notities ook in de vocabulaire
         skos:prefLabel   "Rioolput"@nl .
 imbor-term:41ab4cca-c6d7-4bfb-9748-28def30e0a3f # IMBOR-collectie "Objecttype"
         skos:member      imbor-sw-term:Rioolput .
