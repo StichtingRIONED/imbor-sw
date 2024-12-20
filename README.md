@@ -120,7 +120,7 @@ imbor-sw:b7168388-9eb9-4c95-b35e-1ba2660849e8_Stellaag_card rdf:type sh:Property
 
 ### Deelmodel GWSW-IMBOR-SW omgezet in IMBOR-vorm
 
-In de volgende paragrafen is als voorbeeld een datamodel IMBOR-conform uitgewerkt, het voorbeeld bevat enkele omgezette concepten van GWSW en bijbehorende topconcepten van IMBOR-Kern.
+In de volgende paragrafen is als voorbeeld een datamodel IMBOR-conform uitgewerkt, dit test-datamodel bevat enkele omgezette concepten van GWSW en bijbehorende topconcepten van IMBOR-Kern.
 
 Gemodelleerd zijn de fysieke objecten **rioolput** en **overstortput** inclusief enkele **kenmerken**.
 Zie ook het test-datamodel in de GWSW/RDF-viewer: [data.gwsw.nl/imbor-sw-test](https://data.gwsw.nl/1.6.1/imbor-sw-test/index.html?menu_item=classes).   
