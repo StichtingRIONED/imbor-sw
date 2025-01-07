@@ -69,7 +69,7 @@ Definieer restricties voor properties in SHACL-vorm (sh:PropertyShape):
 
 Voor de module IMBOR Stedelijk Water:
 * https://data.gwsw.nl/1.6/totaal/ (gwsw:) - Voor ongewijzigde SW-concepten
-* https://data.crow.nl/imbor-sw/def/ (imbor-sw:) - Voor IMBOR-conforme toevoegingen van SW-concepten in het kern-model (propertyshapes, kenmerk-attributen)
+* https://data.crow.nl/imbor-sw/def/ (imbor-sw:) - Gewijzigde SW-concepten voor IMBOR-conforme toevoegingen aan het IMBOR-datamodel (propertyshapes, kenmerk-attributen)
 * https://data.crow.nl/imbor-sw/term/ (imbor-sw-term:) - Voor IMBOR-conforme toevoegingen van SW-concepten in de vocabulaire
 
 **Annotaties toevoegen**  
