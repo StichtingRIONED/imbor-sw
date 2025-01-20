@@ -22,7 +22,7 @@ where
 
     ?elem rdf:type ?coll .
   }
-  UNION {
+  UNION { # Functie als collectie erbij
     BIND (IRI(gwsw:Functie) as ?coll)
     ?elem rdf:type gwsw:Functie .
   }
