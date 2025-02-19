@@ -11,7 +11,6 @@ Het ontwerp omvat het volgende:
 * Functionele beschrijving van de conversie GWSW naar IMBOR-SW [GWSW in IMBOR-vorm](#gwsw-in-imbor-vorm)
 
 ## GWSW Deelmodel IMBOR-SW 
-
 Indeling (vergelijkbaar met deelmodel GWSW Basis): CoF-en TOP, BAS, MDS, HYD (excl. NLCS). Gebruik conformiteitsklasse 6.
 
 Om te komen tot de presentatie op [data.gwsw.nl/imbor-sw](https://data.gwsw.nl/1.6.1/imbor-sw/index.html?menu_item=classes) worden de volgende stappen doorlopen:
@@ -30,10 +29,11 @@ De app in repository gwsw_worker maakt de conversie van het deelmodel GWSW-IMBOR
 De werkbladen in de spreadsheet Mapping GWSW IMBOR.xlsm:
 - *vervallen (202412150): het blad IMBOR: Gebruik de query IMBOR Classes+Props.rq in de map queries. De query draait op IMBOR-Kern (zie map datamodellen).*
 - het blad **IMBORVoc_Termen**: bevat de termen-tabel vanuit MS-Access.
-- het blad **GWSW**: met de SPARQL-query Klassen binnen GWSW-Lijsten en de query GWSW Collecties.rq in de map queries. 
+- het blad **GWSW**: bevat de GWSW-concepten op basis van de SPARQL-queries **Klassen.rq** binnen 
+[GWSW-Lijsten](https://github.com/StichtingRIONED/gwsw_queries/blob/main/model/Lijsten/Klassen.rq) en **GWSW Collecties.rq** in de map [queries](./queries). 
 
 **Gegevensbron blad GWSW**
->De SPARQL-queries draaien op het deelmodel GWSW-IMBOR-SW. Gebruik GraphDB-repository GWSW_IMBOR-SW_v161 (zie map datamodellen voor de inhoud).
+>De SPARQL-queries draaien op het deelmodel GWSW-IMBOR-SW. Gebruik GraphDB-repository GWSW_IMBOR-SW_v161 (zie map 'datamodels source' voor de inhoud).
 De datamodel GWSW_IMBOR-SW_v161 is het filter op GWSW-IMBOR-SW exclusief het IMBOR-Kern datamodel, denk aan de parameter in app.config.json
 (gebruik voor presentaties van GWSW-IMBOR-SW wel het IMBOR-Kern model).
 
