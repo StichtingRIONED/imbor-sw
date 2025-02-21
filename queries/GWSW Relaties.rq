@@ -26,9 +26,9 @@ where
  ?b owl:onProperty ?property .
  ?b owl:onClass ?object .
 
- ?Class2 rdfs:subClassOf* ?Class1 . # Property path: 0 of meer links
+ #?Class2 rdfs:subClassOf* ?Class1 . # Property path: 0 of meer links
  #?Class2 :hasDateStart ?dat . # alleen GWSW-classes gebruiken
- FILTER (CONTAINS(str(?Class2), ?aft))
+ #FILTER (CONTAINS(str(?Class2), ?aft))
  
  BIND (strafter(str(?Class1), ?aft) AS ?OwnerOfProperty)
  # BIND (strafter(str(?Class2), ?aft) AS ?Subject)
