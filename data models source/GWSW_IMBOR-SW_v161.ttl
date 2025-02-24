@@ -7,7 +7,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
 
 gwsw:FilterDatamodel rdf:type owl:Ontology;
-    owl:versionInfo "Deelmodel IMBOR-SW, filter op CoFs BAS HYD MDS TOP, cfk=6, versie=1.6 (2025-02-22T13:31:00)"@nl;
+    owl:versionInfo "Deelmodel IMBOR-SW, filter op CoFs BAS HYD MDS TOP, cfk=6, versie=1.6 (2025-02-24T18:46:06)"@nl;
     rdfs:label "Deelmodel IMBOR-SW, filter collectie_BASHYDMDSTOP6_v1.6"@nl.
 gwsw:hasAspect rdfs:label "has as aspect"@en;
     a owl:ObjectProperty.
@@ -1614,14 +1614,6 @@ _:n3-1420 gwsw:hasAuthorChange "Marinus Vonhof";
     owl:onClass gwsw:Buitengrens;
     owl:onProperty gwsw:hasAspect;
     owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger.
-_:n3-1421 gwsw:hasAuthorChange "Marinus Vonhof";
-    gwsw:hasDateChange "2020-04-18"^^xsd:date;
-    gwsw:hasAuthorStart "Marinus Vonhof";
-    gwsw:hasDateStart "2013-10-05"^^xsd:date;
-    a owl:Restriction;
-    owl:onClass gwsw:InrichtingBovengrond;
-    owl:onProperty gwsw:hasAspect;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger.
 _:n3-1422 a owl:Restriction;
     owl:onProperty gwsw:functie;
     owl:hasValue gwsw:BluswaterLeveren.
@@ -4706,17 +4698,6 @@ _:n3-4114 gwsw:hasAuthorStart "Marinus Vonhof";
 _:n3-4115 a owl:Restriction;
     owl:onProperty gwsw:uitvoering;
     owl:hasValue gwsw:VerbondenMetRioolput.
-_:n3-4136 gwsw:hasAuthorChange "Marinus Vonhof";
-    gwsw:hasDateChange "2020-04-18"^^xsd:date;
-    gwsw:hasAuthorStart "Marinus Vonhof";
-    gwsw:hasDateStart "2013-10-05"^^xsd:date;
-    a owl:Restriction;
-    owl:onClass gwsw:Bovengrond;
-    owl:onProperty gwsw:isAspectOf;
-    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger.
-_:n3-4137 a owl:Restriction;
-    owl:onProperty gwsw:hasReference;
-    owl:allValuesFrom gwsw:InrichtingBovengrondColl.
 _:n3-4196 gwsw:hasAuthorChange "Marinus Vonhof";
     gwsw:hasDateChange "2019-05-15"^^xsd:date;
     gwsw:hasAuthorStart "Finy Teitsma (Oranjewoud)";
@@ -12079,6 +12060,7 @@ gwsw:BGTCode rdfs:label "BGT Code"@nl;
     skos:definition "Code binnen de Basisregistratie Grootschalige Topografie. De code kan informatie bevatten over het soort object en de locatie. De BGT-code van een gebouw bevat vaak de BAG-code."@nl;
     gwsw:hasAuthorStart "Marinus Vonhof";
     gwsw:hasDateStart "2020-05-28"^^xsd:date;
+    skos:altLabel "Identificatie geovoorziening"@nl;
     rdfs:comment "[is aspect]";
     skos:scopeNote gwsw:Cof_BAS;
     a owl:Class;
@@ -13769,7 +13751,7 @@ gwsw:Bovengrond rdfs:label "Bovengrond"@nl;
     rdfs:comment "[cfk fout]";
     skos:scopeNote gwsw:Cof_TOP;
     a owl:Class;
-    rdfs:subClassOf gwsw:Ruimte, _:n3-1421.
+    rdfs:subClassOf gwsw:Ruimte.
 gwsw:Ruimte rdfs:label "Ruimte"@en;
     gwsw:hasAuthorChange "Marinus Vonhof";
     gwsw:hasDateChange "2017-11-16"^^xsd:date;
@@ -13783,18 +13765,6 @@ gwsw:Ruimte rdfs:label "Ruimte"@en;
     a owl:Class;
     rdfs:subClassOf _:n3-6887;
     owl:disjointWith gwsw:FysiekObject.
-gwsw:InrichtingBovengrond rdfs:label "Inrichting bovengrond"@nl;
-    gwsw:hasAuthorStart "Marinus Vonhof";
-    gwsw:hasDateStart "2013-10-05"^^xsd:date;
-    rdfs:comment "[is aspect]";
-    skos:scopeNote gwsw:Cof_BAS, gwsw:Cof_DMO;
-    a owl:Class;
-    rdfs:subClassOf gwsw:Kenmerk, _:n3-4136, _:n3-4137.
-gwsw:InrichtingBovengrondColl rdfs:label "Inrichting bovengrond (coll)"@nl;
-    rdfs:comment "[is coll]";
-    skos:scopeNote gwsw:Cof_BAS, gwsw:Cof_DMO;
-    a owl:Class;
-    rdfs:subClassOf gwsw:VerzamelingSoorten, _:n3-4138.
 gwsw:Brandput rdfs:label "Brandput"@nl;
     skos:definition "Put, in de grond geslagen tot aan een watervoerende laag"@nl;
     rdfs:seeAlso "https://nl.wikipedia.org/wiki/Nortonpijp";
@@ -13982,11 +13952,6 @@ gwsw:Wanddikte rdfs:label "Wanddikte"@nl;
     skos:scopeNote gwsw:Cof_MDS, gwsw:Cof_EN, gwsw:Cof_RRB, gwsw:Cof_HYD, gwsw:Cof_PLI;
     a owl:Class;
     rdfs:subClassOf gwsw:Dikte, _:n3-8681, _:n3-8682, _:n3-8683, _:n3-8684.
-gwsw:StatusFunctionerenColl rdfs:label "Status functioneren (coll)"@nl;
-    rdfs:comment "[is coll]";
-    skos:scopeNote gwsw:Cof_REV, gwsw:Cof_BAS, gwsw:Cof_DMO;
-    a owl:Class;
-    rdfs:subClassOf gwsw:VerzamelingSoorten, _:n3-7128.
 gwsw:Vlak rdfs:label "Vlak"@nl;
     gwsw:hasAuthorChange "Marinus Vonhof";
     gwsw:hasDateChange "2019-05-15"^^xsd:date;
@@ -14445,7 +14410,7 @@ gwsw:DatumInwinning rdfs:label "Datum inwinning"@nl;
     gwsw:hasAuthorStart "Marinus Vonhof";
     gwsw:hasDateStart "2015-10-29"^^xsd:date;
     gwsw:hasUnit "yyyymmdd";
-    skos:altLabel "Invwinningsdatum"@nl;
+    skos:altLabel "Inwinningsdatum"@nl;
     rdfs:comment "[is aspect]";
     skos:scopeNote gwsw:Cof_TOP;
     a owl:Class;
@@ -14658,11 +14623,6 @@ gwsw:OnderscheidendKenmerk rdfs:label "Onderscheidend kenmerk"@nl;
     skos:scopeNote gwsw:Cof_TOP;
     a owl:Class;
     rdfs:subClassOf gwsw:Kenmerk.
-gwsw:WegtypeColl rdfs:label "Wegtype (coll)"@nl;
-    rdfs:comment "[is coll]";
-    skos:scopeNote gwsw:Cof_BAS;
-    a owl:Class;
-    rdfs:subClassOf gwsw:VerzamelingSoorten, _:n3-8812.
 gwsw:MaximaleCapaciteitDoorlaat rdfs:label "Maximale capaciteit doorlaat"@nl;
     gwsw:hasAuthorChange "Marinus Vonhof", "Johan Post";
     gwsw:hasDateChange "2025-01-16"^^xsd:date, "2022-11-25"^^xsd:date;
@@ -15551,11 +15511,6 @@ gwsw:Geometrie rdfs:label "Geometrie"@nl;
     skos:scopeNote gwsw:Cof_TOP;
     a owl:Class;
     rdfs:subClassOf gwsw:Kenmerk, _:n3-3309, _:n3-3310.
-gwsw:StatusMaatregelColl rdfs:label "Status maatregel (coll)"@nl;
-    rdfs:comment "[is coll]";
-    skos:scopeNote gwsw:Cof_MDS, gwsw:Cof_MTR;
-    a owl:Class;
-    rdfs:subClassOf gwsw:VerzamelingSoorten, _:n3-7135.
 gwsw:Vuilwaterstelsel rdfs:label "Vuilwaterstelsel"@nl;
     gwsw:hasAuthorChange "Eric van Gorkom", "Johan Post";
     gwsw:hasDateChange "2021-10-01"^^xsd:date, "2024-05-13"^^xsd:date;
@@ -16152,24 +16107,11 @@ gwsw:WijzeVanInwinning rdfs:label "Wijze van inwinning"@nl;
     skos:definition "Wijze waarop gegevens verzameld zijn"@nl;
     gwsw:hasAuthorStart "Marinus Vonhof";
     gwsw:hasDateStart "2013-02-05"^^xsd:date;
+    skos:altLabel "Wijze van inwinnen"@nl;
     rdfs:comment "[is aspect]";
     skos:scopeNote gwsw:Cof_TOP;
     a owl:Class;
     rdfs:subClassOf gwsw:Kenmerk, _:n3-8845, _:n3-8846.
-_:n3-4138 a owl:Class;
-    owl:oneOf _:n3-4139.
-_:n3-4139 rdf:first gwsw:OpenbaarGroen;
-    rdf:rest _:n3-4140.
-_:n3-4140 rdf:first gwsw:InDeWeg;
-    rdf:rest _:n3-4141.
-_:n3-4141 rdf:first gwsw:Trottoir_Fietspad;
-    rdf:rest _:n3-4142.
-_:n3-4142 rdf:first gwsw:ParticuliereGrond;
-    rdf:rest _:n3-4143.
-_:n3-4143 rdf:first gwsw:InDeWegkant;
-    rdf:rest _:n3-4144.
-_:n3-4144 rdf:first gwsw:BraakTerrein;
-    rdf:rest rdf:nil.
 gwsw:VrijvervalTransportstelsel rdfs:label "Vrijverval transportstelsel"@nl;
     gwsw:hasAuthorChange "Marinus Vonhof", "Johan Post";
     gwsw:hasDateChange "2025-01-16"^^xsd:date, "2021-10-01";
@@ -17881,28 +17823,6 @@ _:n3-7061 rdf:first gwsw:Open;
     rdf:rest _:n3-7062.
 _:n3-7062 rdf:first gwsw:Dicht;
     rdf:rest rdf:nil.
-_:n3-7128 a owl:Class;
-    owl:oneOf _:n3-7129.
-_:n3-7129 rdf:first gwsw:InOntwerp;
-    rdf:rest _:n3-7130.
-_:n3-7130 rdf:first gwsw:InGebruik;
-    rdf:rest _:n3-7131.
-_:n3-7131 rdf:first gwsw:InAanleg;
-    rdf:rest _:n3-7132.
-_:n3-7132 rdf:first gwsw:BuitenGebruik;
-    rdf:rest rdf:nil.
-_:n3-7135 a owl:Class;
-    owl:oneOf _:n3-7136.
-_:n3-7136 rdf:first gwsw:Uitgevoerd;
-    rdf:rest _:n3-7137.
-_:n3-7137 rdf:first gwsw:Gepland;
-    rdf:rest _:n3-7138.
-_:n3-7138 rdf:first gwsw:InUitvoering;
-    rdf:rest _:n3-7139.
-_:n3-7139 rdf:first gwsw:InVoorbereiding;
-    rdf:rest _:n3-7140.
-_:n3-7140 rdf:first gwsw:Vervallen;
-    rdf:rest rdf:nil.
 gwsw:Steenwolblok rdfs:label "Steenwolblok"@nl;
     gwsw:hasAuthorChange "Marinus Vonhof", "Johan Post";
     gwsw:hasDateChange "2025-01-16"^^xsd:date, "2024-04-30"^^xsd:date;
@@ -18391,6 +18311,7 @@ gwsw:Waterschapsgebied rdfs:label "Waterschapsgebied"@nl;
     rdfs:seeAlso "[IMGeo:1.0/2007] Regionaal gebied onder het bestuur van een overheidsinstantie (waterschap) die tot taak heeft de waterhuishouding in dit gebied te regelen."@nl;
     gwsw:hasAuthorStart "Marinus Vonhof";
     gwsw:hasDateStart "2015-10-28"^^xsd:date;
+    skos:altLabel "Waterschapgrens"@nl;
     skos:scopeNote gwsw:Cof_BAS;
     a owl:Class;
     rdfs:subClassOf gwsw:RegistratiefGebied.
@@ -18404,16 +18325,6 @@ gwsw:Weesleiding rdfs:label "Weesleiding"@nl;
     skos:scopeNote gwsw:Cof_BAS;
     a owl:Class;
     rdfs:subClassOf gwsw:Leiding, _:n3-8808, _:n3-8809.
-_:n3-8812 a owl:Class;
-    owl:oneOf _:n3-8813.
-_:n3-8813 rdf:first gwsw:Gebiedsontsluitingsweg;
-    rdf:rest _:n3-8814.
-_:n3-8814 rdf:first gwsw:Woonstraat;
-    rdf:rest _:n3-8815.
-_:n3-8815 rdf:first gwsw:DoorgaandeWeg;
-    rdf:rest _:n3-8816.
-_:n3-8816 rdf:first gwsw:Hoofdweg;
-    rdf:rest rdf:nil.
 gwsw:Werveloverstortput rdfs:label "Werveloverstortput"@nl;
     rdfs:seeAlso "[NEN 3300:1996] een overstortput waarbij een cilindrische vorm, een spiraalachtige goot, een duikschot en een langere drempel zijn toegepast en de inhoud voor de drempel is vergroot om de vuiluitworp tijdens overstorting te beperken"@nl;
     gwsw:hasAuthorStart "Marinus Vonhof";
@@ -19474,8 +19385,10 @@ gwsw:Bedrijven rdfs:label "Bedrijven"@nl;
     skos:altLabel "Werkgebied"@nl;
     a gwsw:TypeBebouwingColl.
 gwsw:Winkels rdfs:label "Winkels"@nl;
+    skos:altLabel "Winkelgebied"@nl;
     a gwsw:TypeBebouwingColl.
 gwsw:Woningen rdfs:label "Woningen"@nl;
+    skos:altLabel "Woongebied"@nl;
     a gwsw:TypeBebouwingColl.
 gwsw:KlasseA15 rdfs:label "Klasse A15"@nl;
     gwsw:hasAuthorChange "Marinus Vonhof";
@@ -19541,41 +19454,6 @@ gwsw:VlakkeBodemBanken rdfs:label "Vlakke bodem met banken"@nl;
     gwsw:hasAuthorStart "Johan Post";
     gwsw:hasDateStart "2024-04-30"^^xsd:date;
     a gwsw:BodemprofielColl.
-gwsw:BraakTerrein rdfs:label "Braak terrein"@nl;
-    skos:altLabel "Bouwland"@nl;
-    a gwsw:InrichtingBovengrondColl.
-gwsw:InDeWeg rdfs:label "In de weg"@nl;
-    a gwsw:InrichtingBovengrondColl.
-gwsw:InDeWegkant rdfs:label "In de wegkant"@nl;
-    a gwsw:InrichtingBovengrondColl.
-gwsw:OpenbaarGroen rdfs:label "Openbaar groen"@nl;
-    a gwsw:InrichtingBovengrondColl.
-gwsw:Trottoir_Fietspad rdfs:label "Trottoir / fietspad"@nl;
-    a gwsw:InrichtingBovengrondColl.
-gwsw:ParticuliereGrond rdfs:label "Particuliere grond"@nl;
-    a gwsw:InrichtingBovengrondColl.
-gwsw:BuitenGebruik rdfs:label "Buiten gebruik"@nl;
-    gwsw:hasAuthorChange "Marinus Vonhof";
-    gwsw:hasDateChange "2025-01-16"^^xsd:date;
-    skos:definition "[IMBOR] Statusbeschrijving die aangeeft dat een object niet bruikbaar is voor zijn gebruikelijke functie."@nl;
-    a gwsw:StatusFunctionerenColl.
-gwsw:InAanleg rdfs:label "In aanleg"@nl;
-    gwsw:hasAuthorChange "Marinus Vonhof";
-    gwsw:hasDateChange "2025-01-16"^^xsd:date;
-    skos:definition "[IMBOR] Statusbeschrijving die aangeeft dat een object zich bevindt in het proces van realisatie."@nl;
-    a gwsw:StatusFunctionerenColl.
-gwsw:InGebruik rdfs:label "In gebruik"@nl;
-    gwsw:hasAuthorChange "Marinus Vonhof";
-    gwsw:hasDateChange "2025-01-16"^^xsd:date;
-    skos:definition "[IMBOR] Het object is een actualiteit in de werkelijkheid."@nl;
-    skos:notation "ACT"^^gwsw:Dt_Notation_HY;
-    a gwsw:StatusFunctionerenColl.
-gwsw:InOntwerp rdfs:label "In ontwerp"@nl;
-    gwsw:hasAuthorChange "Marinus Vonhof";
-    gwsw:hasDateChange "2025-01-16"^^xsd:date;
-    skos:definition "[IMBOR] Het object is planmatig geschapen, maar nog niet gerealiseerd in de werkelijkheid."@nl;
-    skos:notation "ONT"^^gwsw:Dt_Notation_HY;
-    a gwsw:StatusFunctionerenColl.
 gwsw:DatatransportThema rdfs:label "Datatransport (thema)"@nl;
     gwsw:hasAuthorChange "Marinus Vonhof";
     gwsw:hasDateChange "2025-01-07";
@@ -19625,23 +19503,6 @@ gwsw:Dicht rdfs:label "Dicht"@nl;
     gwsw:hasDateChange "2025-01-16"^^xsd:date;
     skos:definition "[IMBOR] De actuele stand van de afsluiter is gesloten."@nl;
     a gwsw:StandaardAfsluiterstandColl.
-gwsw:DoorgaandeWeg rdfs:label "Doorgaande weg"@nl;
-    a gwsw:WegtypeColl.
-gwsw:Gebiedsontsluitingsweg rdfs:label "Gebiedsontsluitingsweg"@nl;
-    gwsw:hasAuthorChange "Marinus Vonhof";
-    gwsw:hasDateChange "2025-01-16"^^xsd:date;
-    skos:definition "[IMBOR] Weg waarop het verkeer op de wegvakken kan stromen en op de kruispunten kan uitwisselen."@nl;
-    a gwsw:WegtypeColl.
-gwsw:Hoofdweg rdfs:label "Hoofdweg"@nl;
-    gwsw:hasAuthorChange "Marinus Vonhof";
-    gwsw:hasDateChange "2025-01-16"^^xsd:date;
-    skos:definition "[IMBOR] Gebied primair in gebruik voor verkeer en vervoer, waaronder spoorwegen, wegdelen, vliegverkeersbanen, parkeerterreinen, bermen en de ondersteunende objecten als kunstwerken verstaan worden. Opmerking: Erftoegangswegen (buurtontsluitingswegen, industriewegen, landbouwwegen, fietsstraten, woonstraten), fietspaden, voetpaden, ruiterpaden en parkeergebieden worden toegerekend aan het functionele gebied waarbinnen ze liggen."@nl;
-    a gwsw:WegtypeColl.
-gwsw:Woonstraat rdfs:label "Woonstraat"@nl;
-    gwsw:hasAuthorChange "Marinus Vonhof";
-    gwsw:hasDateChange "2025-01-16"^^xsd:date;
-    skos:definition "[IMBOR] Een straat die toegang geeft tot erven en percelen en waar de snelheid maximaal dertig kilometer per uur kan bedragen."@nl;
-    a gwsw:WegtypeColl.
 gwsw:Enkelloop rdfs:label "Enkelloop"@nl;
     gwsw:hasAuthorChange "Marinus Vonhof";
     gwsw:hasDateChange "2025-01-16"^^xsd:date;
@@ -19693,28 +19554,6 @@ gwsw:Verlies rdfs:label "Verlies"@nl;
     skos:definition "[IMBOR] Binnen de maaiveldschematisering van het object is er sprake van een vermindering aan stabiliteit."@nl;
     skos:notation "VRL"^^gwsw:Dt_Notation_HY;
     a gwsw:MaaiveldschematiseringColl.
-gwsw:Gepland rdfs:label "Gepland"@nl;
-    a gwsw:StatusMaatregelColl.
-gwsw:InUitvoering rdfs:label "In uitvoering"@nl;
-    gwsw:hasAuthorChange "Marinus Vonhof";
-    gwsw:hasDateChange "2025-01-16"^^xsd:date;
-    skos:definition "[IMBOR] Het project wordt momenteel uitgevoerd."@nl;
-    a gwsw:StatusMaatregelColl.
-gwsw:InVoorbereiding rdfs:label "In voorbereiding"@nl;
-    gwsw:hasAuthorChange "Marinus Vonhof";
-    gwsw:hasDateChange "2025-01-16"^^xsd:date;
-    skos:definition "[IMBOR] Gevormd object waarvan de voor vervulling van de functie noodzakelijke reële objecten nog niet gereed zijn."@nl;
-    a gwsw:StatusMaatregelColl.
-gwsw:Uitgevoerd rdfs:label "Uitgevoerd"@nl;
-    gwsw:hasAuthorChange "Marinus Vonhof";
-    gwsw:hasDateChange "2025-01-16"^^xsd:date;
-    skos:definition "[IMBOR] De status van het project is dat het project in het verleden is voltooid."@nl;
-    a gwsw:StatusMaatregelColl.
-gwsw:Vervallen rdfs:label "Vervallen"@nl;
-    gwsw:hasAuthorChange "Marinus Vonhof";
-    gwsw:hasDateChange "2025-01-16"^^xsd:date;
-    skos:definition "[IMBOR] Het object is in werkelijkheid niet langer aanwezig."@nl;
-    a gwsw:StatusMaatregelColl.
 gwsw:ZandKlei rdfs:label "Zand en klei"@nl;
     a gwsw:GrondsoortColl.
 gwsw:KleiZand rdfs:label "Klei en zand"@nl;

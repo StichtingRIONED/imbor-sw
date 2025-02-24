@@ -31,8 +31,8 @@ where
     ?b owl:onProperty gwsw:functie .
     ?b owl:hasValue ?object .
     BIND ("functie" as ?Property)
-    BIND ("" as ?card) 
-    BIND ("" as ?at) 
+    BIND ("exact" as ?card) 
+    BIND ("1" as ?at) 
  }
  ?Class1 rdfs:label ?labelOwner .
  FILTER (lang(?labelOwner) != "en")
