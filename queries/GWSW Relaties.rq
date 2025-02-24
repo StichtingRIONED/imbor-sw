@@ -8,23 +8,37 @@ PREFIX geo: <http://www.opengis.net/ont/geosparql#>
 PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
 PREFIX : <http://data.gwsw.nl/1.6/totaal/>
 
-SELECT DISTINCT ?OwnerOfProperty ?Property ?Object ?card ?at
+SELECT DISTINCT ?OwnerOfProperty ?labelOwner ?Property ?Object ?labelObject ?card ?at
 
 FROM <http://www.ontotext.com/explicit> # GraphDB: gebruik alleen expliciete (not-inferred) binnen default Graph
 
 where
 {
- ?Class1 rdfs:subClassOf ?b .
-
  BIND (str(iri(:)) AS ?aft)
 
- # zoek de restricties op cardinaliteit
- ?b ?prd ?at .
- FILTER (CONTAINS(str(?prd), "Cardinality"))
- BIND (IF (CONTAINS(str(?prd), "maxQual"), "max", (IF (CONTAINS(str(?prd), "minQual"), "min", "exact"))) as ?card)
- 
- ?b owl:onProperty ?property .
- ?b owl:onClass ?object .
+
+ { # zoek de restricties op cardinaliteit
+    ?Class1 rdfs:subClassOf ?b .
+    ?b ?prd ?at .
+    FILTER (CONTAINS(str(?prd), "Cardinality"))
+    BIND (IF (CONTAINS(str(?prd), "maxQual"), "max", (IF (CONTAINS(str(?prd), "minQual"), "min", "exact"))) as ?card)
+    ?b owl:onProperty ?property .
+    ?b owl:onClass ?object . 
+    BIND (strafter(str(?property), ?aft) AS ?Property) 
+ } 
+ UNION {
+    ?Class1 rdfs:subClassOf ?b .
+    ?b owl:onProperty gwsw:functie .
+    ?b owl:hasValue ?object .
+    BIND ("functie" as ?Property)
+    BIND ("" as ?card) 
+    BIND ("" as ?at) 
+ }
+ ?Class1 rdfs:label ?labelOwner .
+ FILTER (lang(?labelOwner) != "en")
+
+ ?object rdfs:label ?labelObject .
+ FILTER (lang(?labelObject) != "en")
 
  #?Class2 rdfs:subClassOf* ?Class1 . # Property path: 0 of meer links
  #?Class2 :hasDateStart ?dat . # alleen GWSW-classes gebruiken
@@ -33,5 +47,5 @@ where
  BIND (strafter(str(?Class1), ?aft) AS ?OwnerOfProperty)
  # BIND (strafter(str(?Class2), ?aft) AS ?Subject)
  BIND (strafter(str(?object), ?aft) AS ?Object)
- BIND (strafter(str(?property), ?aft) AS ?Property)
+
 }
