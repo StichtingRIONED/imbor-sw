@@ -17,6 +17,8 @@
   {
     "remarks": [
       "Item nr 69",
+      "20250226/mv: Herstel: Naam aanhouden, het materie-individu staat in IMBOR-Kern, die gebruiken",
+      "20250225/overleg: Naam aangepast, blijft bij SW",
       "20250220/overleg: hou bij IMBOR-SW",
       "20250220/mv: Staat bij discipline SW in IMBOR",
       "20250117/jm: Is materiaal in IMBOR",
@@ -31,6 +33,7 @@
   {
     "remarks": [
       "Item nr 1000",
+      "20250225/overleg: Is alsnog aangepast",
       "20250224/overleg: Wordt aangepast in IMBOR-SW",
       "20250221/mv: Naam uit GWSW overnemen",
       "20250117/jm: BOB's in IMBOR verwerkt,  beoordelen door GWSW of deze goed verwerkt zijn.",
@@ -44,6 +47,7 @@
   {
     "remarks": [
       "Item nr 1001",
+      "20250225/overleg: Is alsnog aangepast",
       "20250224/overleg: Wordt aangepast in IMBOR-SW",
       "20250221/mv: Naam uit GWSW overnemen",
       "20250117/jm: BOB's in IMBOR verwerkt,  beoordelen door GWSW of deze goed verwerkt zijn.",
@@ -56,29 +60,8 @@
   },
   {
     "remarks": [
-      "Item nr 2829",
-      "20250224/overleg: Wordt aangepast in IMBOR-SW",
-      "20250221/mv: Naam in IMBOR corrigeren"
-    ],
-    "gwsw": "OverbruggenGrootNiveauverschil",
-    "action": [
-      {"replace": "imbor:816F272C-BB45-4BEE-A22D-D5D61CFA81A1"}
-    ]
-  },
-  {
-    "remarks": [
-      "Item nr 2876",
-      "20250224/overleg: Wordt meegenomen bij de import van de functielijst",
-      "20250221/mv: Onlangs toegevoegde functies om het datamodel compleet te maken (elk fysiek object heeft nu een functie)"
-    ],
-    "gwsw": "OntluchtenVanRiolering",
-    "action": [
-      {"replace": "imbor:27555C8F-511B-4D8F-B5F7-27DEC3BD4157"}
-    ]
-  },
-  {
-    "remarks": [
       "Item nr 970",
+      "20250225/overleg: Wordt IMBOR-Kern",
       "20250224/mv: Label aangepast in GWSW",
       "20250220/mv: Staat in IMBOR-SW, ok?",
       "20250117/jm: In IMBOR enumeratie FysiekObjectBelastingklasseDIN19580/EN1433",
@@ -86,8 +69,34 @@
     ],
     "gwsw": "BelastingklasseDIN19580_EN1433Coll",
     "action": [
-      {"replace": "imbor:D037985E-BA7F-4146-AC41-92AB1A79438C"},
-      {"parent": "nen2660:EnumerationType"}
+      {"replace": "imbor:D037985E-BA7F-4146-AC41-92AB1A79438C"}
+    ]
+  },
+  {
+    "remarks": [
+      "Item nr 177",
+      "20250117/jm: Gravel en grind zijn verschillende materialen",
+      "20241216/mv: Gravel en grind (en/nl) zijn toch hetzelfde? Term split hanteren?",
+      "20231229/tm: discipline overstijgend. IMBOR volgen en Grondsoorttypering waar nodig aanvullen."
+    ],
+    "gwsw": "Grind",
+    "action": [
+      {"replace": "imbor:118382A9-916C-4DFA-9AA7-D2195F22BAFD"}
+    ]
+  },
+  {
+    "remarks": [
+      "Item nr 2",
+      "20250225/mv: Synoniem aan GWSW toegevoegd",
+      "20250117/jm: Als nieuw informatieobject adres verwerken in IMBOR. In IMBOR verdwijnen dan wel de zelfstandige attributen huisnummer en postcode.",
+      "20241205/overleg: Wordt niet opgenomen in IMBOR, oplossen in SW",
+      "20240327/overleg: In IMBOR wordt Adresgegevens opgenomen, als subClassOf van het NEN2660 concept",
+      "20231229/tm: goede modellering. Kan Informatieobject worden in IMBOR.",
+      "20231219/ro:  Zit in IMBOR niet als klasse maar als aantal attributen (o.a. huisnummer, postcode, etc.). "
+    ],
+    "gwsw": "Adresgegevens",
+    "action": [
+      {"replace": "imbor:3704FDDE-4D32-4E32-9658-84E0703DA829"}
     ]
   },
   {
@@ -2516,6 +2525,18 @@
   },
   {
     "remarks": [
+      "Item nr 93",
+      "20250224/overleg: Wordt aangepast in IMBOR-Kern",
+      "20250117/jm: Is GWSW, gaat niet mee met IMBOR Stedelijk water",
+      "20231229/tm: Een GWSW term. Wijzigen naar SW"
+    ],
+    "gwsw": "BinnenonderkantOnderdeel",
+    "action": [
+      {"parent": "imbor:0DAC7828-B6E7-46EB-B538-DD6AC0005ECA"}
+    ]
+  },
+  {
+    "remarks": [
       "Item nr 1201",
       "20250224/overleg: Wordt aangepast in IMBOR-Kern",
       "20250117/jm: In IMBOR 1 attribuut als resultaat van de 3 attributen in GWSW, verwerken als 3 afzonderlijke attributen",
@@ -2571,7 +2592,8 @@
     ],
     "gwsw": "TypeVervuilingColl",
     "action": [
-      {"label": "VuilvangroosterTypeVervuiling"}
+      {"label": "VuilvangroosterTypeVervuiling"},
+      {"parent": "nen2660:EnumerationType"}
     ]
   },
   {
@@ -2620,6 +2642,18 @@
     "gwsw": "NiveauBuitenwater",
     "action": [
       {"parent": "imbor:0DAC7828-B6E7-46EB-B538-DD6AC0005ECA"}
+    ]
+  },
+  {
+    "remarks": [
+      "Item nr 307",
+      "20250117/jm: Zie eerdere opmerking Perceel als object overnemen/opnemen",
+      "20231229/tm: Zie aanmerking bij Bedrijfslocatie.",
+      "20231219/ro:  Zit niet in IMBOR. "
+    ],
+    "gwsw": "Perceel",
+    "action": [
+      {"parent": "nen3610:RegistratieveRuimte"}
     ]
   },
   {
@@ -2737,6 +2771,16 @@
   },
   {
     "remarks": [
+      "Item nr 969",
+      "20250224/mv: Label aangepast in GWSW"
+    ],
+    "gwsw": "BelastingklasseDIN19580_EN1433",
+    "action": [
+      {"parent": "imbor:10A09B7D-2095-4B91-B112-A9C99F2B291E"}
+    ]
+  },
+  {
+    "remarks": [
       "Item nr 1120",
       "20250117/jm: Naar GWSW",
       ""
@@ -2809,6 +2853,15 @@
     "gwsw": "GeslotenVerhardOppervlakVlak",
     "action": [
       {"parent": "imbor:DBF397AA-4FD9-4183-A782-87AE30ED2144"}
+    ]
+  },
+  {
+    "remarks": [
+      "Item nr 1756"
+    ],
+    "gwsw": "LateraalDebiet",
+    "action": [
+      {"parent": "imbor:1799894E-4D26-4800-A08E-6B2C7D4B07DF"}
     ]
   },
   {
