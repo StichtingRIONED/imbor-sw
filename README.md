@@ -1,9 +1,10 @@
-# IMBOR-SW ontwikkelen op basis van het GWSW
+# IMBOR-SW op basis van het GWSW
 
 Deze repository bevat het ontwerp voor de directe aanmaak van het deelmodel IMBOR Stedelijk Water vanuit het GWSW-datamodel .
 
-Zie [data.gwsw.nl/imbor-sw](https://data.gwsw.nl/1.6.1/imbor-sw/index.html?menu_item=classes).
-In kleur de gebruikte RDF-schema's <span style="color: blue;">blauw=IMBOR-Kern</span>, <span style="color: orangered;">rood=NEN2660</span>, zwart=IMBOR-SW.
+>IMBOR Stedelijk Water is gebaseerd op het GWSW-deelmodel IMBOR-SW, een filter op het GWSW-datamodel. 
+Zie ook [data.gwsw.nl/imbor-sw](https://data.gwsw.nl/1.6.1/imbor-sw/index.html). 
+Deze site toont het GWSW-deelmodel IMBOR-SW binnen het IMBOR-datamodel.
 
 Het ontwerp omvat het volgende:
 * Definiëren van het deelmodel IMBOR-SW binnen het GWSW-datamodel [GWSW Deelmodel IMBOR-SW](#gwsw-deelmodel-imbor-sw)

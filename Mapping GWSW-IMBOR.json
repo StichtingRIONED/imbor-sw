@@ -1574,7 +1574,7 @@
     ],
     "gwsw": "PE",
     "action": [
-      {"replace": "imbor:6BAD1FDB-6052-4239-A199-AD8CFA73159A"}
+      {"replace": "imbor-id:5D3E6406-5DE8-4849-8992-E85BD7ADBF68"}
     ]
   },
   {
@@ -2887,9 +2887,28 @@
   },
   {
     "remarks": [
-      "Item nr 1756"
+      "Item nr 1756",
+      "20250310/mv: Heeft in GWSW alleen een supertype-functie."
     ],
     "gwsw": "LateraalDebiet",
+    "action": [
+      {"remove": ""}
+    ]
+  },
+  {
+    "remarks": [
+      "Item nr 1757"
+    ],
+    "gwsw": "LateraalDebietDWA",
+    "action": [
+      {"parent": "imbor:1799894E-4D26-4800-A08E-6B2C7D4B07DF"}
+    ]
+  },
+  {
+    "remarks": [
+      "Item nr 1758"
+    ],
+    "gwsw": "LateraalDebietHWA",
     "action": [
       {"parent": "imbor:1799894E-4D26-4800-A08E-6B2C7D4B07DF"}
     ]
