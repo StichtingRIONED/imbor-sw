@@ -1,9 +1,9 @@
 # IMBOR-SW op basis van het GWSW
 
 Deze repository bevat het ontwerp voor de directe aanmaak van het deelmodel IMBOR Stedelijk Water vanuit het GWSW-datamodel .
+IMBOR Stedelijk Water is gebaseerd op het GWSW-deelmodel IMBOR-SW, een filter op het GWSW-datamodel. 
 
->IMBOR Stedelijk Water is gebaseerd op het GWSW-deelmodel IMBOR-SW, een filter op het GWSW-datamodel. 
-Zie ook [data.gwsw.nl/imbor-sw](https://data.gwsw.nl/1.6.1/imbor-sw/index.html). 
+>Zie ook [data.gwsw.nl/imbor-sw](https://data.gwsw.nl/1.6.1/imbor-sw/index.html). 
 Deze site toont het GWSW-deelmodel IMBOR-SW binnen het IMBOR-datamodel.
 
 Het ontwerp omvat het volgende:
@@ -12,13 +12,13 @@ Het ontwerp omvat het volgende:
 * Functionele beschrijving van de conversie GWSW naar IMBOR-SW [GWSW in IMBOR-vorm](#gwsw-in-imbor-vorm)
 
 ## GWSW Deelmodel IMBOR-SW 
-Indeling (vergelijkbaar met deelmodel GWSW Basis): CoF-en TOP, BAS, MDS, HYD (excl. NLCS). Gebruik conformiteitsklasse 6.
+Indeling (vergelijkbaar met deelmodel GWSW Basis, excl. NLCS): CoF-en TOP, BAS, HYD, MDS. Gebruik conformiteitsklasse 6.
 
 Om te komen tot de presentatie op [data.gwsw.nl/imbor-sw](https://data.gwsw.nl/1.6.1/imbor-sw/index.html?menu_item=classes) worden de volgende stappen doorlopen:
 - converteer het model IMBOR-Kern naar het GWSW-OroX protocol (GWSW-conform RDF)
 - koppel het omgezette model IMBOR-Kern aan het datamodel GWSW
 - voer de mapping GWSW-IMBOR uit op deze model-koppeling
-- filter deze mapping op basis van deelmodel IMBOR-SW (Cof-en TOP, BAS, MDS, HYD en CFK 6)
+- filter deze mapping op basis van deelmodel IMBOR-SW (Cof-en TOP, BAS, HYD, MDS en CFK 6)
 - de presentatie (via DivOro.exe) is afgestemd op het IMBOR-SW, gebruikt de mapping en markeert de gebruikte schema's (NEN2660, IMBOR enz).
 
 ## Mapping GWSW-IMBOR
