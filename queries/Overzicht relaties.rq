@@ -1,0 +1,54 @@
+# Overzicht relaties met cardinaliteit (20250521)
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX geof: <http://www.opengis.net/def/function/geosparql/>
+PREFIX : <http://data.gwsw.nl/1.6/totaal/>
+PREFIX imbor: <https://data.crow.nl/imbor/def/>
+
+SELECT DISTINCT ?Class1 ?Property ?object ?min ?max ?exact #?OwnerOfProperty ?Property ?Object
+
+FROM <http://www.ontotext.com/explicit> # GraphDB: gebruik alleen expliciete (not-inferred) binnen default Graph
+
+where
+{
+ ?Class1 rdfs:subClassOf ?b .
+
+ BIND (str(iri(:)) AS ?aft)
+ BIND (str(iri(imbor:)) AS ?aftIMBOR)
+
+ # zoek de restricties op cardinaliteit
+ ?b owl:onProperty ?property .
+ ?b owl:onClass ?object .
+
+ ?Class2 rdfs:subClassOf* ?Class1 . # Property path: 0 of meer links
+ #?Class2 :hasDateStart ?dat . # alleen GWSW-classes gebruiken
+ 
+    #FILTER (CONTAINS(str(?Class2), ?aft))
+    FILTER (CONTAINS(str(?property), ?aft))
+    
+    OPTIONAL {
+    
+	?Class1 rdfs:subClassOf ?cls .
+    ?cls rdf:type owl:Restriction .
+?cls owl:onProperty ?property .
+?cls owl:onClass ?object .
+    
+    { ?cls owl:maxQualifiedCardinality ?max . }
+    UNION
+   { ?cls owl:minQualifiedCardinality ?min . }
+    UNION
+   { ?cls owl:qualifiedCardinality ?exact . }
+    
+    }
+ 
+ 
+ BIND (strafter(str(?Class1), ?aft) AS ?OwnerOfProperty)
+ BIND (strafter(str(?Class2), ?aft) AS ?Subject)
+ BIND (strafter(str(?object), ?aft) AS ?Object)
+ BIND (strafter(str(?property), ?aft) AS ?Property)
+}
+#limit 100
